@@ -1,6 +1,11 @@
 # Keymaps For my Keyboards
 
 ## Layouts
+### Ergodox Infinity
+* Default 
+  * ![ergodox-default](layout_pngs/ergodox-default.png)
+* Layer 1 
+  * ![ergodox-layer-1](layout_pngs/ergodox-layer-1.png)
 ### POK3R
 * Default 
   * ![poker-default](layout_pngs/poker-default.png)
