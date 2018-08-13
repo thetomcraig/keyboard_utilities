@@ -116,7 +116,15 @@
       "f": 5
     },
     "<i class=\"varela varela-tilde\"></i>\n`",
+    {
+      "c": "#e3d5b9",
+      "a": 4,
+      "f": 2
+    },
     "Tmux\n\n\n\n\n\nWin 1",
+    {
+      "a": 5
+    },
     "Tmux\n\n\n\n\n\nWin 2",
     "Tmux\n\n\n\n\n\nWin 3",
     "Tmux\n\n\n\n\n\nWin 4",
@@ -130,7 +138,6 @@
     "Vol +",
     {
       "a": 4,
-      "f": 2,
       "w": 1.5
     },
     "\n\n\nForward Del"
@@ -139,9 +146,11 @@
     {
       "w": 1.5
     },
-    "Enter",
+    "\nEnter",
     {
-      "c": "#81817e"
+      "c": "#81817e",
+      "a": 7,
+      "f": 5
     },
     "Q",
     {
@@ -157,25 +166,26 @@
     "Y",
     "U",
     {
-      "c": "#e3d5b9"
+      "c": "#e3d5b9",
+      "a": 4,
+      "f": 2
     },
     "Prev\n\n\n\n\n\nWord",
     "Next\n\n\n\n\n\nWord",
-    "Tmux\nPrev Win",
+    "Tmux\n\n\n\n\n\nPrev Win",
     {
       "c": "#81817e"
     },
     "{\n[",
     "}\n]",
     {
-      "c": "#e3d5b9",
-      "w": 1.5
+      "f": 5
     },
-    "PASSWORD"
+    "\\\n|"
   ],
   [
     {
-      "a": 4,
+      "c": "#e3d5b9",
       "f": 2,
       "w": 1.75
     },
@@ -192,6 +202,9 @@
     },
     "F",
     "G",
+    {
+      "c": "#e3d5b9"
+    },
     "←",
     {
       "n": true
@@ -200,6 +213,7 @@
     "↑",
     "→",
     {
+      "c": "#81817e",
       "a": 5
     },
     ":\n;",
@@ -228,20 +242,28 @@
     "Z",
     "X",
     {
-      "c": "#e3d5b9"
+      "c": "#e3d5b9",
+      "a": 4,
+      "f": 2
     },
-    "Tmux\nNew Win",
+    "Tmux\nWin\n\n\n\n\nNew",
     {
-      "c": "#81817e"
+      "c": "#81817e",
+      "a": 7,
+      "f": 5
     },
     "V",
     "B",
     {
-      "c": "#e3d5b9"
+      "c": "#e3d5b9",
+      "a": 4,
+      "f": 2
     },
-    "Tmux\nNext Win",
+    "Tmux\nWin\n\n\n\n\nNext",
     {
-      "c": "#81817e"
+      "c": "#81817e",
+      "a": 7,
+      "f": 5
     },
     "M",
     {
