@@ -1,0 +1,35 @@
+Variant = "standard";
+Generator = "KIICONF 0.2";
+Base = "Blank";
+Date = "2015-09-12";
+KLL = "0.3c";
+Author = "HaaTa (Jacob Alexander) 2015";
+Version = "0.1";
+Name = "MDErgo1";
+Layout = "Default";
+
+U"EQUALS" : flashMode();
+U"7" : U"NUMLOCK";
+U"8" : U"P/";
+U"9" : U"P*";
+U"0" : U"P-";
+U"MINUS" : flashMode();
+U"U" : U"P7";
+U"I" : mouseOut( 1, 0, 0 );
+U"O" : mouseOut( 2, 0, 0 );
+U"P" : U"KEYPAD PLUS";
+U"H" : mouseOut( 0, -1, 0 );
+U"J" : mouseOut( 0, 0, 1 );
+U"K" : mouseOut( 0, 0, -1 );
+U"L" : mouseOut( 0, 1, 0 );
+U"SEMICOLON" : U"KEYPAD PLUS";
+U"M" : U"P1";
+U"COMMA" : U"P2";
+U"PERIOD" : U"P3";
+U"SLASH" : U"PENTER";
+U"SPACE" : U"P0";
+U"UP" : U"P.";
+U"RIGHT" : U"PENTER";
+
+
+
