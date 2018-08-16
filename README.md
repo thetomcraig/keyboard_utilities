@@ -12,6 +12,8 @@
   * ![poker-default](layout_pngs/poker-default.png)
 * Layer 1 
   * ![poker-layer-1](layout_pngs/poker-layer-1-2.png)
+* Layer 1 
+  * ![poker-layer-1](layout_pngs/poker-layer-1.png)
 
 ### Macbook Internal Keyboard
 * Default 
