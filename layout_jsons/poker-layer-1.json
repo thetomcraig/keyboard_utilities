@@ -48,13 +48,9 @@
     "Prev\n\n\n\n\n\nWord",
     "Next\n\n\n\n\n\nWord",
     "Tmux\nPrev Win",
+    "Bright-",
+    "Bright+",
     {
-      "c": "#81817e"
-    },
-    "{\n[",
-    "}\n]",
-    {
-      "c": "#e3d5b9",
       "w": 1.5
     },
     "PASSWORD"
