@@ -10,6 +10,8 @@
 ### POK3R
 * Default 
   * ![poker-default](layout_pngs/poker-default.png)
+* Layer 1 
+  * ![poker-layer-1](layout_pngs/poker-layer-1-2.png)
 
 ### Macbook Internal Keyboard
 * Default 
