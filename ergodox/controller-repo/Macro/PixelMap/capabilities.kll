@@ -1,0 +1,65 @@
+# PixelMap
+Name = PixelMapCapabilities;
+Version = 0.3;
+Author = "HaaTa (Jacob Alexander) 2015-2017";
+KLL = 0.5;
+
+# Modified Date
+Date = 2017-02-05;
+
+## Capabilities ##
+animation => Pixel_Animation_capability( index : 2, loops : 1, pfunc : 1, divmask : 1, divshift : 1, replace : 1 );
+animationIndex => Pixel_AnimationIndex_capability( settingindex : 2 );
+pixel => Pixel_Pixel_capability();
+
+# Animation Control
+# 0 - Pause/Resume
+# 1 - ForwardOne
+# 2 - Forward
+# 3 - Stop (clears all animations)
+# 4 - Reset (restarts animations)
+# 5 - Wipe Pause (pauses animations and clears display)
+# 6 - Pause
+# 7 - Clear (clears the display, animations continue)
+animation_control => Pixel_AnimationControl_capability( func : 1 );
+
+
+# Enable define
+Pixel_MapEnabled = "1";
+Pixel_MapEnabled => Pixel_MapEnabled_define;
+
+# Default Animation Mode
+# Set to PixelTest_Off for normal operation
+# Other options:
+# - PixelTest_Chan_All   : Flashes all channels
+# - PixelTest_Chan_Roll  : Rolls through all channels in order
+# - PixelTest_Pixel_All  : Flashes all pixels
+# - PixelTest_Pixel_Roll : Rolls through all pixels in order (useful when soldering LEDs)
+Pixel_Test_Mode = "PixelTest_Off";
+Pixel_Test_Mode => Pixel_Test_Mode_define;
+
+# Pixel Buffer Defines
+Pixel_Buffer_Size   => Pixel_Buffer_Size_define;
+Pixel_Buffer_Width  => Pixel_Buffer_Width_define;
+Pixel_Buffer_Buffer => Pixel_Buffer_Buffer_define;
+Pixel_Buffer_Length => Pixel_Buffer_Length_define;
+
+# Pixel Display Mapping Parameters
+Pixel_DisplayMapping_UnitSize = 19; # Default unit spacing in mm
+Pixel_DisplayMapping_ColumnSize = 1;
+Pixel_DisplayMapping_RowSize = 2;
+Pixel_DisplayMapping_ColumnDirection = 1; # Either 1 or -1, K-Type is -1
+Pixel_DisplayMapping_RowDirection = 1;
+
+# Channel Optimized
+# Used to hard-code channel width and count
+# For keyboards with only a single channel setting (e.g. K-Type), this is much more efficient
+Pixel_HardCode_ChanWidth => Pixel_HardCode_ChanWidth_define;
+Pixel_HardCode_Channels => Pixel_HardCode_Channels_define;
+Pixel_HardCode_ChanWidth = 0;
+Pixel_HardCode_Channels = 0;
+
+# Animation Stack Size
+Pixel_AnimationStackSize => Pixel_AnimationStackSize_define;
+Pixel_AnimationStackSize = 20;
+
