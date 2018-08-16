@@ -26,15 +26,12 @@ U"7" : U"F7";
 U"8" : U"F8";
 U"9" : U"F9";
 U"0" : U"F10";
-U"MINUS" : flashMode();
 U"I" : mouseOut( 1, 0, 0 );
 U"O" : mouseOut( 2, 0, 0 );
 U"H" : U"LEFT";
 U"J" : U"DOWN";
 U"K" : U"UP";
 U"L" : U"RIGHT";
-U"PAGEUP" : CONS"SCANPREVIOUSTRACK";
-U"PAGEDOWN" : CONS"SCANNEXTTRACK";
 
 
 

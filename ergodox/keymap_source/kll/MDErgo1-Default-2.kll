@@ -8,12 +8,10 @@ Version = "0.1";
 Name = "MDErgo1";
 Layout = "Default";
 
-U"EQUALS" : flashMode();
 U"7" : U"NUMLOCK";
 U"8" : U"P/";
 U"9" : U"P*";
 U"0" : U"P-";
-U"MINUS" : flashMode();
 U"U" : U"P7";
 U"I" : mouseOut( 1, 0, 0 );
 U"O" : mouseOut( 2, 0, 0 );

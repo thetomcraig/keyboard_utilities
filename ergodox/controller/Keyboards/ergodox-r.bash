@@ -13,7 +13,7 @@
 
 # Feel free to change the variables in this section to configure your keyboard
 
-BuildPath="ICED-R"
+BuildPath="Custom-ICED-R"
 
 ## KLL Configuration ##
 
@@ -23,7 +23,7 @@ BaseMap="scancode_map rightHand slave1 leftHand"
 # This is the default layer of the keyboard
 # NOTE: To combine kll files into a single layout, separate them by spaces
 # e.g.  DefaultMap="mylayout mylayoutmod"
-DefaultMap="infinity_ergodox/all-leds infinity_ergodox/mdergo1Overlay infinity_ergodox/lcdFuncMap"
+DefaultMap="infinity_ergodox/all-leds MDErgo1-Default-0 infinity_ergodox/lcdFuncMap"
 
 # This is where you set the additional layers
 # NOTE: Indexing starts at 1
@@ -31,8 +31,8 @@ DefaultMap="infinity_ergodox/all-leds infinity_ergodox/mdergo1Overlay infinity_e
 # e.g.  PartialMaps[1]="layer1 layer1mod"
 #       PartialMaps[2]="layer2"
 #       PartialMaps[3]="layer3"
-PartialMaps[1]="infinity_ergodox/iced_func"
-PartialMaps[2]="infinity_ergodox/iced_numpad"
+PartialMaps[1]="MDErgo1-Default-1 infinity_ergodox/lcdFuncMap"
+PartialMaps[2]="MDErgo1-Default-2 infinity_ergodox/lcdFuncMap"
 
 
 
