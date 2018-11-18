@@ -20,6 +20,7 @@
 #include <Lib/MacroLib.h>
 
 // Project Includes
+#include <Lib/storage.h>
 #include <cli.h>
 #include <kll_defs.h>
 #include <latency.h>
@@ -33,6 +34,10 @@
 
 
 // ----- Function Declarations -----
+
+void Pixel_loadConfig();
+void Pixel_saveConfig();
+void Pixel_printConfig();
 
 void cliFunc_aniAdd     ( char* args );
 void cliFunc_aniDel     ( char* args );
@@ -50,16 +55,20 @@ void cliFunc_rectDisp   ( char* args );
 
 typedef enum PixelTest {
 	PixelTest_Off = 0,    // Disabled
+	PixelTest_Chan_Single,
 	PixelTest_Chan_All,   // Enable all positions
 	PixelTest_Chan_Roll,  // Iterate over all positions
 	PixelTest_Chan_Full,  // Turn on all pixels
 	PixelTest_Chan_Off,   // Turn off all pixels
+	PixelTest_Pixel_Single,
 	PixelTest_Pixel_All,  // Enable all positions
 	PixelTest_Pixel_Roll, // Iterate over all positions
 	PixelTest_Pixel_Full, // Turn on all pixels
 	PixelTest_Pixel_Off,  // Turn off all pixels
+	PixelTest_Scan_Single,
 	PixelTest_Scan_All,
 	PixelTest_Scan_Roll,
+	PixelTest_XY_Single,
 	PixelTest_XY_All,
 	PixelTest_XY_Roll,
 } PixelTest;
@@ -67,6 +76,30 @@ typedef enum PixelTest {
 
 
 // ----- Variables -----
+
+#if Storage_Enable_define == 1
+typedef struct {
+	uint8_t animation_indices[Pixel_AnimationStackSize];
+	PixelPeriodConfig fade_periods[4][4];
+} PixelConfig;
+
+static PixelConfig defaults = {
+	.animation_indices = {[0 ... Pixel_AnimationStackSize-1] = 255}, //Todo, use some kll define
+	// .fade_periods initialized later
+};
+
+static PixelConfig settings;
+
+static StorageModule PixelStorage = {
+	.name = "Pixel Map",
+	.settings = &settings,
+	.defaults = &defaults,
+	.size = sizeof(PixelConfig),
+	.onLoad = Pixel_loadConfig,
+	.onSave = Pixel_saveConfig,
+	.display = Pixel_printConfig
+};
+#endif
 
 // Macro Module command dictionary
 CLIDict_Entry( aniAdd,       "Add the given animation id to the stack" );
@@ -94,7 +127,7 @@ CLIDict_Def( pixelCLIDict, "Pixel Module Commands" ) = {
 
 // Debug states
 PixelTest Pixel_testMode;
-uint16_t  Pixel_testPos = 0;
+volatile uint16_t  Pixel_testPos = 0;
 
 // Frame State
 //  Indicates to pixel and output modules current state of the buffer
@@ -118,6 +151,19 @@ uint16_t Pixel_Mapping_HostLen = 128; // TODO Define
 uint8_t  Pixel_AnimationStackElement_HostSize = sizeof( AnimationStackElement );
 #endif
 
+// Pixel Fade Profile Mapping
+// Assigned per pixel (rather than channel)
+// 0 - Disabled
+// 1 - Profile 1 - Keys
+// 2 - Profile 2 - Underlighting
+// 3 - Profile 3 - Indicator LEDs
+// 4 - Profile 4 - Current active layer (defaultmap is excluded)
+static uint8_t Pixel_pixel_fade_profile[Pixel_TotalPixels_KLL];
+
+// Pixel Fade Profile Parameters
+// TODO (HaaTa): Use KLL to determine number of profiles (currently only 4)
+static PixelFadeProfile Pixel_pixel_fade_profile_entries[4];
+
 // Latency Measurement Resource
 static uint8_t pixelLatencyResource;
 
@@ -130,6 +176,9 @@ uint8_t Pixel_addAnimation( AnimationStackElement *element, CapabilityState csta
 uint8_t Pixel_determineLastTriggerScanCode( TriggerMacro *trigger );
 
 void Pixel_pixelSet( PixelElement *elem, uint32_t value );
+void Pixel_clearAnimations();
+
+void Pixel_SecondaryProcessing_profile_init();
 
 PixelBuf *Pixel_bufferMap( uint16_t channel );
 
@@ -293,6 +342,87 @@ void Pixel_AnimationControl_capability( TriggerMacro *trigger, uint8_t state, ui
 	}
 }
 
+void Pixel_FadeSet_capability( TriggerMacro *trigger, uint8_t state, uint8_t stateType, uint8_t *args )
+{
+	CapabilityState cstate = KLL_CapabilityState( state, stateType );
+
+	switch ( cstate )
+	{
+	case CapabilityState_Initial:
+		// Only use capability on press
+		break;
+	case CapabilityState_Debug:
+		// Display capability name
+		print("Pixel_FadeSet_capability(profile,config,period)");
+		return;
+	default:
+		return;
+	}
+
+	// Get arguments
+	uint8_t profile = *(uint8_t*)(&args[0]);
+	uint8_t config = *(uint8_t*)(&args[1]);
+	uint8_t period = *(uint8_t*)(&args[2]);
+
+	// Get period configuation
+	const PixelPeriodConfig *period_config = &Pixel_LED_FadePeriods[period];
+
+	// Set period configuration
+	Pixel_pixel_fade_profile_entries[profile].conf[config].start = period_config->start;
+	Pixel_pixel_fade_profile_entries[profile].conf[config].end = period_config->end;
+
+	// Reset the current period being processed
+	Pixel_pixel_fade_profile_entries[profile].pos = 0;
+	Pixel_pixel_fade_profile_entries[profile].period_conf = PixelPeriodIndex_Off_to_On;
+}
+
+void Pixel_FadeLayerHighlight_capability( TriggerMacro *trigger, uint8_t state, uint8_t stateType, uint8_t *args )
+{
+	CapabilityState cstate = KLL_CapabilityState( state, stateType );
+	// TODO (HaaTa): FIXME
+	return;
+
+	switch ( cstate )
+	{
+	case CapabilityState_Initial:
+		// Scan the layer for keys
+		break;
+	case CapabilityState_Last:
+		// Refresh the fade profiles
+		Pixel_SecondaryProcessing_profile_init();
+		return;
+	case CapabilityState_Debug:
+		// Display capability name
+		print("Pixel_FadeLayerHighlight_capability(layer)");
+		return;
+	default:
+		return;
+	}
+
+	// Get argument
+	uint16_t layer = *(uint16_t*)(&args[0]);
+
+	// Lookup layer
+	const Layer *layer_map = &LayerIndex[layer];
+
+	// Lookup list of keys in layer
+	for ( uint8_t key = layer_map->first; key <= layer_map->last; key++ )
+	{
+		uint8_t index = key - layer_map->first;
+		// If the first entry in trigger list is a 0, ignore (otherwise, key is in layer)
+		if ( layer_map->triggerMap[index][0] == 0 )
+		{
+			continue;
+		}
+
+		// Lookup pixel associated with scancode (remember -1 as all pixels and scancodes start at 1, not 0)
+		uint16_t pixel = Pixel_ScanCodeToPixel[key - 1];
+
+		// Set pixel to group #4 (index 3)
+		Pixel_pixel_fade_profile[pixel - 1] = 3;
+	}
+}
+
 
 
 // ----- Functions -----
@@ -422,6 +552,11 @@ uint8_t Pixel_addAnimation( AnimationStackElement *element, CapabilityState csta
 		default:
 			break;
 		}
+
+	// Clear all current animations from stack before adding new animation
+	case AnimationReplaceType_Clear:
+		Pixel_clearAnimations();
+		break;
 
 	default:
 		break;
@@ -606,6 +741,33 @@ PixelBuf *Pixel_bufferMap( uint16_t channel )
 
 	// Invalid channel, return first channel and display error
 	erro_msg("Invalid channel: ");
+	printHex( channel );
+	print( NL );
+	return 0;
+}
+
+// PixelBuf lookup (LED_Buffers)
+// - Determines which buffer a channel resides in
+PixelBuf *LED_bufferMap( uint16_t channel )
+{
+	// TODO Generate based on keyboard
+#if ISSI_Chip_31FL3731_define == 1 || ISSI_Chip_31FL3732_define == 1
+	if      ( channel < 144 ) return &LED_Buffers[0];
+	else if ( channel < 288 ) return &LED_Buffers[1];
+	else if ( channel < 432 ) return &LED_Buffers[2];
+	else if ( channel < 576 ) return &LED_Buffers[3];
+#elif ISSI_Chip_31FL3733_define == 1
+	if      ( channel < 192 ) return &LED_Buffers[0];
+	else if ( channel < 384 ) return &LED_Buffers[1];
+	else if ( channel < 576 ) return &LED_Buffers[2];
+#else
+	if      ( channel < 192 ) return &LED_Buffers[0];
+	else if ( channel < 384 ) return &LED_Buffers[1];
+	else if ( channel < 576 ) return &LED_Buffers[2];
+#endif
+
+	// Invalid channel, return first channel and display error
+	erro_msg("Invalid channel (LED): ");
 	printHex( channel );
 	print( NL );
 	return 0;
@@ -1277,12 +1439,22 @@ void Pixel_pixelTweenInterpolation( const uint8_t *frame, AnimationStackElement 
 
 			case PixelAddressType_ScanCode:
 				interp_mod->index = start + cur;
-				// TODO Ignore unused ScanCodes
+
+				// Ignore un-assigned ScanCodes
+				if ( Pixel_ScanCodeToDisplay[interp_mod->index - 1] == 0 )
+				{
+					continue;
+				}
 				break;
 
 			case PixelAddressType_Index:
 				interp_mod->index = start + cur;
-				// TODO Ignore unused Indices
+
+				// Ignore unused pixels (this is uncommon)
+				if ( Pixel_Mapping[interp_mod->index - 1].width == 0 || Pixel_Mapping[interp_mod->index - 1].channels == 0 )
+				{
+					continue;
+				}
 				break;
 
 			default:
@@ -1409,6 +1581,12 @@ uint8_t Pixel_animationProcess( AnimationStackElement *elem )
 		// Indicate animation slot is free
 		elem->index = 0xFFFF;
 		return 0;
+
+	// Single frame of the animation
+	// Set to paused afterwards
+	case AnimationPlayState_Single:
+		elem->state = AnimationPlayState_Pause;
+		break;
 
 	// Do nothing
 	case AnimationPlayState_Start:
@@ -1577,6 +1755,210 @@ void Pixel_pixelToggle( PixelElement *elem )
 
 
 
+// -- Secondary Processing --
+
+void Pixel_SecondaryProcessing_profile_init()
+{
+	// TODO (HaaTa): Only 3 profiles for now, may need more groups in the future
+	for ( uint8_t group = 0; group < 3; group++ )
+	{
+		const PixelLEDGroupEntry entry = Pixel_LED_DefaultFadeGroups[group];
+
+		// Iterate over each pixel
+		for ( uint16_t pxin = 0; pxin < entry.size; pxin++ )
+		{
+			// For each pixel in the default settings, apply index
+			// 0 specifies disabled, so all groups are +1
+			Pixel_pixel_fade_profile[entry.pixels[pxin] - 1] = group + 1;
+		}
+	}
+}
+
+void Pixel_SecondaryProcessing_setup()
+{
+	// Disable all fade profiles (active defaults afterwards)
+	memset( Pixel_pixel_fade_profile, 0, Pixel_TotalPixels_KLL );
+
+	// Setup each of the default profiles
+	Pixel_SecondaryProcessing_profile_init();
+
+	// Setup default profile parameters
+	for ( uint8_t pf = 0; pf < 4; pf++ )
+	{
+		// Each of the periods
+		for ( uint8_t pr = 0; pr < 4; pr++ )
+		{
+			// Lookup period using index
+			uint8_t period_index = Pixel_LED_FadePeriod_Defaults[pf][pr];
+			PixelPeriodConfig conf = Pixel_LED_FadePeriods[period_index];
+
+			// Set period to profile
+			Pixel_pixel_fade_profile_entries[pf].conf[pr].start = conf.start;
+			Pixel_pixel_fade_profile_entries[pf].conf[pr].end = conf.end;
+		}
+
+		// Reset state
+		Pixel_pixel_fade_profile_entries[pf].pos = 0;
+		Pixel_pixel_fade_profile_entries[pf].period_conf = PixelPeriodIndex_Off_to_On;
+	}
+}
+
+void Pixel_SecondaryProcessing()
+{
+	// Copy KLL buffer into LED buffer
+	for ( uint8_t buf = 0; buf < Pixel_BuffersLen_KLL; buf++ )
+	{
+		memcpy(
+			LED_Buffers[buf].data,
+			Pixel_Buffers[buf].data,
+			Pixel_Buffers[buf].size * ( Pixel_Buffers[buf].width >> 3 ) // Size may not be multiples bytes
+		);
+	}
+
+	// Iterate over each of the pixels, applying the appropriate profile to each one
+	for ( uint16_t pxin = 0; pxin < Pixel_TotalPixels_KLL; pxin++ )
+	{
+		// Select profile
+		uint8_t profile_in = Pixel_pixel_fade_profile[pxin];
+
+		// Nothing to do (fade disabled for this pixel)
+		if ( profile_in == 0 )
+		{
+			continue;
+		}
+
+		// All profiles start from 1
+		PixelFadeProfile *profile = &Pixel_pixel_fade_profile_entries[profile_in - 1];
+		PixelPeriodConfig *period = &profile->conf[profile->period_conf];
+
+		// Lookup channels of the pixel
+		const PixelElement *elem = &Pixel_Mapping[pxin];
+		for ( uint8_t ch = 0; ch < elem->channels; ch++ )
+		{
+			// Lookup PixelBuf containing the channel
+			uint16_t chan = elem->indices[ch];
+			PixelBuf *buf = LED_bufferMap( chan );
+			PixelBuf *bufin = Pixel_bufferMap( chan );
+
+			// Lookup memory location
+			// Then apply fade depending on the current position
+			//
+			// Percentage calculation using 32-bit integer instead of float
+			// This is just a: pos / end * current value of LED
+			// Ignores rounding
+			// For 8-bit values, the maximum percentage spread must be no greater than 25-bits
+			// e.g. 1 << 24
+			uint32_t val;
+			switch (buf->width)
+			{
+			// TODO (HaaTa): Handle non-16bit arrays of 8-bit values
+			case 16:
+				switch ( profile->period_conf )
+				{
+				// Off -> On
+				case PixelPeriodIndex_Off_to_On:
+				// On -> Off
+				case PixelPeriodIndex_On_to_Off:
+					// If start and end are set to 0, ignore
+					if ( period->end == 0 && period->start == 0 )
+					{
+						break;
+					}
+
+					val = (uint8_t)((uint16_t*)bufin->data)[chan - buf->offset];
+					val *= profile->pos;
+					val >>= period->end;
+					((uint16_t*)buf->data)[chan - buf->offset] = (uint8_t)val;
+					break;
+				// On hold time
+				case PixelPeriodIndex_On:
+					// Do nothing
+					break;
+				// Off hold time
+				case PixelPeriodIndex_Off:
+				{
+					PixelPeriodConfig *prev = &profile->conf[PixelPeriodIndex_On_to_Off];
+
+					// If the previous config was disabled, do not set to 0
+					if ( prev->start == 0 && prev->end == 0 )
+					{
+						break;
+					}
+
+					// If the previous On->Off change didn't go to fully off
+					// Calculate the value based off the previous config
+					val = 0;
+					if ( prev->start != 0 )
+					{
+						val = (uint8_t)((uint16_t*)bufin->data)[chan - buf->offset];
+						val *= (1 << prev->start) - 1;
+						val >>= prev->end;
+					}
+
+					// Set to 0
+					((uint16_t*)buf->data)[chan - buf->offset] = (uint8_t)val;
+					break;
+				}
+				}
+				break;
+			default:
+				erro_print("Unsupported buffer width");
+				break;
+			}
+		}
+	}
+
+	// Increment positions of each of the active profiles
+	for ( uint8_t proin = 0; proin < 4; proin++ )
+	{
+		// Lookup profile and current period
+		PixelFadeProfile *profile = &Pixel_pixel_fade_profile_entries[proin];
+		PixelPeriodConfig *period = &profile->conf[profile->period_conf];
+
+		switch ( profile->period_conf )
+		{
+		case PixelPeriodIndex_Off_to_On:
+			profile->pos++;
+			// Check if we need to move onto the next conf
+			if ( profile->pos >= (1 << period->end) )
+			{
+				profile->pos = (1 << profile->conf[PixelPeriodIndex_On].start) - 1;
+				profile->period_conf = PixelPeriodIndex_On;
+			}
+			break;
+		case PixelPeriodIndex_On:
+			profile->pos++;
+			// Check if we need to move onto the next conf
+			if ( profile->pos >= (1 << period->end) )
+			{
+				profile->pos = (1 << profile->conf[PixelPeriodIndex_On_to_Off].end);
+				profile->period_conf = PixelPeriodIndex_On_to_Off;
+			}
+			break;
+		case PixelPeriodIndex_On_to_Off:
+			profile->pos--;
+			// Check if we need to move onto the next conf
+			if ( profile->pos == (1 << period->start) - 1 )
+			{
+				profile->pos = (1 << profile->conf[PixelPeriodIndex_Off].start) - 1;
+				profile->period_conf = PixelPeriodIndex_Off;
+			}
+			break;
+		case PixelPeriodIndex_Off:
+			profile->pos++;
+			// Check if we need to move onto the next conf
+			if ( profile->pos >= (1 << period->end) )
+			{
+				profile->pos = (1 << profile->conf[PixelPeriodIndex_Off_to_On].start) - 1;
+				profile->period_conf = PixelPeriodIndex_Off_to_On;
+			}
+			break;
+		}
+	}
+}
+
+
+
 // -- General --
 
 // Looks up the final scancode in a trigger macro
@@ -1689,6 +2071,21 @@ inline void Pixel_process()
 	// First check if we are in a test mode
 	switch ( Pixel_testMode )
 	{
+	// Single channel control
+	case PixelTest_Chan_Single:
+		// Toggle channel
+		Pixel_channelToggle( Pixel_testPos );
+
+		// Increment channel
+		Pixel_testPos++;
+		if ( Pixel_testPos >= Pixel_TotalChannels_KLL )
+			Pixel_testPos = 0;
+
+		// Disable test mode
+		Pixel_testMode = PixelTest_Off;
+
+		goto pixel_process_done;
+
 	// Toggle current position, then increment
 	case PixelTest_Chan_Roll:
 		// Toggle channel
@@ -1731,6 +2128,21 @@ inline void Pixel_process()
 			// Toggle channel
 			Pixel_channelSet( ch, 0 );
 		}
+
+		goto pixel_process_done;
+
+	// Single pixel control
+	case PixelTest_Pixel_Single:
+		// Toggle channel
+		Pixel_pixelToggle( (PixelElement*)&Pixel_Mapping[ Pixel_testPos - 1 ] );
+
+		// Increment channel
+		Pixel_testPos++;
+		if ( Pixel_testPos >= Pixel_TotalChannels_KLL )
+			Pixel_testPos = 0;
+
+		// Disable test mode
+		Pixel_testMode = PixelTest_Off;
 
 		goto pixel_process_done;
 
@@ -1782,6 +2194,31 @@ inline void Pixel_process()
 
 		goto pixel_process_done;
 
+	// Single scan control
+	case PixelTest_Scan_Single:
+	{
+		// Lookup pixel
+		uint16_t pixel = Pixel_ScanCodeToPixel[ Pixel_testPos ];
+
+		// Increment pixel
+		Pixel_testPos++;
+		if ( Pixel_testPos >= MaxScanCode_KLL )
+			Pixel_testPos = 0;
+
+		// Ignore if pixel set to 0
+		if ( pixel == 0 )
+		{
+			goto pixel_process_final;
+		}
+
+		// Toggle channel
+		Pixel_pixelToggle( (PixelElement*)&Pixel_Mapping[ pixel - 1 ] );
+
+		// Disable test mode
+		Pixel_testMode = PixelTest_Off;
+
+		goto pixel_process_done;
+	}
 	// Toggle current position, then increment
 	case PixelTest_Scan_Roll:
 	{
@@ -1883,6 +2320,16 @@ inline void Pixel_process()
 	}
 
 pixel_process_done:
+	// Apply secondary LED processing
+	// XXX (HaaTa): Disabling IRQ as a hack, some interrupt is causing corruption during the buffer handling
+#if !defined(_host_)
+	__disable_irq();
+#endif
+	Pixel_SecondaryProcessing();
+#if !defined(_host_)
+	__enable_irq();
+#endif
+
 	// Frame is now ready to send
 	Pixel_FrameState = FrameState_Ready;
 
@@ -1896,6 +2343,17 @@ inline void Pixel_setup()
 {
 	// Register Pixel CLI dictionary
 	CLI_registerDictionary( pixelCLIDict, pixelCLIDictName );
+
+	// Register storage module
+#if Storage_Enable_define == 1
+	for (uint8_t profile=0; profile<4; profile++) {
+		for (uint8_t config=0; config<4; config++) {
+			defaults.fade_periods[profile][config] =
+				Pixel_LED_FadePeriods[Pixel_LED_FadePeriod_Defaults[profile][config]];
+		}
+	}
+	Storage_registerModule(&PixelStorage);
+#endif
 
 	// Set frame state to update
 	Pixel_FrameState = FrameState_Update;
@@ -1911,6 +2369,9 @@ inline void Pixel_setup()
 
 	// Add initial animations
 	Pixel_initializeStartAnimations();
+
+	// Initialize secondary buffer processing
+	Pixel_SecondaryProcessing_setup();
 
 	// Allocate latency resource
 	pixelLatencyResource = Latency_add_resource("PixelMap", LatencyOption_Ticks);
@@ -2034,6 +2495,10 @@ void cliFunc_pixelTest( char* args )
 		Pixel_testPos = 0;
 		Pixel_testMode = PixelTest_Pixel_Off;
 		return;
+
+	default:
+		Pixel_testMode = PixelTest_Pixel_Single;
+		break;
 	}
 
 	// Check for specific position
@@ -2042,24 +2507,18 @@ void cliFunc_pixelTest( char* args )
 		Pixel_testPos = numToInt( arg1Ptr );
 	}
 
+	// If 0, ignore
+	if ( Pixel_testPos == 0 )
+	{
+		Pixel_testMode = PixelTest_Off;
+		return;
+	}
+
 	// Debug info
 	print( NL );
 	info_msg("Pixel: ");
-	printInt16( Pixel_testPos + 1 );
+	printInt16( Pixel_testPos );
 	print(" ");
-
-	// Lookup pixel element
-	PixelElement *elem = (PixelElement*)&Pixel_Mapping[ Pixel_testPos ];
-	Pixel_showPixelElement( elem );
-	print( NL );
-
-	// Toggle channel
-	Pixel_pixelToggle( elem );
-
-	// Increment channel
-	Pixel_testPos++;
-	if ( Pixel_testPos >= Pixel_TotalPixels_KLL )
-		Pixel_testPos = 0;
 }
 
 void cliFunc_chanTest( char* args )
@@ -2082,33 +2541,37 @@ void cliFunc_chanTest( char* args )
 		info_msg("All channel test");
 		Pixel_testPos = 0;
 		Pixel_testMode = PixelTest_Chan_All;
-		break;
+		return;
 
 	case 'r':
 	case 'R':
 		info_msg("Channel roll test");
 		Pixel_testPos = 0;
 		Pixel_testMode = PixelTest_Chan_Roll;
-		break;
+		return;
 
 	case 's':
 	case 'S':
 		info_msg("Stopping channel test");
 		Pixel_testMode = PixelTest_Off;
-		break;
+		return;
 
 	case 'f':
 	case 'F':
 		info_msg("Enable all pixels");
 		Pixel_testPos = 0;
 		Pixel_testMode = PixelTest_Chan_Full;
-		break;
+		return;
 
 	case 'o':
 	case 'O':
 		info_msg("Disable all pixels");
 		Pixel_testPos = 0;
 		Pixel_testMode = PixelTest_Chan_Off;
+		return;
+
+	default:
+		Pixel_testMode = PixelTest_Chan_Single;
 		break;
 	}
 
@@ -2123,14 +2586,6 @@ void cliFunc_chanTest( char* args )
 	info_msg("Channel: ");
 	printInt16( Pixel_testPos );
 	print( NL );
-
-	// Toggle pixel
-	Pixel_channelToggle( Pixel_testPos );
-
-	// Increment pixel
-	Pixel_testPos++;
-	if ( Pixel_testPos >= Pixel_TotalChannels_KLL )
-		Pixel_testPos = 0;
 }
 
 void cliFunc_pixelSCTest( char* args )
@@ -2153,19 +2608,23 @@ void cliFunc_pixelSCTest( char* args )
 		info_msg("All scancode pixel test");
 		Pixel_testPos = 0;
 		Pixel_testMode = PixelTest_Scan_All;
-		break;
+		return;
 
 	case 'r':
 	case 'R':
 		info_msg("Scancode pixel roll test");
 		Pixel_testPos = 0;
 		Pixel_testMode = PixelTest_Scan_Roll;
-		break;
+		return;
 
 	case 's':
 	case 'S':
 		info_msg("Stopping scancode pixel test");
 		Pixel_testMode = PixelTest_Off;
+		return;
+
+	default:
+		Pixel_testMode = PixelTest_Scan_Single;
 		break;
 	}
 
@@ -2173,6 +2632,13 @@ void cliFunc_pixelSCTest( char* args )
 	if ( *arg1Ptr != '\0' )
 	{
 		Pixel_testPos = numToInt( arg1Ptr );
+	}
+
+	// If 0, ignore
+	if ( Pixel_testPos == 0 )
+	{
+		Pixel_testMode = PixelTest_Off;
+		return;
 	}
 
 	// Lookup pixel
@@ -2185,25 +2651,6 @@ void cliFunc_pixelSCTest( char* args )
 	print(" Pixel: ");
 	printInt16( pixel );
 	print(" ");
-
-	// Lookup pixel element
-	PixelElement *elem = (PixelElement*)&Pixel_Mapping[ pixel - 1 ];
-	Pixel_showPixelElement( elem );
-	print( NL );
-
-	// Increment pixel
-	Pixel_testPos++;
-	if ( Pixel_testPos >= MaxScanCode_KLL )
-		Pixel_testPos = 0;
-
-	// Ignore if pixel set to 0
-	if ( pixel == 0 )
-	{
-		return;
-	}
-
-	// Toggle pixel
-	Pixel_pixelToggle( elem );
 }
 
 void cliFunc_pixelXYTest( char* args )
@@ -2446,3 +2893,87 @@ void cliFunc_rectDisp( char* args )
 	Pixel_dispBuffer();
 }
 
+
+#if Storage_Enable_define == 1
+void Pixel_loadConfig() {
+	// Animations
+	for ( uint8_t pos = 0; pos < Pixel_AnimationStackSize; pos++ )
+	{
+		uint8_t index = settings.animation_indices[pos];
+		if (index != 255) {
+			AnimationStackElement element = Pixel_AnimationSettings[ index ];
+			element.state = AnimationPlayState_Start;
+			Pixel_addAnimation( &element, CapabilityState_None );
+		}
+	}
+
+	// Fade periods
+	for (uint8_t profile=0; profile<4; profile++)
+	{
+		for (uint8_t config=0; config<4; config++)
+		{
+			PixelPeriodConfig period_config = settings.fade_periods[profile][config];
+			Pixel_pixel_fade_profile_entries[profile].conf[config] = period_config;
+		}
+	}
+}
+
+void Pixel_saveConfig() {
+	// Animations
+	for ( uint8_t pos = 0; pos < Pixel_AnimationStackSize; pos++ )
+	{
+		if (pos < Pixel_AnimationStack.size) {
+			AnimationStackElement *elem = Pixel_AnimationStack.stack[pos];
+			settings.animation_indices[pos] = elem->index;
+		} else {
+			settings.animation_indices[pos] = 255;
+		}
+	}
+
+	// Fade periods
+	for (uint8_t profile=0; profile<4; profile++)
+	{
+		for (uint8_t config=0; config<4; config++)
+		{
+			// XXX TODO: Needs a real lookup
+			const PixelPeriodConfig period_config = Pixel_pixel_fade_profile_entries[profile].conf[config];
+			settings.fade_periods[profile][config] = period_config;
+		}
+	}
+}
+
+void Pixel_printConfig() {
+	// Animations
+	print(" \033[35mAnimations\033[0m" NL);
+	for ( uint8_t pos = 0; pos < Pixel_AnimationStackSize; pos++ )
+	{
+		uint8_t index = settings.animation_indices[pos];
+		if (index != 255) {
+			print("AnimationStack.stack[");
+			printInt8(pos);
+			print("]->index = ");
+			printInt8(index);
+			print(NL);
+		}
+	}
+
+	// Fade periods
+	print(NL " \033[35mFades\033[0m" NL);
+	for (uint8_t profile=0; profile<4; profile++)
+	{
+		for (uint8_t config=0; config<4; config++)
+		{
+			PixelPeriodConfig period = settings.fade_periods[profile][config];
+			print("FadeConfig[");
+			printInt8(profile);
+			print("][");
+			printInt8(config);
+			print("] = {");
+			printInt8(period.start);
+			print(", ");
+			printInt8(period.end);
+			print(NL);
+		}
+	}
+}
+#endif

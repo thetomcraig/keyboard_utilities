@@ -25,9 +25,8 @@
 
 // ----- Local Includes -----
 
-#include "mchck.h"
+#include "device.h"
 #include "usb-common.h"
-
 
 
 // ----- Defines -----
@@ -59,6 +58,7 @@
 #define USB_DESC_STRING_LANG_ENUS USB_DESC_STRING(u"\x0409")
 #define USB_DESC_STRING_SERIALNO ((const void *)1)
 
+#define USB_CTRL_REQ_MSFT_COMPAT_ID 0x0004
 
 // ----- Structs & Enumerations -----
 
@@ -148,6 +148,7 @@ struct usb_desc_dev_t {
 };
 CTASSERT_SIZE_BYTE(struct usb_desc_dev_t, 18);
 
+#if !defined(_sam_)
 struct usb_desc_ep_t {
 	uint8_t bLength;
 	enum usb_desc_type bDescriptorType : 8; /* = USB_DESC_EP */
@@ -186,6 +187,7 @@ struct usb_desc_ep_t {
 	uint8_t bInterval;
 } __packed;
 CTASSERT_SIZE_BYTE(struct usb_desc_ep_t, 7);
+#endif
 
 struct usb_desc_iface_t {
 	uint8_t bLength;
@@ -417,8 +419,7 @@ int usb_ep0_tx(void *buf, size_t len, size_t reqlen, ep_callback_t cb, void *cb_
 int usb_ep0_tx_cp(const void *, size_t, size_t, ep_callback_t, void *);
 
 
-
 // ----- DFU USB Additional Includes -----
 
 #include "dfu.h"
-
+#include "dfu.desc.h"

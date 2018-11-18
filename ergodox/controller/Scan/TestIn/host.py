@@ -110,6 +110,7 @@ class TriggerType:
     Resume1    = 0x12
     Inactive1  = 0x13
     Active1    = 0x14
+    Rotation1  = 0x15
 
     Debug      = 0xFF
 
@@ -363,6 +364,16 @@ class Commands:
     '''
     Container class of commands available to controll the host-side KLL implementation
     '''
+
+    def setTriggerCode( self, index, index_type, state ):
+        '''
+        Adds a Trigger Code to the internal KLL buffer
+
+        Returns 1 if added, 0 if the ScanCode is already in the buffer
+        Returns 2 if there's an error
+        Generally 1 will be the return
+        '''
+        return control.kiibohd.Scan_setTriggerCode( int( index ), int( index_type ), int( state ) )
 
     def addScanCode( self, index, index_type=TriggerType.Switch1 ):
         '''

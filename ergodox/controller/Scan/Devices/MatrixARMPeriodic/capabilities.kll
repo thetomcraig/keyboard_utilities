@@ -1,11 +1,11 @@
 # MatrixARMPeriodic
 Name = MatrixARMPeriodicCapabilities;
-Version = 0.2;
+Version = 0.3;
 Author = "HaaTa (Jacob Alexander) 2017-2018";
 KLL = 0.5;
 
 # Modified Date
-Date = 2018-03-24;
+Date = 2018-11-13;
 
 # Defines available to the MatrixArmPeriodic sub-module
 
@@ -39,4 +39,50 @@ StrobeDelay = 0; # Disabled
 ActivityTimerMultiplier => ActivityTimerMultiplier_define;
 ActivityTimerMultiplier = 1; # 1 second by default
 #ActivityTimerMultiplier = 60; # 60 seconds between each tick
+
+# ScanCode Strobe List
+# This specified which the column (strobe) GPIOs for the matrix
+# gpio(<label>, <index>)
+# gpio(A,3)  ==> PA3
+# gpio(C,24) ==> PC24
+ScanCodeStrobeList => ScanCodeStrobeList_define;
+ScanCodeStrobeList = "";
+
+# ScanCode Sense List
+# This specified which the row (sense) GPIOs for the matrix
+# gpio(<label>, <index>)
+# gpio(A,3)  ==> PA3
+# gpio(C,24) ==> PC24
+ScanCodeSenseList => ScanCodeSenseList_define;
+ScanCodeSenseList = "";
+
+# ScanCode Matrix Type
+# Specifies which type of pull resistors are used
+# GPIO_Config_Pulldown  - Built-in pulldown resistor on sense
+# GPIO_Config_Pullup    - Built-in pullup resistor on sense
+# GPIO_Config_Opendrain - External pull resistor on sense
+ScanCodeMatrixType => ScanCodeMatrixType_define;
+ScanCodeMatrixType = "GPIO_Config_Pulldown";
+
+# ScanCode Remapping
+# This is useful when a matrix is laid out convenient for pcb routing; however,
+# is not convenient for matching the pcb switch number to the encoded number.
+# Early Input Club keyboards used sequential matrix numbering, though since the K-Type
+# this has no longer been the case.
+ScanCodeRemapping => ScanCodeRemapping_define;
+ScanCodeRemapping = 0; # Disabled by default
+
+# Array for ScanCode Remapping
+# Indexing starts from 1
+# 0 represents unused scancode
+# Example (WhiteFox.sam4s):
+# ScanCodeRemappingMatrix = "
+#  1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,
+# 17,18,19,20,21,22,23,24,25,26,27,28,29, 0,30,31,
+# 32,33,34,35,36,37,38,39,40,41,42,43,44, 0,45,46,
+# 47,48,49,50,51,52,53,54,55,56,57,58,59, 0,60,61,
+# 62,63,64, 0, 0, 0,65, 0, 0,66,67,68,69, 0,70,71,
+# ";
+ScanCodeRemappingMatrix => ScanCodeRemappingMatrix_define;
+ScanCodeRemappingMatrix = ""; # Default to empty array
 

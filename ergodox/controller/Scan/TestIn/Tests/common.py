@@ -19,8 +19,8 @@ Common functions for Host-side KLL tests
 
 ### Imports ###
 
+import copy
 import inspect
-import json
 import linecache
 import logging
 import sys
@@ -217,6 +217,8 @@ class KLLTest:
             # Set current test, used by sub-test children for debugging
             self.cur_test = index
 
+            ## TODO Run Permutation Start
+
             # Prepare layer setting
             # Run loop, to make sure layer is engaged already
             interface.control.cmd('lockLayer')(test.layer)
@@ -232,6 +234,8 @@ class KLLTest:
 
             # Cleanup layer manipulations
             interface.control.cmd('clearLayers')()
+
+            ## TODO Run Permutation Start
 
             # Check if test has failed
             if not test.result:
@@ -350,6 +354,7 @@ class TriggerResultEval(EvalBase):
 
         # Trigger Evaluation
         if not self.trigger.done():
+            self.trigger.trigger_permutations()
             if not self.trigger.eval():
                 return False
 
@@ -481,6 +486,12 @@ class TriggerEval:
         self.clean = -1
         self.cleaned = -1
 
+        # Settings
+        # TODO (HaaTa): Expose these 2 variables somehow, they are useful for testing combos
+        self.reverse_combo = False
+        self.delayed_combo = False
+        self.sub_step = 0 # Used with delayed_combo
+
         # Build sequence of combos
         self.trigger = []
         for comboindex, combo in enumerate(self.entry):
@@ -495,6 +506,22 @@ class TriggerEval:
                 ncombo.append(TriggerElem(self, elem, elemschedule))
             self.trigger.append(ncombo)
 
+    def trigger_permutations(self):
+        '''
+        Calculate the number of order permutations the trigger can be initiated with.
+        For example:
+        U"RCtrl" + U"RAlt" : U"A";
+        can be processed 3 ways.
+
+        1) RCtrl + RAlt in the same cycle
+        2) RCtrl in the first cycle, RAlt in the second cycle
+        3) RAlt in the first cycle, RCtrl in the second cycle
+
+        Only triggers need permutation testing.
+        '''
+        # TODO
+        pass
+
     def eval(self):
         '''
         Attempt to evaluate TriggerEval
@@ -506,16 +533,31 @@ class TriggerEval:
         if self.step > len(self.trigger):
             return False
 
+        # Reverse combo
+        combo = copy.copy(self.trigger[self.step])
+        if self.reverse_combo:
+            combo.reverse()
+
+        # Delayed combo
+        if self.delayed_combo:
+            combo = [combo[self.sub_step]]
+        self.sub_step += 1
+
         # Attempt to evaluate each element in the current combo
         finished = True
-        for elem in self.trigger[self.step]:
+        for elem in combo:
             if not elem.eval():
                 finished = False
+
+        # Only increment if sub_steps are complete
+        if self.delayed_combo:
+            finished = finished and self.sub_step >= len(self.trigger[self.step])
 
         # Increment step if finished
         if finished:
             self.step += 1
             self.clean += 1
+            self.sub_step = 0 # Reset on each combo
 
         # Always return True (even if not finished)
         # Only return False on an unexpected error
@@ -711,6 +753,11 @@ class TriggerElem:
             # Activate layer
             i.control.cmd('applyLayer')(ScheduleState.P, self.elem['uid'], layer_state)
 
+        # Generic Trigger
+        elif self.elem['type'] in ['GenericTrigger']:
+            # Activate trigger
+            i.control.cmd('setTriggerCode')(self.elem['uid'], self.elem['idcode'], self.elem['schedule'][0]['state'] )
+
         # Unknown TriggerElem
         else:
             logger.warning("Unknown TriggerElem {}", self.elem)
@@ -757,6 +804,13 @@ class TriggerElem:
 
             # Deactivate layer
             i.control.cmd('applyLayer')(state, self.elem['uid'], layer_state)
+
+        # Generic Trigger
+        elif self.elem['type'] in ['GenericTrigger']:
+            # Do nothing as we don't know how to clean up this trigger
+            # XXX (HaaTa): It can be possible to deduce from the idcode what type of trigger this is
+            #              However, not all triggers have an inverse (some just cleanup on their own such as rotations)
+            pass
 
         # Unknown TriggerElem
         else:
@@ -853,17 +907,43 @@ class ResultElem:
         '''
         # TODO (HaaTa) Handle scheduling
         import interface as i
+        TriggerType = i.control.scan.TriggerType
 
         # Lookup capability history, success if any capabilities match
         match = None
         for cap in i.control.data.capability_history.all():
             data = cap.callbackdata
             # Validate state and capability name
-            if (data.state & 0x0F) == state and data.read_capability()[0] == self.name:
+            # Rotations use states beyond 0x0F
+            if (
+                data.read_capability()[0] == self.name and (
+                    (data.state & 0x0F) == state or
+                    (data.state == state and data.stateType == TriggerType.Rotation1)
+                )
+            ):
                 # Validate args
                 match_args = True
-                for index in range(len(self.expected_args)):
-                    if data.args[index] != self.expected_args[index]:
+
+                # XXX Each data argument may consist of multiple bytes
+                #     This can be looked up using kll.json
+                #     Generally 1, 2 and 4 (8-bit, 16-bit and 32-bit)
+                capability = i.control.json_input['Capabilities'][self.name]
+                byte_pos = 0
+                for index in range(capability['args_count']):
+                    value_width = capability['args'][index]['width']
+                    value = 0
+                    if value_width == 1:
+                        value = data.args[byte_pos]
+                        byte_pos += 1
+                    elif value_width == 2:
+                        value = (data.args[byte_pos + 1] << 8) | data.args[byte_pos]
+                        byte_pos += 2
+                    elif value_width == 4:
+                        value = (data.args[byte_pos + 3] << 24) | (data.args[byte_pos + 2] << 16) | (data.args[byte_pos + 1] << 8) | data.args[byte_pos]
+                        byte_pos += 4
+
+                    # Check read value vs. expected
+                    if value != self.expected_args[index]:
                         match_args = False
                         break
 
@@ -897,12 +977,16 @@ class ResultElem:
         @return: True if found, False if not.
         '''
         # TODO (HaaTa) Handle scheduling
+        if len(self.parent.parent.trigger.entry[-1][-1]['schedule']) > 0:
+            state = self.parent.parent.trigger.entry[-1][-1]['schedule'][0]['state']
+        else:
+            state = 1
 
         # Check capability state
-        result = self.monitor_state(1)
+        result = self.monitor_state(state)
 
         # Validate capability result
-        result = result and self.validation.verify(1)
+        result = result and self.validation.verify(state)
 
         return result
 
@@ -912,15 +996,28 @@ class ResultElem:
 
         @return: True if expected cleanup occured, False if not.
         '''
+        import interface as i
+        TriggerType = i.control.scan.TriggerType
         # TODO (HaaTa) Handle scheduling
 
-        # Check capability state
-        result = self.monitor_state(3)
+        # If not a generic trigger, don't check for cleanup
+        trigger = self.parent.parent.trigger.entry[-1][-1]
+        if trigger['type'] == 'GenericTrigger':
+            # If this is a rotation trigger, don't check for cleanup (single-shot)
+            if trigger['idcode'] == TriggerType.Rotation1:
+                return True
 
-        # Validate capability result cleanup
-        result = result and self.validation.verify(3)
+            # If this is a layer trigger, don't check for clenau
 
-        return result
+            # Check capability state
+            result = self.monitor_state(3)
+
+            # Validate capability result cleanup
+            result = result and self.validation.verify(3)
+
+            return result
+
+        return True
 
     def __repr__(self):
         '''

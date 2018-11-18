@@ -1,4 +1,4 @@
-/* Copyright (C) 2017 by Jacob Alexander
+/* Copyright (C) 2017-2018 by Jacob Alexander
  *
  * This file is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,11 @@
 
 // ----- Includes -----
 
+// Project Includes
+#include <Lib/gpio.h>
+
 // Local Includes
-#include "../mchck.h"
+#include "../device.h"
 #include "../debug.h"
 
 
@@ -29,6 +32,14 @@
 // ----- Defines -----
 
 // ----- Variables -----
+
+static uint8_t prev_btn_state = 1;
+
+// Esc key strobe
+const GPIO_Pin strobe_pin = gpio(B,1);
+const GPIO_Pin sense_pin = gpio(A,26);
+
+
 
 // ----- Functions -----
 
@@ -41,23 +52,36 @@ void Device_reset()
 void Device_setup()
 {
 	// Setup scanning for S1
-	// Row1
-	GPIOD_PDDR &= ~(1<<5);
-	PORTD_PCR5 = PORT_PCR_PE | PORT_PCR_PFE | PORT_PCR_MUX(1);
-	// Col1
-	GPIOB_PDDR |= (1<<2);
-	PORTB_PCR2 = PORT_PCR_DSE | PORT_PCR_MUX(1);
-	GPIOB_PSOR |= (1<<2);
+	PMC->PMC_PCER0 = (1 << ID_PIOA) | (1 << ID_PIOB);
+
+	// Cols (strobe)
+	GPIO_Ctrl( strobe_pin, GPIO_Type_DriveSetup, GPIO_Config_Pullup );
+	GPIO_Ctrl( strobe_pin, GPIO_Type_DriveHigh, GPIO_Config_Pullup );
+
+	// Rows (sense)
+	GPIO_Ctrl( sense_pin, GPIO_Type_ReadSetup, GPIO_Config_Pullup );
 }
 
 // Called during each loop of the main bootloader sequence
 void Device_process()
 {
+	uint8_t cur_btn_state;
+
+	// stray capacitance hack
+	GPIO_Ctrl( sense_pin, GPIO_Type_DriveSetup, GPIO_Config_Pullup );
+	GPIO_Ctrl( sense_pin, GPIO_Type_DriveLow, GPIO_Config_Pullup );
+	GPIO_Ctrl( sense_pin, GPIO_Type_ReadSetup, GPIO_Config_Pullup );
+
 	// Check for S1 being pressed
-	if ( GPIOD_PDIR & (1<<5) )
+	cur_btn_state = GPIO_Ctrl( sense_pin, GPIO_Type_Read, GPIO_Config_Pullup ) != 0;
+
+	// Rising edge = press
+	if ( cur_btn_state && !prev_btn_state )
 	{
 		print( "Reset key pressed." NL );
 		SOFTWARE_RESET();
 	}
+
+	prev_btn_state = cur_btn_state;
 }
 

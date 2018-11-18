@@ -55,20 +55,25 @@ const uint32_t Time_maxTicks = F_CPU / 1000;
 const uint32_t Time_maxTicks_ms = 0xFFFFFFFF / ( F_CPU / 1000 );
 #elif defined(_host_)
 // TODO (HaaTa) This is variable, should be set in KLL?
-const uint32_t Time_maxTicks = 1;
+const uint32_t Time_maxTicks = 1000;
 const uint32_t Time_maxTicks_ms = 1;
 #endif
 
 #if F_CPU == 120000000
 const char* Time_ticksPer_ns_str = "8.3333 ns";
+const uint32_t Time_ticksPer_ns_x1000 = 8333;
 #elif F_CPU == 72000000
 const char* Time_ticksPer_ns_str = "13.889 ns";
+const uint32_t Time_ticksPer_ns_x1000 = 13889;
 #elif F_CPU == 48000000
 const char* Time_ticksPer_ns_str = "20.833 ns";
+const uint32_t Time_ticksPer_ns_x1000 = 20833;
 #elif defined(_host_)
 const char* Time_ticksPer_ns_str = "<USERDEFINED>";
+const uint32_t Time_ticksPer_ns_x1000 = 1;
 #else
 const char* Time_ticksPer_ns_str = "<UNKNOWN>";
+const uint32_t Time_ticksPer_ns_x1000 = 1;
 #endif
 
 
@@ -233,7 +238,7 @@ uint32_t Time_us( Time time )
 		return 0xFFFFFFFF;
 	}
 
-	uint32_t us = ( time.ms + time.ticks * Time_maxTicks ) * 1000;
+	uint32_t us = time.ms * 1000 + time.ticks / (Time_maxTicks / 1000);
 	return us;
 }
 
@@ -248,7 +253,13 @@ uint32_t Time_ns( Time time )
 		return 0xFFFFFFFF;
 	}
 
-	uint32_t ns = ( time.ms + time.ticks * Time_maxTicks ) * 1000000;
+	// XXX (HaaTa): Since most MCUs don't run at 1 GHz, and we don't have floating point numbers
+	//              converting to ns is more interesting.
+	//              For example, 120 MHz /w 400 ticks is 8.333..ns * 400 ticks = 3333.2 ns
+	//              To do this with integers only, we multiply the ns constant to us, then divide by 1000 at the end.
+	//               400 * 8333 / 1000 = 3333 ns
+	//              Not exact, but pretty close.
+	uint32_t ns = time.ms * 1000000 + (time.ticks * Time_ticksPer_ns_x1000 / 1000);
 	return ns;
 }
 
@@ -353,6 +364,13 @@ Time Time_duration_rollover( Time now, Time since )
 	// Ticks do not rollover, they are computed from the last increment of ms
 	// Depending on the set clock speed, the maximum number of ticks per ms may vary
 	duration.ticks = now.ticks + ( Time_maxTicks - since.ticks );
+
+	// If ticks have exceeded 1 ms, increment ms
+	if ( duration.ticks >= Time_maxTicks )
+	{
+		duration.ms++;
+		duration.ticks -= Time_maxTicks;
+	}
 
 	return duration;
 }

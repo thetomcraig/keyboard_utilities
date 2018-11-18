@@ -44,6 +44,15 @@ elseif ( ${COMPILER_FAMILY} MATCHES "arm" )
 		arm/usb_serial.c
 	)
 
+
+	if ( "${CHIP}" MATCHES "^sam.*$" )
+	list(APPEND Module_SRCS
+		../../Lib/ASF/sam/drivers/udp/udp_device.c
+		../../Lib/ASF/common/services/usb/udc/udc.c
+		../../Lib/ASF/common/services/usb/class/cdc/device/udi_cdc.c
+	)
+	endif ( )
+
 #| Host Mode
 elseif ( ${COMPILER_FAMILY} MATCHES "host" )
 

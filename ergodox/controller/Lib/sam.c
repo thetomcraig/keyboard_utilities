@@ -1,4 +1,4 @@
-/* Copyright (C) 2017 by Jacob Alexander
+/* Copyright (C) 2017-2018 by Jacob Alexander
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,21 +22,30 @@
 // ----- Includes -----
 
 // Debug Includes
-#include "led.h"
 #if defined(_bootloader_)
 #include <inttypes.h>
 #include <debug.h>
 #else
 #include <print.h>
+#include <led.h>
 #endif
 
 // Local Includes
 #include "entropy.h"
+#include "efc.h"
 #include "sam.h"
+#include "osc.h"
+#include "udc.h"
+#include "sysview.h"
 
+#define WDT_TICK_US (128 * 1000000 / BOARD_FREQ_SLCK_XTAL)
+#define WDT_MAX_VALUE 4095
 
+#define TRACE_BUFFER_SIZE 256
 
 // ----- Variables -----
+
+const uint8_t sys_reset_to_loader_magic[22] = "\xff\x00\x7fRESET TO LOADER\x7f\x00\xff";
 
 /* Initialize segments */
 extern uint32_t _sfixed;
@@ -48,6 +57,14 @@ extern uint32_t _szero;
 extern uint32_t _ezero;
 extern uint32_t _sstack;
 extern uint32_t _estack;
+
+// Unique Id storage variable
+// Must be read from flash using ReadUniqueID()
+uint32_t sam_UniqueId[4];
+
+uintptr_t __stack_chk_guard = 0xdeadbeef;
+
+//__attribute__((__aligned__(TRACE_BUFFER_SIZE * sizeof(uint32_t)))) uint32_t mtb[TRACE_BUFFER_SIZE];
 
 // ----- Function Declarations -----
 
@@ -78,6 +95,20 @@ void fault_isr()
 #endif
 }
 
+
+// Stack Overflow Interrupt
+void __stack_chk_fail(void)
+{
+	print("Segfault!" NL );
+#if defined(DEBUG) && defined(JLINK)
+	asm volatile("BKPT #01");
+#else
+	fault_isr();
+#endif
+}
+
+
+// Default ISR if not used
 void unused_isr()
 {
 #if defined(DEBUG) && defined(JLINK)
@@ -94,25 +125,40 @@ void unused_isr()
 extern volatile uint32_t systick_millis_count;
 void systick_default_isr()
 {
+	SEGGER_SYSVIEW_RecordEnterISR();
 	systick_millis_count++;
 
 	// Not necessary in bootloader
 #if !defined(_bootloader_)
 	CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
 	DWT->CTRL &= DWT_CTRL_CYCCNTENA_Msk;
+	// Check to see if SysTick is being starved by another IRQ
+	// 12 cycle IRQ latency (plus some extra)
+	// XXX (HaaTa) There seems to be a CPU bug where you need to wait some clock cycles before you can
+	// clear the CYCCNT register on SAM4S (this wasn't the case on Kinetis)
+	// TODO (HaaTa) Determine what is starving IRQs by about 2000 cycles
+	if ( DWT->CYCCNT > F_CPU / 1000 + 30 )
+	{
+		/* XXX (HaaTa) The printing of this message is causing LED buffers to get clobbered (likely due to frame overflows)
+		erro_print("SysTick is being starved by another IRQ...");
+		printInt32( DWT->CYCCNT );
+		print(" vs. ");
+		printInt32( F_CPU / 1000 );
+		print(NL);
+		*/
+	}
 	DWT->CYCCNT = 0;
 	DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 #endif
+	SEGGER_SYSVIEW_RecordExitISRToScheduler();
 }
-
-// NVIC - Default ISR/Vector Linking
 
 /* Cortex-M4 core handlers */
 void NMI_Handler        ( void ) __attribute__ ((weak, alias("unused_isr")));
-void HardFault_Handler  ( void ) __attribute__ ((weak, alias("unused_isr")));
-void MemManage_Handler  ( void ) __attribute__ ((weak, alias("unused_isr")));
-void BusFault_Handler   ( void ) __attribute__ ((weak, alias("unused_isr")));
-void UsageFault_Handler ( void ) __attribute__ ((weak, alias("unused_isr")));
+void HardFault_Handler  ( void ) __attribute__ ((weak, alias("fault_isr")));
+void MemManage_Handler  ( void ) __attribute__ ((weak, alias("fault_isr")));
+void BusFault_Handler   ( void ) __attribute__ ((weak, alias("fault_isr")));
+void UsageFault_Handler ( void ) __attribute__ ((weak, alias("fault_isr")));
 void SVC_Handler        ( void ) __attribute__ ((weak, alias("unused_isr")));
 void DebugMon_Handler   ( void ) __attribute__ ((weak, alias("unused_isr")));
 void PendSV_Handler     ( void ) __attribute__ ((weak, alias("unused_isr")));
@@ -123,7 +169,7 @@ void SUPC_Handler   ( void ) __attribute__ ((weak, alias("unused_isr")));
 void RSTC_Handler   ( void ) __attribute__ ((weak, alias("unused_isr")));
 void RTC_Handler    ( void ) __attribute__ ((weak, alias("unused_isr")));
 void RTT_Handler    ( void ) __attribute__ ((weak, alias("unused_isr")));
-void WDT_Handler    ( void ) __attribute__ ((weak, alias("unused_isr")));
+//void WDT_Handler    ( void ) __attribute__ ((weak, alias("unused_isr")));
 void PMC_Handler    ( void ) __attribute__ ((weak, alias("unused_isr")));
 void EFC0_Handler   ( void ) __attribute__ ((weak, alias("unused_isr")));
 #ifdef _SAM4S_EFC1_INSTANCE_
@@ -168,7 +214,19 @@ void CRCCU_Handler  ( void ) __attribute__ ((weak, alias("unused_isr")));
 void ACC_Handler    ( void ) __attribute__ ((weak, alias("unused_isr")));
 void UDP_Handler    ( void ) __attribute__ ((weak, alias("unused_isr")));
 
+
+void WDT_Handler() {
+	print("WDT!" NL );
+#if defined(DEBUG) && defined(JLINK)
+	__asm volatile("BKPT #01");
+#else
+	SOFTWARE_RESET();
+	for( ;; );
+#endif
+}
+
 /* Exception Table */
+/* NOTE: Table alignment requirements mean that bits [6:0] of the table offset are always zero */
 __attribute__ ((section(".vectors")))
 const DeviceVectors exception_table = {
 
@@ -234,7 +292,7 @@ const DeviceVectors exception_table = {
 #endif /* _SAM4S_HSMCI_INSTANCE_ */
         .pfnTWI0_Handler   = (void*) TWI0_Handler,   /* 19 Two Wire Interface 0 */
         .pfnTWI1_Handler   = (void*) TWI1_Handler,   /* 20 Two Wire Interface 1 */
-        //.pfnSPI_Handler    = (void*) SPI_Handler,    /* 21 Serial Peripheral Interface */ //FIXME
+        .pfnSPI_Handler    = (void*) SPI_Handler,    /* 21 Serial Peripheral Interface */
         .pfnSSC_Handler    = (void*) SSC_Handler,    /* 22 Synchronous Serial Controller */
         .pfnTC0_Handler    = (void*) TC0_Handler,    /* 23 Timer/Counter 0 */
         .pfnTC1_Handler    = (void*) TC1_Handler,    /* 24 Timer/Counter 1 */
@@ -263,9 +321,8 @@ const DeviceVectors exception_table = {
         .pfnPWM_Handler    = (void*) PWM_Handler,    /* 31 Pulse Width Modulation */
         .pfnCRCCU_Handler  = (void*) CRCCU_Handler,  /* 32 CRC Calculation Unit */
         .pfnACC_Handler    = (void*) ACC_Handler,    /* 33 Analog Comparator */
-        //.pfnUDP_Handler    = (void*) UDP_Handler     /* 34 USB Device Port */ //FIXME
+        .pfnUDP_Handler    = (void*) UDP_Handler     /* 34 USB Device Port */
 };
-
 
 // ----- Flash Configuration -----
 
@@ -292,33 +349,92 @@ int memcmp( const void *a, const void *b, unsigned int len )
 
 void *memcpy( void *dst, const void *src, unsigned int len )
 {
+// Fast memcpy (Cortex-M4 only), adapted from:
+// https://cboard.cprogramming.com/c-programming/154333-fast-memcpy-alternative-32-bit-embedded-processor-posted-just-fyi-fwiw.html#post1149163
+// Cortex-M4 can do unaligned accesses, even for 32-bit values
+// Uses 32-bit values to do copies instead of 8-bit (should effectively speed up memcpy by 3x)
+#if defined(_cortex_m4_)
+	uint32_t i;
+	uint32_t *pLongSrc;
+	uint32_t *pLongDest;
+	uint32_t numLongs = len / 4;
+	uint32_t endLen = len & 0x03;
+
+	// Convert byte addressing to long addressing
+	pLongSrc = (uint32_t*) src;
+	pLongDest = (uint32_t*) dst;
+
+	// Copy long values, disregarding any 32-bit alignment issues
+	for ( i = 0; i < numLongs; i++ )
+	{
+		*pLongDest++ = *pLongSrc++;
+	}
+
+	// Convert back to byte addressing
+	uint8_t *srcbuf = (uint8_t*) pLongSrc;
+	uint8_t *dstbuf = (uint8_t*) pLongDest;
+
+	// Copy trailing bytes byte-by-byte
+	for (; endLen > 0; --endLen, ++dstbuf, ++srcbuf)
+		*dstbuf = *srcbuf;
+
+	return (dst);
+#else
 	char *dstbuf = dst;
 	const char *srcbuf = src;
 
 	for (; len > 0; --len, ++dstbuf, ++srcbuf)
 		*dstbuf = *srcbuf;
 	return (dst);
+#endif
+}
+
+// Reads Unique Id into sam_UniqueId buffer
+uint32_t ReadUniqueID()
+{
+	// Send Start STUI (Read Unique Identifier)
+	// Send Stop SPUI (Read Unique Identifier)
+	// Read 32 x 4 bytes (128 bytes) into sam_UniqueId
+	return efc_perform_read_sequence( EFC0, EEFC_FCR_FCMD_STUI, EEFC_FCR_FCMD_SPUI, sam_UniqueId, 4 );
 }
 
 
 // ----- Chip Entry Point -----
 
+// ===== Target frequency (System clock)
+// - PLLA source: XTAL             = 12MHz
+// - PLLA output: XTAL * 20 / 1    = 240MHz
+// - System clock source: PLLA
+// - System clock prescaler: 2 (divided by 2)
+// - System clock: 12 * 20 / 1 / 2 = 120MHz
+
+// ===== Target frequency (USB Clock)
+// - PLLB source: XTAL          = 12MHz
+// - PLLB output: XTAL * 16 / 2 = 96Mhz
+// - USB clock source: PLLB
+// - USB clock divider: 2 (divided by 2)
+// - USB clock: 12 * 16 / 2 / 2 = 48MHz
+
+__attribute__ ((section(".startup")))
 void ResetHandler()
 {
+	// Not locked up... Reset the watchdog timer
+	WDT->WDT_CR = WDT_CR_KEY_PASSWD | WDT_CR_WDRSTT;
+
 	uint32_t *pSrc, *pDest;
 	/* Initialize the relocate segment */
 	pSrc = &_etext;
 	pDest = &_srelocate;
 
 	if (pSrc != pDest) {
-			for (; pDest < &_erelocate;) {
-					*pDest++ = *pSrc++;
-			}
+		for (; pDest < &_erelocate;) {
+			*pDest++ = *pSrc++;
+		}
 	}
 
 	/* Clear the zero segment */
 	for (pDest = &_szero; pDest < &_ezero;) {
-			*pDest++ = 0;
+		*pDest++ = 0;
 	}
 
 
@@ -341,6 +457,9 @@ void ResetHandler()
 	* 6- Select the master clock and processor clock
 	* 7- Select the programmable clocks (optional)
 	*/
+
+	PMC->PMC_MCKR = (PMC->PMC_MCKR & (~PMC_MCKR_CSS_Msk)) | PMC_MCKR_CSS_SLOW_CLK;
+	for ( ; (PMC->PMC_SR & PMC_SR_MCKRDY) != PMC_SR_MCKRDY ; );
 
 	/* Step 1 - Activation of external oscillator
 	* As we are clocking the core from internal Fast RC, we keep the bit CKGR_MOR_MOSCRCEN.
@@ -368,41 +487,43 @@ void ResetHandler()
 	* We set the maximum PLL Lock time to maximum in CKGR_PLLAR_PLLACOUNT.
 	*/
 	//PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | (CKGR_PLLAR_MULA(0x1dul) | CKGR_PLLAR_DIVA(3ul) | CKGR_PLLAR_PLLACOUNT(0x1ul));
-	PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | (CKGR_PLLAR_MULA(0x9ul) | CKGR_PLLAR_DIVA(1ul) | CKGR_PLLAR_PLLACOUNT(0x3ful));
+	PMC->CKGR_PLLAR = CKGR_PLLAR_ONE | (CKGR_PLLAR_MULA(20-1) | CKGR_PLLAR_DIVA(1) | CKGR_PLLAR_PLLACOUNT(0x3ful));
 	for ( ; (PMC->PMC_SR & PMC_SR_LOCKA) != PMC_SR_LOCKA ; );
 
+	PMC->CKGR_PLLBR = (CKGR_PLLBR_MULB(16-1) | CKGR_PLLBR_DIVB(2) | CKGR_PLLBR_PLLBCOUNT(0x3ful));
+	for ( ; (PMC->PMC_SR & PMC_SR_LOCKB) != PMC_SR_LOCKB ; );
+
 	/* Step 6 - Select the master clock and processor clock
-	* Source for MasterClock will be PLLA output (PMC_MCKR_CSS_PLLA_CLK), without frequency division.
+	* Source for MasterClock will be PLLA output (PMC_MCKR_CSS_PLLA_CLK), with 1/2 frequency division.
+	* NOTE: Must change prescaler before changing source
 	*/
-	PMC->PMC_MCKR = PMC_MCKR_PRES_CLK_1 | PMC_MCKR_CSS_PLLA_CLK;
+	PMC->PMC_MCKR = (PMC->PMC_MCKR & (~PMC_MCKR_PRES_Msk)) | PMC_MCKR_PRES_CLK_2;
 	for ( ; (PMC->PMC_SR & PMC_SR_MCKRDY) != PMC_SR_MCKRDY ; );
 
-	/*
-	* Step 7 - Select the programmable clocks
-	*
-	* Output MCK on PCK1/pin PA17
-	* Used to validate Master Clock settings
-	*/
-	//  PMC->PMC_SCER = PMC_SCER_PCK1 ;
-
-	//SystemCoreClock=__SYSTEM_CLOCK_120MHZ;
-	
-	/* exception_table being initialized, setup vectors in RAM */
-	//vectorSetOrigin( &exception_table );
+	PMC->PMC_MCKR = (PMC->PMC_MCKR & (~PMC_MCKR_CSS_Msk)) | PMC_MCKR_CSS_PLLA_CLK;
+	//PMC->PMC_MCKR = PMC_MCKR_PRES_CLK_2 | PMC_MCKR_CSS_PLLA_CLK;
+	for ( ; (PMC->PMC_SR & PMC_SR_MCKRDY) != PMC_SR_MCKRDY ; );
 
 	/* Set the vector table base address */
 	pSrc = (uint32_t *) & _sfixed;
-	SCB->VTOR = ((uint32_t) pSrc & SCB_VTOR_TBLOFF_Msk);
+	SCB->VTOR = ((uint32_t) pSrc);
 
 	/* Disable PMC write protection */
 	//PMC->PMC_WPMR = PMC_WPMR_WPKEY(0x504D43ul) & ~PMC_WPMR_WPEN;
 
 #if defined(DEBUG)
 	disable_write_buffering();
+
+	// Initialize micro-trace buffer
+	//REG_MTB_POSITION = ((uint32_t) (mtb - REG_MTB_BASE)) & 0xFFFFFFF8;
+	//REG_MTB_FLOW = ((uint32_t) mtb + TRACE_BUFFER_SIZE * sizeof(uint32_t)) & 0xFFFFFFF8;
+	//REG_MTB_MASTER = 0x80000000 + 6;
 #endif
 
 	// Initialize the SysTick counter
 	SysTick->LOAD = (F_CPU / 1000) - 1;
+	SysTick->VAL = 0;
+	SysTick->CALIB = F_CPU / 1000 / 8;
 	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_ENABLE_Msk;
 
 	// Enable IRQs
@@ -411,14 +532,25 @@ void ResetHandler()
 	// Intialize entropy for random numbers
 	rand_initialize();
 
+#if !defined(_bootloader_)
 	init_errorLED();
-	errorLED(1);
+	errorLED(0);
+
+	for ( int pos = 0; pos <= sizeof(sys_reset_to_loader_magic)/sizeof(GPBR->SYS_GPBR[0]); pos++ )
+		GPBR->SYS_GPBR[ pos ] = 0x00000000;
+#endif
+	// Read Unique ID from flash
+	ReadUniqueID();
 
 	// Start main
 	main();
 	while ( 1 ); // Shouldn't get here...
 }
 
+bool main_kbd_enable(void)
+{
+	return true;
+}
 
 
 // ----- RAM Setup -----

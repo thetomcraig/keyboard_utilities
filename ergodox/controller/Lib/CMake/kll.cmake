@@ -43,7 +43,7 @@ endif ()
 message ( STATUS "Checking for kll" )
 
 ### XXX XXX XXX - Remember to update Pipfile as well when you change the version! ###
-set ( KLL_MIN_VERSION "0.5.5.5" )
+set ( KLL_MIN_VERSION "0.5.6.6" )
 
 # 1) Check for environment variable
 if ( NOT DEFINED KLL_EXECUTABLE )
@@ -65,6 +65,14 @@ if ( NOT DEFINED KLL_EXECUTABLE )
 			"${PROJECT_SOURCE_DIR}"
 		)
 	endif ()
+endif ()
+
+# Determine if GITHUB_APIKEY was set, and apply it to the KLL compiler environment if it is
+if ( NOT "$ENV{GITHUB_APIKEY}" STREQUAL "" )
+	message ( STATUS "GITHUB_APIKEY was set." )
+	set ( KLL_EXECUTABLE
+		cmake -E env GITHUB_APIKEY=$ENV{GITHUB_APIKEY} ${KLL_EXECUTABLE}
+	)
 endif ()
 
 # Make sure kll is a high enough version
@@ -94,6 +102,7 @@ execute_process ( COMMAND ${KLL_EXECUTABLE} --path
 	OUTPUT_STRIP_TRAILING_WHITESPACE
 	WORKING_DIRECTORY ${KLL_WORKING_DIRECTORY}
 )
+file ( TO_CMAKE_PATH "${kll_installation_path}" kll_installation_path )
 message ( STATUS "kll Installation Path: ${kll_installation_path}" )
 set ( kll_layouts_path
 	"${kll_installation_path}/layouts"
@@ -105,6 +114,7 @@ execute_process ( COMMAND ${KLL_EXECUTABLE} --layout-cache-path
 	OUTPUT_STRIP_TRAILING_WHITESPACE
 	WORKING_DIRECTORY ${KLL_WORKING_DIRECTORY}
 )
+file ( TO_CMAKE_PATH "${kll_cache_path}" kll_cache_path )
 message ( STATUS "kll Layouts Cache Path: ${kll_cache_path}" )
 
 
@@ -158,7 +168,7 @@ if ( NOT "${DefaultMap}" STREQUAL "" )
 	foreach ( MAP ${MAP_LIST} )
 		# Check if kll file is in build directory, otherwise default to layout directory
 		if ( EXISTS "${PROJECT_BINARY_DIR}/${MAP}.kll" )
-			set ( DefaultMap_Args ${DefaultMap_Args} ${MAP}.kll )
+			set ( DefaultMap_Args ${DefaultMap_Args} ${PROJECT_BINARY_DIR}/${MAP}.kll )
 			set ( KLL_DEPENDS ${KLL_DEPENDS} ${PROJECT_BINARY_DIR}/${MAP}.kll )
 		elseif ( EXISTS "${kll_layouts_path}/${MAP}.kll" )
 			set ( DefaultMap_Args ${DefaultMap_Args} ${kll_layouts_path}/${MAP}.kll )
@@ -187,7 +197,7 @@ if ( NOT "${PartialMaps}" STREQUAL "" )
 		foreach ( MAP_PART ${MAP_LIST} )
 			# Check if kll file is in build directory, otherwise default to layout directory
 			if ( EXISTS "${PROJECT_BINARY_DIR}/${MAP_PART}.kll" )
-				set ( PartialMap_Args ${PartialMap_Args} ${MAP_PART}.kll )
+				set ( PartialMap_Args ${PartialMap_Args} ${PROJECT_BINARY_DIR}/${MAP_PART}.kll )
 				set ( KLL_DEPENDS ${KLL_DEPENDS} ${PROJECT_BINARY_DIR}/${MAP_PART}.kll )
 			elseif ( EXISTS "${kll_layouts_path}/${MAP_PART}.kll" )
 				set ( PartialMap_Args ${PartialMap_Args} ${kll_layouts_path}/${MAP_PART}.kll )

@@ -38,7 +38,7 @@ SEARCH_DIR(.)
 /* Memory Spaces Definitions */
 MEMORY
 {
-  FLASH (rx) : ORIGIN = 0x00400000, LENGTH = 512K - 8K
+  FLASH (rx) : ORIGIN = 0x00404000, LENGTH = 512K - 16K - 8K
   RAM  (rwx) : ORIGIN = 0x20000000, LENGTH = 160K
 }
 
@@ -61,6 +61,7 @@ SECTIONS
         . = ALIGN(4);
         _sfixed = .;
         KEEP(*(.vectors .vectors.*))
+	*(.startup*)
         *(.text .text.* .gnu.linkonce.t.*)
         *(.glue_7t) *(.glue_7)
         *(.rodata .rodata* .gnu.linkonce.r.*)
@@ -103,14 +104,14 @@ SECTIONS
 
         . = ALIGN(4);
         _efixed = .;            /* End of text section */
-    } > ROM
+    } > FLASH
 
     /* .ARM.exidx is sorted, so has to go in its own output section.  */
     PROVIDE_HIDDEN (__exidx_start = .);
     .ARM.exidx :
     {
       *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-    } > ROM
+    } > FLASH
     PROVIDE_HIDDEN (__exidx_end = .);
 
     . = ALIGN(4);

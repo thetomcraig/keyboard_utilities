@@ -1,5 +1,5 @@
 /* Copyright (c) 2011,2012 Simon Schubert <2@0x2c.org>.
- * Modifications by Jacob Alexander 2014-2016 <haata@kiibohd.com>
+ * Modifications by Jacob Alexander 2014-2018 <haata@kiibohd.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,17 +28,74 @@
 #include "usb-internal.h"
 #include "dfu.desc.h"
 
-
+extern uint16_t udd_ctrl_prev_payload_nb_trans;
+extern uint16_t udd_ctrl_payload_nb_trans;
 
 // ----- Variables -----
 
+#if defined(_kinetis_)
 static uint8_t ep0_buf[2][EP0_BUFSIZE] __attribute__((aligned(4)));
 struct usbd_t usb;
+
+#elif defined(_sam_)
+#include <stdbool.h>
+
+typedef uint16_t                le16_t;
+
+typedef struct {
+	uint8_t bmRequestType;
+	uint8_t bRequest;
+	le16_t wValue;
+	le16_t wIndex;
+	le16_t wLength;
+} usb_setup_req_t;
+
+typedef struct {
+	//! Data received in USB SETUP packet
+	//! Note: The swap of "req.wValues" from uin16_t to le16_t is done by UDD.
+	usb_setup_req_t req;
+
+	//! Point to buffer to send or fill with data following SETUP packet
+	//! This buffer must be word align for DATA IN phase (use prefix COMPILER_WORD_ALIGNED for buffer)
+	uint8_t *payload;
+
+	//! Size of buffer to send or fill, and content the number of byte transfered
+	uint16_t payload_size;
+
+	//! Callback called after reception of ZLP from setup request
+	void (*callback) (void);
+
+	//! Callback called when the buffer given (.payload) is full or empty.
+	//! This one return false to abort data transfer, or true with a new buffer in .payload.
+	bool(*over_under_run) (void);
+} udd_ctrl_request_t;
+
+extern udd_ctrl_request_t udd_g_ctrlreq;
+
+void udd_set_setup_payload( const uint8_t *payload, uint16_t payload_size );
+
+#endif
 
 
 
 // ----- Functions -----
 
+// XXX
+// Int32 to Hex16 UTF16LE
+// This function takes advantage of a few things to save on flash space
+// 1) Does not set anything if zero
+// 2) No padding
+void int32ToHex16( uint32_t num, uint16_t* str )
+{
+	for ( ; num; num /= 16 )
+	{
+		uint32_t cur = num % 16;
+		*--str = (uint16_t)( cur + (( cur < 10 ) ? '0' : 'A' - 10) );
+	}
+}
+
+
+#if defined(_kinetis_)
 /**
  * Returns: 0 when this is was the last transfer, 1 if there is still
  * more to go.
@@ -188,6 +245,7 @@ static int usb_rx_next(struct usbd_ep_pipe_state_t *s)
  */
 int usb_rx(struct usbd_ep_pipe_state_t *s, void *buf, size_t len, ep_callback_t cb, void *cb_data)
 {
+#if defined(_kinetis_)
 	s->data_buf = buf;
 	s->transfer_size = len;
 	s->pos = 0;
@@ -199,6 +257,10 @@ int usb_rx(struct usbd_ep_pipe_state_t *s, void *buf, size_t len, ep_callback_t 
 		thislen = s->ep_maxsize;
 
 	usb_queue_next(s, s->data_buf, thislen);
+
+#elif defined(_sam_)
+#endif
+
 	return (len);
 }
 
@@ -302,6 +364,15 @@ static int usb_tx_config_desc(int idx, int reqlen)
 static int usb_tx_string_desc(int idx, int reqlen)
 {
 	struct usb_desc_string_t * const *d;
+
+	// Microsoft looks for a special string at index 0xEE
+	// If found it will be compared against known OS compatabilily strings
+	// Once matched additional Microsoft-specific setup requests may be sent
+	if (idx == 0xEE) {
+		d = &msft_extended_compat_desc;
+		usb_ep0_tx_cp(*d, (*d)->bLength, reqlen, NULL, NULL);
+		return (0);
+	}
 
 	for (d = usb.identity->string_descs; idx != 0 && *d != NULL; ++d)
 		--idx;
@@ -590,23 +661,59 @@ void usb_attach_function(const struct usbd_function *function, struct usbd_funct
 	prev->next = ctx;
 }
 
-// XXX
-// Int32 to Hex16 UTF16LE
-// This function takes advantage of a few things to save on flash space
-// 1) Does not set anything if zero
-// 2) No padding
-void int32ToHex16( uint32_t num, uint16_t* str )
-{
-	for ( ; num; num /= 16 )
-	{
-		uint32_t cur = num % 16;
-		*--str = (uint16_t)( cur + (( cur < 10 ) ? '0' : 'A' - 10) );
-	}
+#elif defined(_sam_)
+
+static ep_callback_t _cb_func;
+static void *_cb_data;
+
+bool cb_wrapper() {
+	_cb_func(udd_g_ctrlreq.payload, udd_ctrl_payload_nb_trans, _cb_data);
+	return true;
 }
+
+void udd_set_setup_callback(ep_callback_t cb, void *cb_data) {
+	_cb_func = cb;
+	_cb_data = cb_data;
+	udd_g_ctrlreq.over_under_run = cb_wrapper;
+}
+
+int usb_ep0_tx(void *buf, size_t len, size_t reqlen, ep_callback_t cb, void *cb_data) {
+	if (len > reqlen)
+		len = reqlen;
+	udd_set_setup_payload(buf, len);
+	udd_set_setup_callback(cb, cb_data);
+	return udd_ctrl_payload_nb_trans - udd_ctrl_prev_payload_nb_trans;
+}
+
+int usb_ep0_rx(void *buf, size_t len, ep_callback_t cb, void *cb_data) {
+	udd_set_setup_payload(buf, len);
+	udd_set_setup_callback(cb, cb_data);
+	return udd_ctrl_payload_nb_trans - udd_ctrl_prev_payload_nb_trans;
+}
+
+int usb_ep0_tx_cp(const void *buf, size_t len, size_t reqlen, ep_callback_t cb, void *cb_data) {
+	if (len > reqlen)
+		len = reqlen;
+	udd_set_setup_payload(buf, len);
+	udd_set_setup_callback(cb, cb_data);
+	return udd_ctrl_payload_nb_trans - udd_ctrl_prev_payload_nb_trans;
+}
+
+void usb_handle_control_status_cb(ep_callback_t cb) {
+	udd_g_ctrlreq.callback = (void (*)(void))cb;
+}
+
+void usb_attach_function(const struct usbd_function *function, struct usbd_function_ctx_header *ctx) {}
+void usb_handle_control_status(int fail) {}
+
+#endif
+
+
 
 void usb_init(const struct usbd_device *identity)
 {
 	// Set the device serial number to the reserved iSerial string memory
+#if defined(_kinetis_)
 	int32ToHex16( SIM_UIDH, &(dfu_device_str_desc[3]->bString[8]) );
 	int32ToHex16( SIM_UIDMH, &(dfu_device_str_desc[3]->bString[16]) );
 	int32ToHex16( SIM_UIDML, &(dfu_device_str_desc[3]->bString[24]) );
@@ -614,5 +721,14 @@ void usb_init(const struct usbd_device *identity)
 
 	usb.identity = identity;
 	usb_enable();
+
+#elif defined(_sam_)
+	int32ToHex16( sam_UniqueId[0], &(dfu_device_str_desc[3]->bString[8]) );
+	int32ToHex16( sam_UniqueId[1], &(dfu_device_str_desc[3]->bString[16]) );
+	int32ToHex16( sam_UniqueId[2], &(dfu_device_str_desc[3]->bString[24]) );
+	int32ToHex16( sam_UniqueId[3], &(dfu_device_str_desc[3]->bString[32]) );
+
+	init_usb_bootloader(0);
+#endif
 }
 

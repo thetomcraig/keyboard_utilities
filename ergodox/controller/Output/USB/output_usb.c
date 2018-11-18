@@ -51,7 +51,6 @@
 #include <output_com.h>
 
 
-
 // ----- Macros -----
 
 // Used to build a bitmap lookup table from a byte addressable array
@@ -73,6 +72,7 @@ void cliFunc_idle       ( char* args );
 void cliFunc_kbdProtocol( char* args );
 void cliFunc_readLEDs   ( char* args );
 void cliFunc_usbAddr    ( char* args );
+void cliFunc_usbConf    ( char* args );
 void cliFunc_usbInitTime( char* args );
 
 
@@ -84,6 +84,7 @@ CLIDict_Entry( idle,        "Show/set the HID Idle time (multiples of 4 ms)." );
 CLIDict_Entry( kbdProtocol, "Keyboard Protocol Mode: 0 - Boot, 1 - OS/NKRO Mode." );
 CLIDict_Entry( readLEDs,    "Read LED byte:" NL "\t\t1 NumLck, 2 CapsLck, 4 ScrlLck, 16 Kana, etc." );
 CLIDict_Entry( usbAddr,     "Shows the negotiated USB unique Id, given to device by host." );
+CLIDict_Entry( usbConf,     "Shows whether USB is configured or not." );
 CLIDict_Entry( usbInitTime, "Displays the time in ms from usb_init() till the last setup call." );
 
 CLIDict_Def( usbCLIDict, "USB Module Commands" ) = {
@@ -91,6 +92,7 @@ CLIDict_Def( usbCLIDict, "USB Module Commands" ) = {
 	CLIDict_Item( kbdProtocol ),
 	CLIDict_Item( readLEDs ),
 	CLIDict_Item( usbAddr ),
+	CLIDict_Item( usbConf ),
 	CLIDict_Item( usbInitTime ),
 	{ 0, 0, 0 } // Null entry for dictionary end
 };
@@ -575,6 +577,7 @@ void Output_usbCodeSend_capability( TriggerMacro *trigger, uint8_t state, uint8_
 
 		break;
 	}
+
 #endif
 }
 
@@ -745,9 +748,14 @@ inline void USB_setup()
 
 	// Check if we need to disable secure bootloader mode
 	// This is done by setting both 32 bit Kiibohd specific VBAT secure register regions
-#if ( defined(_kii_v1_) || defined(_kii_v2_) ) && SecureBootloader_define == 0
+#if SecureBootloader_define == 0
+#if ( defined(_kii_v1_) || defined(_kii_v2_) )
 	VBAT_SECURE1 = 0;
 	VBAT_SECURE2 = 0;
+#elif defined(_kii_v3_)
+	GPBR_SECURE1 = 0;
+	GPBR_SECURE2 = 0;
+#endif
 #endif
 
 #if enableRawIO_define == 1
@@ -803,8 +811,25 @@ void USB_indicator_update()
 			continue;
 		}
 		// Detect if on
-		else if ( cur == prev )
+		else if ( cur && cur == prev )
 		{
+			// TODO (HaaTa): Temporary Lock led control
+#if Scan_KiraKeyboard_define == 1 && !defined(_host_)
+			switch ( id )
+			{
+			case LED_NUM_LOCK_1:
+				Scan_numlock(cur);
+				break;
+			case LED_CAPS_LOCK_2:
+				Scan_capslock(cur);
+				break;
+			case LED_SCROLL_LOCK_3:
+				Scan_scrolllock(cur);
+				break;
+			default:
+				break;
+			}
+#endif
 			// On
 			Macro_ledState( id, ScheduleType_On );
 		}
@@ -817,9 +842,27 @@ void USB_indicator_update()
 		// Detect if release
 		else if ( prev )
 		{
+			// TODO (HaaTa): Temporary Lock led control
+#if Scan_KiraKeyboard_define == 1 && !defined(_host_)
+			switch ( id )
+			{
+			case LED_NUM_LOCK_1:
+				Scan_numlock(cur);
+				break;
+			case LED_CAPS_LOCK_2:
+				Scan_capslock(cur);
+				break;
+			case LED_SCROLL_LOCK_3:
+				Scan_scrolllock(cur);
+				break;
+			default:
+				break;
+			}
+#endif
 			// Deactivate
 			Macro_ledState( id, ScheduleType_D );
 		}
+
 	}
 
 	// Update for next state comparison
@@ -1132,6 +1175,16 @@ void cliFunc_usbAddr( char* args )
 	print(NL);
 	info_msg("USB Address: ");
 	printInt8( USBDev_Address );
+}
+
+
+void cliFunc_usbConf( char* args )
+{
+	print(NL);
+	info_msg("USB Configured: ");
+#if !defined(_host_)
+	printInt8( usb_configured() );
+#endif
 }
 
 

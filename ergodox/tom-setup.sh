@@ -1,13 +1,12 @@
-# First install 3.7.0 binary to make pipenv pythonm with
-pyenv install 3.7.0
-
-# Install pipenv
+brew tap ArmMbed/homebrew-formulae
+brew tap arm-none-eabi-gcc
 brew install pipenv
-# Install env
-pipenv install 3.7.0
+brew install cmake
+brew install ctags
 
 cd controller/Keyboards 
-pipenv install --python ~/.pyenv/versions/3.7.0/bin/python
-# pipenv install --skip-lock --python ~/.pyenv/versions/3.7.0/bin/python
+pipenv install --skip-lock --python ~/.pyenv/versions/3.7.0/bin/python
+
 pipenv shell
+pip install kll
 ./ergodox.bash

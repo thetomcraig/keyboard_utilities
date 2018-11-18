@@ -6,6 +6,45 @@
 #
 ###
 
+include_directories(
+	"Lib/CMSIS/Include"
+	"Lib/CMSIS/Lib/GCC"
+)
+
+if ( "${CHIP_SUPPORT}" MATCHES "sam" )
+include_directories(
+	"Lib/ASF/config"
+	"Lib/ASF/common/boards"
+	"Lib/ASF/common/services/clock"
+	"Lib/ASF/common/services/gpio"
+	"Lib/ASF/common/services/ioport"
+	"Lib/ASF/common/services/usb"
+	"Lib/ASF/common/services/usb/class/cdc"
+	"Lib/ASF/common/services/usb/class/cdc/device"
+	"Lib/ASF/common/services/usb/class/hid"
+	"Lib/ASF/common/services/usb/class/hid/device"
+	"Lib/ASF/common/services/usb/class/hid/device/kbd"
+	"Lib/ASF/common/services/usb/udc"
+	"Lib/ASF/common/utils"
+	"Lib/ASF/sam/boards"
+	"Lib/ASF/sam/drivers/efc"
+	"Lib/ASF/sam/drivers/pio"
+	"Lib/ASF/sam/drivers/pmc"
+	"Lib/ASF/sam/drivers/udp"
+	"Lib/ASF/sam/services/flash_efc"
+	"Lib/ASF/sam/utils"
+	"Lib/ASF/sam/utils/cmsis/sam4s/include"
+	"Lib/ASF/sam/utils/header_files"
+	"Lib/ASF/sam/utils/preprocessor"
+)
+
+add_definitions(
+	-D__SAM4S8C__
+	-DBOARD=SAM4S_XPLAINED_PRO
+	-DUDD_ENABLE
+)
+endif ( )
+
 
 ###
 # Disable -Wl,-search_paths_first for OSX (not supported by avr-gcc or arm-none-eabi-gcc)
@@ -71,20 +110,6 @@ else ()
 endif ()
 
 
-#| Convert the .ELF Into a .bin
-if ( JLINK )
-	set( TARGET_BIN ${TARGET}.jlink.bin )
-	set(
-		TARGET_ADDRESS "0x0"
-		CACHE STRING "Firmware starting address"
-	)
-	add_custom_command( TARGET ${TARGET} POST_BUILD
-		COMMAND ${OBJ_COPY} ${BIN_FLAGS} ${TARGET_OUT} ${TARGET_BIN}
-		COMMENT "Create jlink bin file: ${TARGET_BIN}"
-	)
-endif ()
-
-
 #| Convert the .ELF into a .bin to load onto the McHCK
 #| Then sign using dfu-suffix (requries dfu-util)
 if ( DEFINED DFU )
@@ -126,6 +151,24 @@ if ( DEFINED DFU )
 endif ()
 
 
+#| Convert the .ELF Into a .bin
+if ( JLINK )
+	set( TARGET_BIN ${TARGET}.jlink.bin )
+	set( TARGET_HEX ${TARGET}.jlink.hex )
+	set(
+		TARGET_ADDRESS "0x0"
+		CACHE STRING "Firmware starting address"
+	)
+	add_custom_command( TARGET ${TARGET} POST_BUILD
+		COMMAND ${OBJ_COPY} -O binary ${TARGET_OUT} ${TARGET_BIN}
+		COMMAND ${OBJ_COPY} -O ihex ${TARGET_OUT} ${TARGET_HEX}
+		COMMENT "Create jlink bin file: ${TARGET_BIN}"
+		COMMENT "Create jlink hex file: ${TARGET_HEX}"
+	)
+endif ()
+
+
+
 #| Convert the .ELF into a .HEX to load onto the Teensy
 if ( DEFINED TEENSY )
 	set( TARGET_HEX ${TARGET}.teensy.hex )
@@ -136,20 +179,29 @@ if ( DEFINED TEENSY )
 endif()
 
 
-#| Generate the Extended .LSS
-set( TARGET_LSS ${TARGET}.lss )
-add_custom_command( TARGET ${TARGET} POST_BUILD
-	COMMAND ${CMAKE_OBJDUMP} ${LSS_FLAGS} ${TARGET_OUT} > ${TARGET_LSS}
-	COMMENT "Creating Extended Listing:     ${TARGET_LSS}"
-)
+
+###
+# objdump files
+# Useful if objdump is available
+#
+find_package( Objdump )
+
+if ( OBJDUMP_FOUND )
+	# Generate the Extended .LSS
+	set( TARGET_LSS ${TARGET}.lss )
+	add_custom_command( TARGET ${TARGET} POST_BUILD
+		COMMAND ${CMAKE_OBJDUMP} ${LSS_FLAGS} ${TARGET_OUT} > ${TARGET_LSS}
+		COMMENT "Creating Extended Listing:     ${TARGET_LSS}"
+	)
 
 
-#| Generate the Symbol Table .SYM
-set( TARGET_SYM ${TARGET}.sym )
-add_custom_command( TARGET ${TARGET} POST_BUILD
-	COMMAND ${CMAKE_NM} -n ${TARGET_OUT} > ${TARGET_SYM}
-	COMMENT "Creating Symbol Table:         ${TARGET_SYM}"
-)
+	# Generate the Symbol Table .SYM
+	set( TARGET_SYM ${TARGET}.sym )
+	add_custom_command( TARGET ${TARGET} POST_BUILD
+		COMMAND ${CMAKE_NM} -n ${TARGET_OUT} > ${TARGET_SYM}
+		COMMENT "Creating Symbol Table:         ${TARGET_SYM}"
+	)
+endif ()
 
 
 #| Compiler Selection Record
@@ -191,6 +243,7 @@ endif ()
 #| First check for JLink based dev kits
 if ( JLINK )
 	configure_file( LoadFile/load.jlink load NEWLINE_STYLE UNIX )
+	configure_file( LoadFile/dump.jlink dump NEWLINE_STYLE UNIX @ONLY )
 	configure_file( LoadFile/debug.jlink debug NEWLINE_STYLE UNIX )
 	configure_file( LoadFile/rtt.jlink rtt NEWLINE_STYLE UNIX )
 	configure_file( LoadFile/reset.jlink reset NEWLINE_STYLE UNIX )
@@ -219,15 +272,4 @@ endif()
 
 #| Generate list of compiler commands for clang-tidy usage
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
-
-#| Make sure symlink exists (for convenience)
-if ( UNIX AND NOT DEFINED CONFIGURATOR )
-	# Make sure symlink is created immediately
-	execute_process ( COMMAND ln -sfn ${CMAKE_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR}/. )
-
-	# Also update before each build
-	add_custom_command( TARGET ${TARGET} POST_BUILD
-		COMMAND ln -sfn ${CMAKE_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR}/.
-	)
-endif ()
 

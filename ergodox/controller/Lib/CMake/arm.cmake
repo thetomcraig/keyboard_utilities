@@ -102,12 +102,26 @@ set( COMPILER_SRCS
 	Lib/${CHIP_SUPPORT}.c
 	Lib/delay.c
 	Lib/entropy.c
+	Lib/gpio.c
 	Lib/periodic.c
+	Lib/storage.c
 	Lib/time.c
 )
 if ( "${CPU}" MATCHES "cortex-m4" )
-	list(APPEND COMPILER_SRCS
+	list( APPEND COMPILER_SRCS
 		Lib/arm_cortex.c
+	)
+endif ()
+
+#| SAM Sources
+if ( "${CHIP_SUPPORT}" MATCHES "sam" )
+	list( APPEND COMPILER_SRCS
+		Lib/ASF/common/services/clock/sam4s/sysclk.c
+		Lib/ASF/common/utils/interrupt/interrupt_sam_nvic.c
+		Lib/ASF/sam/drivers/efc/efc.c
+		Lib/ASF/sam/drivers/pmc/pmc.c
+		Lib/ASF/sam/utils/cmsis/sam4s/source/templates/system_sam4s.c
+		Lib/ASF/sam/services/flash_efc/flash_efc.c
 	)
 endif ()
 
@@ -168,11 +182,11 @@ if ( BOOTLOADER )
 	if ( "${COMPILER}" MATCHES "clang" )
 		# TODO Not currently working, clang doesn't support all the neccessary extensions
 		message ( AUTHOR_WARNING "clang doesn't support all the needed extensions, code may need rework to use clang" )
-		set ( TUNING "-D_bootloader_ -Wno-main -msoft-float -target arm-none-eabi -mtbm -fdata-sections -ffunction-sections -fshort-wchar -fplan9-extensions -fstrict-volatile-bitfields -flto -fno-use-linker-plugin" )
+		set ( TUNING "-D_bootloader_ -Wno-main -msoft-float -target arm-none-eabi -mtbm -fdata-sections -ffunction-sections -fshort-wchar -fno-builtin -fplan9-extensions -fstrict-volatile-bitfields -flto -fno-use-linker-plugin -nostdlib" )
 
 	## GCC Compiler
 	else ()
-		set ( TUNING "-D_bootloader_ -Wno-main -msoft-float -mthumb -fplan9-extensions -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -flto -fno-use-linker-plugin" )
+		set ( TUNING "-D_bootloader_ -Wno-main -msoft-float -mthumb -fplan9-extensions -ffunction-sections -fdata-sections -fno-builtin -fstrict-volatile-bitfields -fno-use-linker-plugin -nostdlib" )
 		#set( TUNING "-mthumb -fdata-sections -ffunction-sections -fno-builtin -msoft-float -fstrict-volatile-bitfields -flto -fno-use-linker-plugin -fwhole-program -Wno-main -nostartfiles -fplan9-extensions -D_bootloader_" )
 	endif ()
 
@@ -184,7 +198,7 @@ else ()
 
 	## GCC Compiler
 	else ()
-		set( TUNING "-mthumb -nostdlib -fdata-sections -ffunction-sections -fshort-wchar -fno-builtin -nostartfiles" )
+		set( TUNING "-mthumb -nostdlib -fdata-sections -ffunction-sections -fshort-wchar -fno-builtin -nostartfiles -fstack-protector-all" )
 	endif ()
 endif ()
 

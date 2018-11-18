@@ -25,14 +25,25 @@
 #include <Lib/mcu_compat.h>
 
 // Local Includes
-#include "mchck.h"
+#include "device.h"
 
 
 
 // ----- Defines -----
 
 // UART Configuration
-#if defined(_kii_v2_) // UART2 Debug
+#if defined(_kii_v3_) // USART0 Debug
+// 8 bit, No Parity, 1 stop bit
+#define UART_BAUD   115200
+#define UART_CONFIG (UART_MR_PAR_NO | UART_MR_CHMODE_NORMAL)
+#define UART_PERIPH UART0
+#define UART_IRQ    UART0_IRQn
+#define UART_PMC    ID_UART0
+#define UART_PIO    PIOA
+#define UART_RX_PIN 9
+#define UART_TX_PIN 10
+
+#elif defined(_kii_v2_) // UART2 Debug
 #define UART_BDH    UART2_BDH
 #define UART_BDL    UART2_BDL
 #define UART_C1     UART2_C1
@@ -82,6 +93,7 @@
 
 void uart_serial_setup()
 {
+#if defined(_kinetis_)
 	// Setup the the UART interface for keyboard data input
 	SIM_SCGC4 |= SIM_SCGC4_UART; // Disable clock gating
 
@@ -133,6 +145,24 @@ void uart_serial_setup()
 	// TX Enabled, RX Enabled, RX Interrupt Enabled, Generate idles
 	// UART_C2_TE UART_C2_RE UART_C2_RIE UART_C2_ILIE
 	UART_C2 = UART_C2_TE | UART_C2_ILIE;
+
+#elif defined(_sam_)
+	//Select Peripheral A for UART pins
+	UART_PIO->PIO_ABCDSR[0] &= ~((1 << UART_RX_PIN) | (1 << UART_TX_PIN));
+	UART_PIO->PIO_ABCDSR[1] &= ~((1 << UART_RX_PIN) | (1 << UART_TX_PIN));
+	UART_PIO->PIO_PDR = (1 << UART_RX_PIN) | (1 << UART_TX_PIN);
+
+	//Enable UART peripheral clock
+	PMC->PMC_PCER0 = (1 << UART_PMC);
+
+	// Configure UART speed and format
+	uint16_t div = F_CPU / (UART_BAUD*16);
+	UART_PERIPH->UART_BRGR = UART_BRGR_CD(div);
+	UART_PERIPH->UART_MR = UART_CONFIG;
+
+	// Enable UART
+	UART_PERIPH->UART_CR = UART_CR_TXEN | UART_CR_RXEN;
+#endif
 }
 
 
@@ -144,8 +174,13 @@ int uart_serial_write( const void *buffer, uint32_t size )
 	// While buffer is not empty and transmit buffer is
 	while ( position < size )
 	{
+#if defined(_kinetis_)
 		while ( !( UART_SFIFO & UART_SFIFO_TXEMPT ) ); // Wait till there is room to send
 		UART_D = data[position++];
+#elif defined(_sam_)
+		while ( !( UART_PERIPH->UART_SR & UART_SR_TXRDY ) ); //Wait till tx ready
+		UART0->UART_THR = data[position++];
+#endif
 	}
 
 	return 0;

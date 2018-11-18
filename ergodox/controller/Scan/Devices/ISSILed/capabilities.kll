@@ -5,7 +5,7 @@ Author = "HaaTa (Jacob Alexander) 2015-2017";
 KLL = 0.5;
 
 # Modified Date
-Date = 2017-03-29;
+Date = 2018-09-15;
 
 # Basic ISSI Capabilities
 # Modes
@@ -15,6 +15,9 @@ Date = 2017-03-29;
 #  3: Turn off all leds
 #  4: Turn on all leds
 #  5: Toggle all leds
+#  6: Set framerate (1000 / value = fps) i.e. ms per frame
+#  7: Increase fps (1000 / value = fps)
+#  8: Decrease fps (1000 / value = fps)
 # Amount -> 0 -> 255
 ledControl => LED_control_capability( mode : 1, amount : 1 );
 
@@ -64,6 +67,15 @@ LED_MapCh4_Addr = ISSI_Ch4;
 ISSI_Enable => ISSI_Enable_define;
 ISSI_Enable = 1;
 
+# GPIO Pin Assignment
+# Hardware Shutdown Pin (SDB)
+ISSI_HardwareShutdownPin => ISSI_HardwareShutdownPin_define;
+ISSI_HardwareShutdownPin = "gpio(B,16)";
+
+# I2C Reset Pin (IIRST)
+ISSI_IIRSTPin => ISSI_IIRSTPin_define;
+ISSI_IIRSTPin = "gpio(A,5)";
+
 # Global Brightness
 # 31FL3731 (emulated)
 # 31FL3732
@@ -80,6 +92,8 @@ ISSI_Chips = 1; # 1 by default
 # I2C Buses
 ISSI_I2C_Buses => ISSI_I2C_Buses_define;
 ISSI_I2C_Buses = 1; # 1 by default
+ISSI_I2C_FirstBus => ISSI_I2C_FirstBus_define;
+ISSI_I2C_FirstBus = 0; # Start at I2C0 (used for initialization)
 
 # I2C LED Struct Definition
 LED_BufferStruct = "
@@ -89,6 +103,11 @@ typedef struct LED_Buffer {
 	uint16_t buffer[144];
 } LED_Buffer;
 volatile LED_Buffer LED_pageBuffer[ ISSI_Chips_define ];
+
+typedef struct KLL_Buffer {
+	uint16_t buffer[144];
+} KLL_Buffer;
+volatile KLL_Buffer KLL_pageBuffer[ ISSI_Chips_define ];
 ";
 
 # FPS Target

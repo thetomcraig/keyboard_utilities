@@ -1,0 +1,122 @@
+The target system is: Generic -  - 
+The host system is: Darwin - 18.0.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/local/bin/arm-none-eabi-gcc 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is GNU, found in "/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/3.12.4/CompilerIdC/CMakeCCompilerId.o"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_290ab/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_290ab.dir/build.make CMakeFiles/cmTC_290ab.dir/build
+Building C object CMakeFiles/cmTC_290ab.dir/testCCompiler.c.obj
+/usr/local/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_290ab.dir/testCCompiler.c.obj   -c /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C static library libcmTC_290ab.a
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -P CMakeFiles/cmTC_290ab.dir/cmake_clean_target.cmake
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_290ab.dir/link.txt --verbose=1
+/usr/local/bin/arm-none-eabi-ar qc libcmTC_290ab.a  CMakeFiles/cmTC_290ab.dir/testCCompiler.c.obj
+/usr/local/bin/arm-none-eabi-ranlib libcmTC_290ab.a
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3f678/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_3f678.dir/build.make CMakeFiles/cmTC_3f678.dir/build
+Building C object CMakeFiles/cmTC_3f678.dir/CMakeCCompilerABI.c.obj
+/usr/local/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_3f678.dir/CMakeCCompilerABI.c.obj   -c /usr/local/Cellar/cmake/3.12.4/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C static library libcmTC_3f678.a
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -P CMakeFiles/cmTC_3f678.dir/cmake_clean_target.cmake
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f678.dir/link.txt --verbose=1
+/usr/local/bin/arm-none-eabi-ar qc libcmTC_3f678.a  CMakeFiles/cmTC_3f678.dir/CMakeCCompilerABI.c.obj
+/usr/local/bin/arm-none-eabi-ranlib libcmTC_3f678.a
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3f678/fast"]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_3f678.dir/build.make CMakeFiles/cmTC_3f678.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_3f678.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/usr/local/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_3f678.dir/CMakeCCompilerABI.c.obj   -c /usr/local/Cellar/cmake/3.12.4/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C static library libcmTC_3f678.a]
+  ignore line: [/usr/local/Cellar/cmake/3.12.4/bin/cmake -P CMakeFiles/cmTC_3f678.dir/cmake_clean_target.cmake]
+  ignore line: [/usr/local/Cellar/cmake/3.12.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f678.dir/link.txt --verbose=1]
+  ignore line: [/usr/local/bin/arm-none-eabi-ar qc libcmTC_3f678.a  CMakeFiles/cmTC_3f678.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/usr/local/bin/arm-none-eabi-ranlib libcmTC_3f678.a]
+  ignore line: []
+  implicit libs: []
+  implicit dirs: []
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_98884/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_98884.dir/build.make CMakeFiles/cmTC_98884.dir/build
+Building C object CMakeFiles/cmTC_98884.dir/feature_tests.c.obj
+/usr/local/bin/arm-none-eabi-gcc   -std=c11 -o CMakeFiles/cmTC_98884.dir/feature_tests.c.obj   -c /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_98884.a
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -P CMakeFiles/cmTC_98884.dir/cmake_clean_target.cmake
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98884.dir/link.txt --verbose=1
+/usr/local/bin/arm-none-eabi-ar qc libcmTC_98884.a  CMakeFiles/cmTC_98884.dir/feature_tests.c.obj
+/usr/local/bin/arm-none-eabi-ranlib libcmTC_98884.a
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_35267/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_35267.dir/build.make CMakeFiles/cmTC_35267.dir/build
+Building C object CMakeFiles/cmTC_35267.dir/feature_tests.c.obj
+/usr/local/bin/arm-none-eabi-gcc   -std=c99 -o CMakeFiles/cmTC_35267.dir/feature_tests.c.obj   -c /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_35267.a
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -P CMakeFiles/cmTC_35267.dir/cmake_clean_target.cmake
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35267.dir/link.txt --verbose=1
+/usr/local/bin/arm-none-eabi-ar qc libcmTC_35267.a  CMakeFiles/cmTC_35267.dir/feature_tests.c.obj
+/usr/local/bin/arm-none-eabi-ranlib libcmTC_35267.a
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ac1b9/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_ac1b9.dir/build.make CMakeFiles/cmTC_ac1b9.dir/build
+Building C object CMakeFiles/cmTC_ac1b9.dir/feature_tests.c.obj
+/usr/local/bin/arm-none-eabi-gcc   -std=c90 -o CMakeFiles/cmTC_ac1b9.dir/feature_tests.c.obj   -c /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/feature_tests.c
+Linking C static library libcmTC_ac1b9.a
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -P CMakeFiles/cmTC_ac1b9.dir/cmake_clean_target.cmake
+/usr/local/Cellar/cmake/3.12.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac1b9.dir/link.txt --verbose=1
+/usr/local/bin/arm-none-eabi-ar qc libcmTC_ac1b9.a  CMakeFiles/cmTC_ac1b9.dir/feature_tests.c.obj
+/usr/local/bin/arm-none-eabi-ranlib libcmTC_ac1b9.a
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros

@@ -1,5 +1,5 @@
 /* Copyright (c) 2011,2012 Simon Schubert <2@0x2c.org>.
- * Modifications by Jacob Alexander 2014-2017 <haata@kiibohd.com>
+ * Modifications by Jacob Alexander 2014-2018 <haata@kiibohd.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@
 #include "usb.h"
 #include "dfu.h"
 #include "debug.h"
+#include "weak.h"
 
 
 
@@ -91,10 +92,20 @@ static void dfu_reset_system( void *buf, ssize_t len, void *cbdata )
 	SOFTWARE_RESET();
 }
 
-static int dfu_handle_control( struct usb_ctrl_req_t *req, void *data )
+int dfu_handle_control( struct usb_ctrl_req_t *req, void *data )
 {
 	struct dfu_ctx *ctx = data;
 	int fail = 1;
+
+	if ( req->bRequest == MS_VENDOR_CODE) {
+		/* Microsoft extensions */
+		switch (req->wIndex) {
+			case USB_CTRL_REQ_MSFT_COMPAT_ID:
+				usb_ep0_tx_cp(&msft_extended_compat_desc, msft_extended_compat_desc.dwLength, req->wLength, NULL, NULL);
+		}
+
+		goto out_no_status;
+	}
 
 	switch ( (enum dfu_ctrl_req_code)req->bRequest )
 	{
@@ -220,6 +231,8 @@ static int dfu_handle_control( struct usb_ctrl_req_t *req, void *data )
 		{
 		case DFU_STATE_dfuMANIFEST:
 			ctx->state = DFU_STATE_dfuMANIFEST_WAIT_RESET;
+			// Download finished, just waiting for reset now
+			Chip_download_complete();
 			break;
 		case DFU_STATE_dfuMANIFEST_WAIT_RESET:
 			ctx->state = DFU_STATE_dfuIDLE;
