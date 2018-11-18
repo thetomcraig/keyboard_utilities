@@ -4,9 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-kll = "*"
+kll = ">=0.5.6.6"
 
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+

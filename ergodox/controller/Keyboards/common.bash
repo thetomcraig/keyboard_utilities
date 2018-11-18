@@ -1,17 +1,29 @@
 #!/bin/bash
 # Common functions for running kiibohd unit tests
-# Jacob Alexander 2016-2017
+# Jacob Alexander 2016-2018
 
 PASSED=0
 FAILED=0
+FAILED_TESTS=()
+
+COLOR_RED="\e[1;91m"
+COLOR_GREEN="\e[1;92m"
+COLOR_YELLOW="\e[1;93m"
+COLOR_CYAN="\e[1;96m"
+COLOR_NORMAL="\e[0m"
 
 # Results
 result() {
 	echo "### Final Results ###"
-	echo "${PASSED}/$((PASSED+FAILED))"
 	if (( FAILED == 0 )); then
+		printf "${COLOR_GREEN}${PASSED}/$((PASSED+FAILED))${COLOR_NORMAL}\n"
 		return 0
 	else
+		printf "${COLOR_YELLOW}${PASSED}/$((PASSED+FAILED))${COLOR_NORMAL}\n"
+		printf "${COLOR_RED} -- FAILED -- ${COLOR_NORMAL}\n"
+		for i in "${FAILED_TESTS[@]}"; do
+			printf "${COLOR_RED}${i}${COLOR_NORMAL}\n"
+		done
 		return 1
 	fi
 }
@@ -20,6 +32,7 @@ result() {
 # Args: Command
 cmd() {
 	# Run command
+	printf "${COLOR_CYAN} ==== Test $((PASSED+FAILED+1)) ==== ${COLOR_NORMAL}\n"
 	echo "CMD: $@"
 	$@
 	local RET=$?
@@ -27,9 +40,13 @@ cmd() {
 	# Check command
 	if [[ ${RET} -ne 0 ]]; then
 		((FAILED++))
+		FAILED_TESTS+=("'${@}'")
+		printf "${COLOR_RED} ==> FAILED: $@ ❌${COLOR_NORMAL}\n"
 	else
 		((PASSED++))
+		printf "${COLOR_GREEN} ==> PASSED: $@ ✓${COLOR_NORMAL}\n"
 	fi
+	echo
 
 	return ${RET}
 }
@@ -51,7 +68,7 @@ cmd_cpy() {
 
 	# If the build failed, make sure to delete the old one
 	if [[ ${RET} -ne 0 ]]; then
-		echo "Build failed for '${1}' removing firmware '${3}'"
+		printf "${COLOR_RED}Build failed for '${1}' removing firmware '${3}'${COLOR_NORMAL}\n"
 		rm -f ${3}
 	else
 		# Copy file
