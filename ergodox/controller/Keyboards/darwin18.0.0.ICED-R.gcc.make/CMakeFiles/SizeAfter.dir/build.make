@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.12.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/tom/dev/keyboard_utilities/ergodox/controller
+CMAKE_SOURCE_DIR = /Users/tom/.projects_root/keyboard_utilities/ergodox/controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make
+CMAKE_BINARY_DIR = /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make
 
 # Utility rule file for SizeAfter.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboard
 include CMakeFiles/SizeAfter.dir/progress.make
 
 CMakeFiles/SizeAfter: kiibohd.elf
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Chip usage for mk20dx256vlh7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Chip usage for mk20dx256vlh7"
 	../../Lib/CMake/sizeCalculator arm-none-eabi-size ram kiibohd.elf 65536 \ SRAM
 	../../Lib/CMake/sizeCalculator arm-none-eabi-size flash kiibohd.elf 253952 Flash
 
@@ -73,6 +73,6 @@ CMakeFiles/SizeAfter.dir/clean:
 .PHONY : CMakeFiles/SizeAfter.dir/clean
 
 CMakeFiles/SizeAfter.dir/depend:
-	cd /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/tom/dev/keyboard_utilities/ergodox/controller /Users/tom/dev/keyboard_utilities/ergodox/controller /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles/SizeAfter.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/tom/.projects_root/keyboard_utilities/ergodox/controller /Users/tom/.projects_root/keyboard_utilities/ergodox/controller /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles/SizeAfter.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SizeAfter.dir/depend
 

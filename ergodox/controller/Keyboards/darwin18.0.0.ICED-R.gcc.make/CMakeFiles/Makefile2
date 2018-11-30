@@ -59,10 +59,10 @@ RM = /usr/local/Cellar/cmake/3.12.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/tom/dev/keyboard_utilities/ergodox/controller
+CMAKE_SOURCE_DIR = /Users/tom/.projects_root/keyboard_utilities/ergodox/controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make
+CMAKE_BINARY_DIR = /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make
 
 #=============================================================================
 # Target rules for target CMakeFiles/DFUMessage.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboard
 CMakeFiles/DFUMessage.dir/all: CMakeFiles/kiibohd.dir/all
 	$(MAKE) -f CMakeFiles/DFUMessage.dir/build.make CMakeFiles/DFUMessage.dir/depend
 	$(MAKE) -f CMakeFiles/DFUMessage.dir/build.make CMakeFiles/DFUMessage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=1 "Built target DFUMessage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=1 "Built target DFUMessage"
 .PHONY : CMakeFiles/DFUMessage.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/DFUMessage.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DFUMessage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 41
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 41
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DFUMessage.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/DFUMessage.dir/rule
 
 # Convenience name for target.
@@ -108,7 +108,7 @@ clean: CMakeFiles/DFUMessage.dir/clean
 CMakeFiles/SizeAfter.dir/all: CMakeFiles/kiibohd.dir/all
 	$(MAKE) -f CMakeFiles/SizeAfter.dir/build.make CMakeFiles/SizeAfter.dir/depend
 	$(MAKE) -f CMakeFiles/SizeAfter.dir/build.make CMakeFiles/SizeAfter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=2 "Built target SizeAfter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=2 "Built target SizeAfter"
 .PHONY : CMakeFiles/SizeAfter.dir/all
 
 # Include target in all.
@@ -118,9 +118,9 @@ all: CMakeFiles/SizeAfter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SizeAfter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 41
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 41
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SizeAfter.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/SizeAfter.dir/rule
 
 # Convenience name for target.
@@ -145,14 +145,14 @@ clean: CMakeFiles/SizeAfter.dir/clean
 CMakeFiles/kll_parser.dir/all:
 	$(MAKE) -f CMakeFiles/kll_parser.dir/build.make CMakeFiles/kll_parser.dir/depend
 	$(MAKE) -f CMakeFiles/kll_parser.dir/build.make CMakeFiles/kll_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=46 "Built target kll_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=46 "Built target kll_parser"
 .PHONY : CMakeFiles/kll_parser.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kll_parser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kll_parser.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/kll_parser.dir/rule
 
 # Convenience name for target.
@@ -177,7 +177,7 @@ clean: CMakeFiles/kll_parser.dir/clean
 CMakeFiles/kiibohd.dir/all:
 	$(MAKE) -f CMakeFiles/kiibohd.dir/build.make CMakeFiles/kiibohd.dir/depend
 	$(MAKE) -f CMakeFiles/kiibohd.dir/build.make CMakeFiles/kiibohd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target kiibohd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target kiibohd"
 .PHONY : CMakeFiles/kiibohd.dir/all
 
 # Include target in all.
@@ -187,9 +187,9 @@ all: CMakeFiles/kiibohd.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kiibohd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 40
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 40
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kiibohd.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/kiibohd.dir/rule
 
 # Convenience name for target.
@@ -214,14 +214,14 @@ clean: CMakeFiles/kiibohd.dir/clean
 CMakeFiles/kll_display.dir/all:
 	$(MAKE) -f CMakeFiles/kll_display.dir/build.make CMakeFiles/kll_display.dir/depend
 	$(MAKE) -f CMakeFiles/kll_display.dir/build.make CMakeFiles/kll_display.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=44 "Built target kll_display"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=44 "Built target kll_display"
 .PHONY : CMakeFiles/kll_display.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kll_display.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kll_display.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/kll_display.dir/rule
 
 # Convenience name for target.
@@ -246,14 +246,14 @@ clean: CMakeFiles/kll_display.dir/clean
 CMakeFiles/kll_regen.dir/all:
 	$(MAKE) -f CMakeFiles/kll_regen.dir/build.make CMakeFiles/kll_regen.dir/depend
 	$(MAKE) -f CMakeFiles/kll_regen.dir/build.make CMakeFiles/kll_regen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=47 "Built target kll_regen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=47 "Built target kll_regen"
 .PHONY : CMakeFiles/kll_regen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kll_regen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kll_regen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/kll_regen.dir/rule
 
 # Convenience name for target.
@@ -278,14 +278,14 @@ clean: CMakeFiles/kll_regen.dir/clean
 CMakeFiles/kll_debug.dir/all:
 	$(MAKE) -f CMakeFiles/kll_debug.dir/build.make CMakeFiles/kll_debug.dir/depend
 	$(MAKE) -f CMakeFiles/kll_debug.dir/build.make CMakeFiles/kll_debug.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=43 "Built target kll_debug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=43 "Built target kll_debug"
 .PHONY : CMakeFiles/kll_debug.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kll_debug.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kll_debug.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/kll_debug.dir/rule
 
 # Convenience name for target.
@@ -310,14 +310,14 @@ clean: CMakeFiles/kll_debug.dir/clean
 CMakeFiles/kll_token.dir/all:
 	$(MAKE) -f CMakeFiles/kll_token.dir/build.make CMakeFiles/kll_token.dir/depend
 	$(MAKE) -f CMakeFiles/kll_token.dir/build.make CMakeFiles/kll_token.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=48 "Built target kll_token"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=48 "Built target kll_token"
 .PHONY : CMakeFiles/kll_token.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kll_token.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kll_token.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/kll_token.dir/rule
 
 # Convenience name for target.
@@ -342,14 +342,14 @@ clean: CMakeFiles/kll_token.dir/clean
 CMakeFiles/kll_final_display.dir/all:
 	$(MAKE) -f CMakeFiles/kll_final_display.dir/build.make CMakeFiles/kll_final_display.dir/depend
 	$(MAKE) -f CMakeFiles/kll_final_display.dir/build.make CMakeFiles/kll_final_display.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=45 "Built target kll_final_display"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles --progress-num=45 "Built target kll_final_display"
 .PHONY : CMakeFiles/kll_final_display.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kll_final_display.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kll_final_display.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/CMakeFiles 0
 .PHONY : CMakeFiles/kll_final_display.dir/rule
 
 # Convenience name for target.

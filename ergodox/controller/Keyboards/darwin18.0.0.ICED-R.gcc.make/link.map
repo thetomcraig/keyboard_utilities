@@ -290,8 +290,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x1a CMakeFiles/kiibohd.dir/Lib/storage.c.obj
  .debug_macro   0x0000000000000000      0xa60 CMakeFiles/kiibohd.dir/Lib/storage.c.obj
  .debug_macro   0x0000000000000000       0x28 CMakeFiles/kiibohd.dir/Lib/storage.c.obj
- .debug_line    0x0000000000000000       0x73 CMakeFiles/kiibohd.dir/Lib/storage.c.obj
- .debug_str     0x0000000000000000     0x2da5 CMakeFiles/kiibohd.dir/Lib/storage.c.obj
+ .debug_line    0x0000000000000000       0x7e CMakeFiles/kiibohd.dir/Lib/storage.c.obj
+ .debug_str     0x0000000000000000     0x2dbb CMakeFiles/kiibohd.dir/Lib/storage.c.obj
  .comment       0x0000000000000000       0x80 CMakeFiles/kiibohd.dir/Lib/storage.c.obj
  .ARM.attributes
                 0x0000000000000000       0x33 CMakeFiles/kiibohd.dir/Lib/storage.c.obj
@@ -398,8 +398,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x6a CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
  .debug_macro   0x0000000000000000      0x1df CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
  .debug_macro   0x0000000000000000       0x46 CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
- .debug_line    0x0000000000000000      0x293 CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
- .debug_str     0x0000000000000000     0x4096 CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
+ .debug_line    0x0000000000000000      0x29e CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
+ .debug_str     0x0000000000000000     0x40ac CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
  .comment       0x0000000000000000       0x80 CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
  .debug_frame   0x0000000000000000       0x64 CMakeFiles/kiibohd.dir/Lib/arm_cortex.c.obj
  .ARM.attributes
@@ -1281,8 +1281,8 @@ Discarded input sections
                 0x0000000000000000       0x18 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
  .debug_macro   0x0000000000000000       0x11 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
  .debug_macro   0x0000000000000000      0xa60 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
- .debug_line    0x0000000000000000       0x73 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
- .debug_str     0x0000000000000000     0x2d62 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
+ .debug_line    0x0000000000000000       0x7e CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
+ .debug_str     0x0000000000000000     0x2d78 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
  .comment       0x0000000000000000       0x80 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
  .ARM.attributes
                 0x0000000000000000       0x33 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_joystick.c.obj
@@ -1602,6 +1602,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x6a CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .debug_macro   0x0000000000000000      0x1df CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .debug_macro   0x0000000000000000     0x5af5 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+ .debug_macro   0x0000000000000000       0xbe CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .debug_macro   0x0000000000000000       0x10 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .debug_macro   0x0000000000000000      0x2f1 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .debug_macro   0x0000000000000000       0x10 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
@@ -1752,7 +1753,7 @@ LOAD CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
                 0x0000000000002000                _app_rom = ORIGIN (FLASH)
                 0x0000000000040000                _app_rom_end = (ORIGIN (FLASH) + LENGTH (FLASH))
 
-.text           0x0000000000002000    0x16834
+.text           0x0000000000002000    0x16bd0
                 0x0000000000000000                . = 0x0
  *(.vectors)
  .vectors       0x0000000000002000      0x1bc CMakeFiles/kiibohd.dir/Lib/kinetis.c.obj
@@ -4315,663 +4316,663 @@ LOAD CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
                 0x0000000000012d4f        0x4 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
                 0x0000000000012d4f                rm9_guide
  .rodata.str1.1
-                0x0000000000012d53     0x1277 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000012d53     0x1416 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
  .rodata.tm0_guide
-                0x0000000000013fca        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fca                tm0_guide
+                0x0000000000014169        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014169                tm0_guide
  .rodata.tm10_guide
-                0x0000000000013fcf        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fcf                tm10_guide
+                0x000000000001416e        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001416e                tm10_guide
  .rodata.tm11_guide
-                0x0000000000013fd4        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fd4                tm11_guide
+                0x0000000000014173        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014173                tm11_guide
  .rodata.tm12_guide
-                0x0000000000013fd9        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fd9                tm12_guide
+                0x0000000000014178        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014178                tm12_guide
  .rodata.tm13_guide
-                0x0000000000013fde        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fde                tm13_guide
+                0x000000000001417d        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001417d                tm13_guide
  .rodata.tm14_guide
-                0x0000000000013fe3        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fe3                tm14_guide
+                0x0000000000014182        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014182                tm14_guide
  .rodata.tm15_guide
-                0x0000000000013fe8        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fe8                tm15_guide
+                0x0000000000014187        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014187                tm15_guide
  .rodata.tm16_guide
-                0x0000000000013fed        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013fed                tm16_guide
+                0x000000000001418c        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001418c                tm16_guide
  .rodata.tm17_guide
-                0x0000000000013ff2        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013ff2                tm17_guide
+                0x0000000000014191        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014191                tm17_guide
  .rodata.tm18_guide
-                0x0000000000013ff7        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013ff7                tm18_guide
+                0x0000000000014196        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014196                tm18_guide
  .rodata.tm19_guide
-                0x0000000000013ffc        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000013ffc                tm19_guide
+                0x000000000001419b        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001419b                tm19_guide
  .rodata.tm1_guide
-                0x0000000000014001        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014001                tm1_guide
+                0x00000000000141a0        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141a0                tm1_guide
  .rodata.tm20_guide
-                0x0000000000014006        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014006                tm20_guide
+                0x00000000000141a5        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141a5                tm20_guide
  .rodata.tm21_guide
-                0x000000000001400b        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001400b                tm21_guide
+                0x00000000000141aa        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141aa                tm21_guide
  .rodata.tm22_guide
-                0x0000000000014010        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014010                tm22_guide
+                0x00000000000141af        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141af                tm22_guide
  .rodata.tm23_guide
-                0x0000000000014015        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014015                tm23_guide
+                0x00000000000141b4        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141b4                tm23_guide
  .rodata.tm24_guide
-                0x000000000001401a        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001401a                tm24_guide
+                0x00000000000141b9        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141b9                tm24_guide
  .rodata.tm25_guide
-                0x000000000001401f        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001401f                tm25_guide
+                0x00000000000141be        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141be                tm25_guide
  .rodata.tm26_guide
-                0x0000000000014024        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014024                tm26_guide
+                0x00000000000141c3        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141c3                tm26_guide
  .rodata.tm27_guide
-                0x0000000000014029        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014029                tm27_guide
+                0x00000000000141c8        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141c8                tm27_guide
  .rodata.tm28_guide
-                0x000000000001402e        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001402e                tm28_guide
+                0x00000000000141cd        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141cd                tm28_guide
  .rodata.tm29_guide
-                0x0000000000014033        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014033                tm29_guide
+                0x00000000000141d2        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141d2                tm29_guide
  .rodata.tm2_guide
-                0x0000000000014038        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014038                tm2_guide
+                0x00000000000141d7        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141d7                tm2_guide
  .rodata.tm30_guide
-                0x000000000001403d        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001403d                tm30_guide
+                0x00000000000141dc        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141dc                tm30_guide
  .rodata.tm31_guide
-                0x0000000000014042        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014042                tm31_guide
+                0x00000000000141e1        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141e1                tm31_guide
  .rodata.tm32_guide
-                0x0000000000014047        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014047                tm32_guide
+                0x00000000000141e6        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141e6                tm32_guide
  .rodata.tm33_guide
-                0x000000000001404c        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001404c                tm33_guide
+                0x00000000000141eb        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141eb                tm33_guide
  .rodata.tm34_guide
-                0x0000000000014051        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014051                tm34_guide
+                0x00000000000141f0        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141f0                tm34_guide
  .rodata.tm35_guide
-                0x0000000000014056        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014056                tm35_guide
+                0x00000000000141f5        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141f5                tm35_guide
  .rodata.tm36_guide
-                0x000000000001405b        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001405b                tm36_guide
+                0x00000000000141fa        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141fa                tm36_guide
  .rodata.tm37_guide
-                0x0000000000014060        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014060                tm37_guide
+                0x00000000000141ff        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000141ff                tm37_guide
  .rodata.tm38_guide
-                0x0000000000014065        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014065                tm38_guide
+                0x0000000000014204        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014204                tm38_guide
  .rodata.tm39_guide
-                0x000000000001406a        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001406a                tm39_guide
+                0x0000000000014209        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014209                tm39_guide
  .rodata.tm3_guide
-                0x000000000001406f        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001406f                tm3_guide
+                0x000000000001420e        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001420e                tm3_guide
  .rodata.tm40_guide
-                0x0000000000014074        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014074                tm40_guide
+                0x0000000000014213        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014213                tm40_guide
  .rodata.tm41_guide
-                0x0000000000014079        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014079                tm41_guide
+                0x0000000000014218        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014218                tm41_guide
  .rodata.tm42_guide
-                0x000000000001407e        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001407e                tm42_guide
+                0x000000000001421d        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001421d                tm42_guide
  .rodata.tm43_guide
-                0x0000000000014083        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014083                tm43_guide
+                0x0000000000014222        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014222                tm43_guide
  .rodata.tm44_guide
-                0x0000000000014088        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014088                tm44_guide
+                0x0000000000014227        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014227                tm44_guide
  .rodata.tm45_guide
-                0x000000000001408d        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001408d                tm45_guide
+                0x000000000001422c        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001422c                tm45_guide
  .rodata.tm46_guide
-                0x0000000000014092        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014092                tm46_guide
+                0x0000000000014231        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014231                tm46_guide
  .rodata.tm47_guide
-                0x0000000000014097        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014097                tm47_guide
+                0x0000000000014236        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014236                tm47_guide
  .rodata.tm48_guide
-                0x000000000001409c        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001409c                tm48_guide
+                0x000000000001423b        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001423b                tm48_guide
  .rodata.tm49_guide
-                0x00000000000140a1        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140a1                tm49_guide
+                0x0000000000014240        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014240                tm49_guide
  .rodata.tm4_guide
-                0x00000000000140a6        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140a6                tm4_guide
+                0x0000000000014245        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014245                tm4_guide
  .rodata.tm50_guide
-                0x00000000000140ab        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140ab                tm50_guide
+                0x000000000001424a        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001424a                tm50_guide
  .rodata.tm51_guide
-                0x00000000000140b0        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140b0                tm51_guide
+                0x000000000001424f        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001424f                tm51_guide
  .rodata.tm52_guide
-                0x00000000000140b5        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140b5                tm52_guide
+                0x0000000000014254        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014254                tm52_guide
  .rodata.tm53_guide
-                0x00000000000140ba        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140ba                tm53_guide
+                0x0000000000014259        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014259                tm53_guide
  .rodata.tm54_guide
-                0x00000000000140bf        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140bf                tm54_guide
+                0x000000000001425e        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001425e                tm54_guide
  .rodata.tm55_guide
-                0x00000000000140c4        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140c4                tm55_guide
+                0x0000000000014263        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014263                tm55_guide
  .rodata.tm56_guide
-                0x00000000000140c9        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140c9                tm56_guide
+                0x0000000000014268        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014268                tm56_guide
  .rodata.tm57_guide
-                0x00000000000140ce        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140ce                tm57_guide
+                0x000000000001426d        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001426d                tm57_guide
  .rodata.tm58_guide
-                0x00000000000140d3        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140d3                tm58_guide
+                0x0000000000014272        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014272                tm58_guide
  .rodata.tm59_guide
-                0x00000000000140d8        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140d8                tm59_guide
+                0x0000000000014277        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014277                tm59_guide
  .rodata.tm5_guide
-                0x00000000000140dd        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140dd                tm5_guide
+                0x000000000001427c        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001427c                tm5_guide
  .rodata.tm60_guide
-                0x00000000000140e2        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140e2                tm60_guide
+                0x0000000000014281        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014281                tm60_guide
  .rodata.tm61_guide
-                0x00000000000140e7        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140e7                tm61_guide
+                0x0000000000014286        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014286                tm61_guide
  .rodata.tm62_guide
-                0x00000000000140ec        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140ec                tm62_guide
+                0x000000000001428b        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001428b                tm62_guide
  .rodata.tm63_guide
-                0x00000000000140f1        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140f1                tm63_guide
+                0x0000000000014290        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014290                tm63_guide
  .rodata.tm64_guide
-                0x00000000000140f6        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140f6                tm64_guide
+                0x0000000000014295        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x0000000000014295                tm64_guide
  .rodata.tm65_guide
-                0x00000000000140fb        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x00000000000140fb                tm65_guide
+                0x000000000001429a        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001429a                tm65_guide
  .rodata.tm66_guide
-                0x0000000000014100        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014100                tm66_guide
+                0x000000000001429f        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x000000000001429f                tm66_guide
  .rodata.tm67_guide
-                0x0000000000014105        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014105                tm67_guide
+                0x00000000000142a4        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142a4                tm67_guide
  .rodata.tm68_guide
-                0x000000000001410a        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001410a                tm68_guide
+                0x00000000000142a9        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142a9                tm68_guide
  .rodata.tm69_guide
-                0x000000000001410f        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001410f                tm69_guide
+                0x00000000000142ae        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142ae                tm69_guide
  .rodata.tm6_guide
-                0x0000000000014114        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014114                tm6_guide
+                0x00000000000142b3        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142b3                tm6_guide
  .rodata.tm70_guide
-                0x0000000000014119        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014119                tm70_guide
+                0x00000000000142b8        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142b8                tm70_guide
  .rodata.tm71_guide
-                0x000000000001411e        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001411e                tm71_guide
+                0x00000000000142bd        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142bd                tm71_guide
  .rodata.tm72_guide
-                0x0000000000014123        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014123                tm72_guide
+                0x00000000000142c2        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142c2                tm72_guide
  .rodata.tm73_guide
-                0x0000000000014128        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014128                tm73_guide
+                0x00000000000142c7        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142c7                tm73_guide
  .rodata.tm74_guide
-                0x000000000001412d        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001412d                tm74_guide
+                0x00000000000142cc        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142cc                tm74_guide
  .rodata.tm75_guide
-                0x0000000000014132        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014132                tm75_guide
+                0x00000000000142d1        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142d1                tm75_guide
  .rodata.tm7_guide
-                0x0000000000014137        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014137                tm7_guide
+                0x00000000000142d6        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142d6                tm7_guide
  .rodata.tm8_guide
-                0x000000000001413c        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x000000000001413c                tm8_guide
+                0x00000000000142db        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142db                tm8_guide
  .rodata.tm9_guide
-                0x0000000000014141        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014141                tm9_guide
+                0x00000000000142e0        0x5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142e0                tm9_guide
  .rodata.voteDebugCLIDict_DescEntry
-                0x0000000000014146       0x25 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                0x0000000000014146                voteDebugCLIDict_DescEntry
+                0x00000000000142e5       0x25 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                0x00000000000142e5                voteDebugCLIDict_DescEntry
  .rodata.Result_appendResultMacroToPendingList.str1.1
-                0x000000000001416b       0x8e CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
+                0x000000000001430a       0x8e CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
  .rodata.Result_evalResultMacroCombo.str1.1
-                0x00000000000141f9       0x50 CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
+                0x0000000000014398       0x50 CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
                                          0x53 (size before relaxing)
  .rodata.Result_process_delayed.str1.1
-                0x0000000000014249       0x1d CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
+                0x00000000000143e8       0x1d CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
  .rodata.CSWTCH.32
-                0x0000000000014266        0x3 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+                0x0000000000014405        0x3 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
  .rodata.Trigger_evalLongTriggerMacroVote.str1.1
-                0x0000000000014269       0x4e CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+                0x0000000000014408       0x4e CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
  .rodata.Trigger_evalShortTriggerMacroVote.str1.1
-                0x00000000000142b7       0xb7 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+                0x0000000000014456       0xb7 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
  .rodata.Trigger_evalTriggerMacro.str1.1
-                0x000000000001436e       0x15 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+                0x000000000001450d       0x15 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
  .rodata.Trigger_process.str1.1
-                0x0000000000014383       0x23 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+                0x0000000000014522       0x23 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
                                          0x28 (size before relaxing)
  .rodata.Trigger_showTriggerMacroVote.str1.1
-                0x00000000000143a6       0x1b CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+                0x0000000000014545       0x1b CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
                                          0x1f (size before relaxing)
  .rodata.LED_bufferMap.str1.1
-                0x00000000000143c1       0x2d CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014560       0x2d CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_AnimationControl_capability.str1.1
-                0x00000000000143ee       0x28 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x000000000001458d       0x28 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_AnimationIndex_capability.str1.1
-                0x0000000000014416       0x64 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000145b5       0x64 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_Animation_capability.str1.1
-                0x000000000001447a       0x4d CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014619       0x4d CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_FadeSet_capability.str1.1
-                0x00000000000144c7       0x30 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014666       0x30 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_Pixel_capability.str1.1
-                0x00000000000144f7       0x29 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014696       0x29 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_SecondaryProcessing.str1.1
-                0x0000000000014520       0x30 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000146bf       0x30 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_addAnimation.str1.1
-                0x0000000000014550       0x76 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000146ef       0x76 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_bufferMap.str1.1
-                0x00000000000145c6       0x27 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014765       0x27 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_channelSet.str1.1
-                0x00000000000145ed       0x33 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x000000000001478c       0x33 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_channelToggle.str1.1
-                0x0000000000014620       0x30 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000147bf       0x30 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_dispBuffer.str1.1
-                0x0000000000014650        0x7 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000147ef        0x7 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
                                          0x12 (size before relaxing)
  .rodata.Pixel_fillPixelLookup.str1.1
-                0x0000000000014657       0xc6 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000147f6       0xc6 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_initializeStartAnimations.str1.1
-                0x000000000001471d       0x40 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000148bc       0x40 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_pixelEvaluation.str1.1
-                0x000000000001475d      0x1a7 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000148fc      0x1a7 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_pixelTweenNextPos.str1.1
-                0x0000000000014904       0x28 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014aa3       0x28 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_setup.str1.1
-                0x000000000001492c        0x9 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014acb        0x9 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.Pixel_showPixelElement.str1.1
-                0x0000000000014935        0xb CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014ad4        0xb CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.aniAddCLIDict_DescEntry
-                0x0000000000014940       0x28 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014940                aniAddCLIDict_DescEntry
+                0x0000000000014adf       0x28 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014adf                aniAddCLIDict_DescEntry
  .rodata.aniDelCLIDict_DescEntry
-                0x0000000000014968       0x27 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014968                aniDelCLIDict_DescEntry
+                0x0000000000014b07       0x27 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014b07                aniDelCLIDict_DescEntry
  .rodata.aniStackCLIDict_DescEntry
-                0x000000000001498f       0x26 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x000000000001498f                aniStackCLIDict_DescEntry
+                0x0000000000014b2e       0x26 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014b2e                aniStackCLIDict_DescEntry
  .rodata.chanTestCLIDict_DescEntry
-                0x00000000000149b5       0x52 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x00000000000149b5                chanTestCLIDict_DescEntry
+                0x0000000000014b54       0x52 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014b54                chanTestCLIDict_DescEntry
  .rodata.cliFunc_aniAdd.str1.1
-                0x0000000000014a07        0x3 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014ba6        0x3 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.cliFunc_aniStack.str1.1
-                0x0000000000014a07       0x66 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014ba6       0x66 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
                                          0x68 (size before relaxing)
  .rodata.cliFunc_chanTest.str1.1
-                0x0000000000014a6d       0x8b CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014c0c       0x8b CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
  .rodata.cliFunc_pixelList.str1.1
-                0x0000000000014af8       0x69 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014c97       0x69 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
                                          0x78 (size before relaxing)
  .rodata.cliFunc_pixelSCTest.str1.1
-                0x0000000000014b61       0xa1 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014d00       0xa1 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
                                          0xaa (size before relaxing)
  .rodata.cliFunc_pixelTest.str1.1
-                0x0000000000014c02       0xcc CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014da1       0xcc CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
                                          0xce (size before relaxing)
  .rodata.cliFunc_pixelXYTest.str1.1
-                0x0000000000014cce       0xd4 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
- *fill*         0x0000000000014da2        0x2 
+                0x0000000000014e6d       0xd4 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+ *fill*         0x0000000000014f41        0x3 
  .rodata.pixelCLIDict
-                0x0000000000014da4       0x78 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014da4                pixelCLIDict
+                0x0000000000014f44       0x78 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014f44                pixelCLIDict
  .rodata.pixelCLIDictName
-                0x0000000000014e1c       0x16 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014e1c                pixelCLIDictName
+                0x0000000000014fbc       0x16 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014fbc                pixelCLIDictName
  .rodata.pixelListCLIDict_DescEntry
-                0x0000000000014e32       0x23 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014e32                pixelListCLIDict_DescEntry
+                0x0000000000014fd2       0x23 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014fd2                pixelListCLIDict_DescEntry
  .rodata.pixelSCTestCLIDict_DescEntry
-                0x0000000000014e55       0x59 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014e55                pixelSCTestCLIDict_DescEntry
+                0x0000000000014ff5       0x59 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x0000000000014ff5                pixelSCTestCLIDict_DescEntry
  .rodata.pixelTestCLIDict_DescEntry
-                0x0000000000014eae       0x5a CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014eae                pixelTestCLIDict_DescEntry
+                0x000000000001504e       0x5a CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x000000000001504e                pixelTestCLIDict_DescEntry
  .rodata.pixelXYTestCLIDict_DescEntry
-                0x0000000000014f08       0x53 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014f08                pixelXYTestCLIDict_DescEntry
+                0x00000000000150a8       0x53 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000150a8                pixelXYTestCLIDict_DescEntry
  .rodata.rectDispCLIDict_DescEntry
-                0x0000000000014f5b       0x31 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                0x0000000000014f5b                rectDispCLIDict_DescEntry
+                0x00000000000150fb       0x31 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                0x00000000000150fb                rectDispCLIDict_DescEntry
  .rodata.str1.1
-                0x0000000000014f8c       0x55 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
- *fill*         0x0000000000014fe1        0x3 
+                0x000000000001512c       0x55 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+ *fill*         0x0000000000015181        0x3 
  .rodata.Pixel_AnimationSettings
-                0x0000000000014fe4       0x10 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x0000000000014fe4                Pixel_AnimationSettings
+                0x0000000000015184       0x10 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x0000000000015184                Pixel_AnimationSettings
  .rodata.Pixel_DisplayMapping
-                0x0000000000014ff4       0xee CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x0000000000014ff4                Pixel_DisplayMapping
+                0x0000000000015194       0xee CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x0000000000015194                Pixel_DisplayMapping
  .rodata.Pixel_LED_DefaultFadeGroup0
-                0x00000000000150e2       0x4c CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x00000000000150e2                Pixel_LED_DefaultFadeGroup0
+                0x0000000000015282       0x4c CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x0000000000015282                Pixel_LED_DefaultFadeGroup0
  .rodata.Pixel_LED_DefaultFadeGroup1
-                0x000000000001512e        0x0 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x000000000001512e                Pixel_LED_DefaultFadeGroup1
+                0x00000000000152ce        0x0 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x00000000000152ce                Pixel_LED_DefaultFadeGroup1
  .rodata.Pixel_LED_DefaultFadeGroup2
-                0x000000000001512e        0x0 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x000000000001512e                Pixel_LED_DefaultFadeGroup2
- *fill*         0x000000000001512e        0x2 
+                0x00000000000152ce        0x0 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x00000000000152ce                Pixel_LED_DefaultFadeGroup2
+ *fill*         0x00000000000152ce        0x2 
  .rodata.Pixel_LED_DefaultFadeGroups
-                0x0000000000015130       0x18 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x0000000000015130                Pixel_LED_DefaultFadeGroups
+                0x00000000000152d0       0x18 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x00000000000152d0                Pixel_LED_DefaultFadeGroups
  .rodata.Pixel_LED_FadePeriod_Defaults
-                0x0000000000015148       0x10 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x0000000000015148                Pixel_LED_FadePeriod_Defaults
+                0x00000000000152e8       0x10 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x00000000000152e8                Pixel_LED_FadePeriod_Defaults
  .rodata.Pixel_LED_FadePeriods
-                0x0000000000015158       0x10 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x0000000000015158                Pixel_LED_FadePeriods
+                0x00000000000152f8       0x10 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x00000000000152f8                Pixel_LED_FadePeriods
  .rodata.Pixel_Mapping
-                0x0000000000015168      0x130 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x0000000000015168                Pixel_Mapping
+                0x0000000000015308      0x130 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x0000000000015308                Pixel_Mapping
  .rodata.Pixel_ScanCodeToDisplay
-                0x0000000000015298       0x5a CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x0000000000015298                Pixel_ScanCodeToDisplay
+                0x0000000000015438       0x5a CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x0000000000015438                Pixel_ScanCodeToDisplay
  .rodata.Pixel_ScanCodeToPixel
-                0x00000000000152f2       0x5a CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x00000000000152f2                Pixel_ScanCodeToPixel
+                0x0000000000015492       0x5a CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x0000000000015492                Pixel_ScanCodeToPixel
  .rodata.all_on_frame1
-                0x000000000001534c        0xf CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                0x000000000001534c                all_on_frame1
+                0x00000000000154ec        0xf CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                0x00000000000154ec                all_on_frame1
  .rodata.HIDIO_buffer_generate_packet.str1.1
-                0x000000000001535b       0x65 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                0x00000000000154fb       0x65 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
  .rodata.HIDIO_buffer_pop_bytes.str1.1
-                0x00000000000153c0       0x4c CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                0x0000000000015560       0x4c CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
                                          0x51 (size before relaxing)
  .rodata.HIDIO_call_id.str1.1
-                0x000000000001540c        0x7 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                0x00000000000155ac        0x7 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
  .rodata.HIDIO_process_incoming_packet.str1.1
-                0x0000000000015413       0xc8 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                0x00000000000155b3       0xc8 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
  .rodata.HIDIO_register_id.str1.1
-                0x00000000000154db       0x41 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                0x000000000001567b       0x41 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
  .rodata.HIDIO_setup.str1.1
-                0x000000000001551c        0x7 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
- *fill*         0x0000000000015523        0x1 
+                0x00000000000156bc        0x7 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+ *fill*         0x00000000000156c3        0x1 
  .rodata.hidioCLIDict
-                0x0000000000015524        0xc CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
-                0x0000000000015524                hidioCLIDict
+                0x00000000000156c4        0xc CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                0x00000000000156c4                hidioCLIDict
  .rodata.hidioCLIDictName
-                0x0000000000015530       0x17 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
-                0x0000000000015530                hidioCLIDictName
+                0x00000000000156d0       0x17 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                0x00000000000156d0                hidioCLIDictName
  .rodata.Output_flashMode_capability.str1.1
-                0x0000000000015547       0x13 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x00000000000156e7       0x13 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
  .rodata.Output_update_external_current.str1.1
-                0x000000000001555a       0x4e CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x00000000000156fa       0x4e CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
  .rodata.cliFunc_current.str1.1
-                0x00000000000155a8       0x2a CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x0000000000015748       0x2a CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
                                          0x2d (size before relaxing)
  .rodata.currentCLIDict_DescEntry
-                0x00000000000155d2       0x26 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
-                0x00000000000155d2                currentCLIDict_DescEntry
+                0x0000000000015772       0x26 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x0000000000015772                currentCLIDict_DescEntry
  .rodata.outputCLIDict
-                0x00000000000155f8       0x24 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
-                0x00000000000155f8                outputCLIDict
+                0x0000000000015798       0x24 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x0000000000015798                outputCLIDict
  .rodata.outputCLIDictName
-                0x000000000001561c       0x17 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
-                0x000000000001561c                outputCLIDictName
+                0x00000000000157bc       0x17 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x00000000000157bc                outputCLIDictName
  .rodata.outputDebugCLIDict_DescEntry
-                0x0000000000015633       0x1a CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
-                0x0000000000015633                outputDebugCLIDict_DescEntry
+                0x00000000000157d3       0x1a CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x00000000000157d3                outputDebugCLIDict_DescEntry
  .rodata.str1.1
-                0x000000000001564d       0x14 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                0x00000000000157ed       0x14 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
  .rodata.CSWTCH.72
-                0x0000000000015661       0xdf CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015801       0xdf CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.CSWTCH.73
-                0x0000000000015740       0xdf CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x00000000000158e0       0xdf CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.Output_consCtrlSend_capability.str1.1
-                0x000000000001581f       0x1e CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x00000000000159bf       0x1e CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
                                          0x23 (size before relaxing)
  .rodata.Output_kbdProtocolBoot_capability.str1.1
-                0x000000000001583d       0x19 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x00000000000159dd       0x19 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.Output_kbdProtocolNKRO_capability.str1.1
-                0x0000000000015856       0x19 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x00000000000159f6       0x19 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.Output_noneSend_capability.str1.1
-                0x000000000001586f       0x12 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015a0f       0x12 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.Output_sysCtrlSend_capability.str1.1
-                0x0000000000015881       0x1c CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015a21       0x1c CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.Output_toggleKbdProtocol_capability.str1.1
-                0x000000000001589d       0x1b CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015a3d       0x1b CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.Output_usbCodeSend_capability.str1.1
-                0x00000000000158b8       0xe0 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015a58       0xe0 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
                                          0xfc (size before relaxing)
  .rodata.Output_usbMouseWheel_capability.str1.1
-                0x0000000000015998       0x20 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015b38       0x20 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.Output_usbMouse_capability.str1.1
-                0x00000000000159b8       0x27 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015b58       0x27 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.USB_6KRODebug.str1.1
-                0x00000000000159df       0x11 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015b7f       0x11 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.USB_ConsCtrlDebug.str1.1
-                0x00000000000159f0       0x15 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015b90       0x15 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.USB_NKRODebug.str1.1
-                0x0000000000015a05       0x11 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015ba5       0x11 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.USB_SysCtrlDebug.str1.1
-                0x0000000000015a16       0x19 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015bb6       0x19 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.USB_setup.str1.1
-                0x0000000000015a2f       0x1c CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015bcf       0x1c CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.cliFunc_idle.str1.1
-                0x0000000000015a4b       0x2b CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015beb       0x2b CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.cliFunc_kbdProtocol.str1.1
-                0x0000000000015a76       0x57 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015c16       0x57 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.cliFunc_readLEDs.str1.1
-                0x0000000000015acd       0x1e CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015c6d       0x1e CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
                                          0x21 (size before relaxing)
  .rodata.cliFunc_usbAddr.str1.1
-                0x0000000000015aeb       0x20 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015c8b       0x20 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.cliFunc_usbConf.str1.1
-                0x0000000000015b0b       0x23 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015cab       0x23 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.cliFunc_usbInitTime.str1.1
-                0x0000000000015b2e       0x22 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015cce       0x22 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
                                          0x29 (size before relaxing)
  .rodata.idleCLIDict_DescEntry
-                0x0000000000015b50       0x30 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015b50                idleCLIDict_DescEntry
+                0x0000000000015cf0       0x30 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015cf0                idleCLIDict_DescEntry
  .rodata.kbdProtocolCLIDict_DescEntry
-                0x0000000000015b80       0x34 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015b80                kbdProtocolCLIDict_DescEntry
+                0x0000000000015d20       0x34 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015d20                kbdProtocolCLIDict_DescEntry
  .rodata.readLEDsCLIDict_DescEntry
-                0x0000000000015bb4       0x40 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015bb4                readLEDsCLIDict_DescEntry
+                0x0000000000015d54       0x40 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015d54                readLEDsCLIDict_DescEntry
  .rodata.str1.1
-                0x0000000000015bf4       0x36 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015d94       0x36 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
  .rodata.usbAddrCLIDict_DescEntry
-                0x0000000000015c2a       0x3d CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015c2a                usbAddrCLIDict_DescEntry
- *fill*         0x0000000000015c67        0x1 
+                0x0000000000015dca       0x3d CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015dca                usbAddrCLIDict_DescEntry
+ *fill*         0x0000000000015e07        0x1 
  .rodata.usbCLIDict
-                0x0000000000015c68       0x54 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015c68                usbCLIDict
+                0x0000000000015e08       0x54 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015e08                usbCLIDict
  .rodata.usbCLIDictName
-                0x0000000000015cbc       0x14 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015cbc                usbCLIDictName
+                0x0000000000015e5c       0x14 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015e5c                usbCLIDictName
  .rodata.usbConfCLIDict_DescEntry
-                0x0000000000015cd0       0x28 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015cd0                usbConfCLIDict_DescEntry
+                0x0000000000015e70       0x28 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015e70                usbConfCLIDict_DescEntry
  .rodata.usbInitTimeCLIDict_DescEntry
-                0x0000000000015cf8       0x42 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                0x0000000000015cf8                usbInitTimeCLIDict_DescEntry
- *fill*         0x0000000000015d3a        0x2 
+                0x0000000000015e98       0x42 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                0x0000000000015e98                usbInitTimeCLIDict_DescEntry
+ *fill*         0x0000000000015eda        0x2 
  .rodata.usb_descriptor_list
-                0x0000000000015d3c      0x144 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
-                0x0000000000015d3c                usb_descriptor_list
+                0x0000000000015edc      0x144 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
+                0x0000000000015edc                usb_descriptor_list
  .rodata.usb_endpoint_config_table
-                0x0000000000015e80        0xa CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
-                0x0000000000015e80                usb_endpoint_config_table
+                0x0000000000016020        0xa CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
+                0x0000000000016020                usb_endpoint_config_table
  .rodata.keyboard_control.str1.1
-                0x0000000000015e8a       0x3d CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
+                0x000000000001602a       0x3d CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
  .rodata.usb_device_check.str1.1
-                0x0000000000015ec7       0x4c CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
+                0x0000000000016067       0x4c CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
  .rodata.usb_setup.str1.1
-                0x0000000000015f13      0x114 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
+                0x00000000000160b3      0x114 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
                                         0x11b (size before relaxing)
  .rodata.usb_keyboard_send.str1.1
-                0x0000000000016027       0x8f CMakeFiles/kiibohd.dir/Output/USB/arm/usb_keyboard.c.obj
+                0x00000000000161c7       0x8f CMakeFiles/kiibohd.dir/Output/USB/arm/usb_keyboard.c.obj
  .rodata.usb_mouse_send.str1.1
-                0x00000000000160b6       0x2f CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mouse.c.obj
+                0x0000000000016256       0x2f CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mouse.c.obj
                                          0x5c (size before relaxing)
  .rodata.usb_rawio_rx.str1.1
-                0x00000000000160e5       0x3a CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
+                0x0000000000016285       0x3a CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
  .rodata.usb_rawio_tx.str1.1
-                0x000000000001611f       0x3a CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
- .rodata        0x0000000000016159        0x4 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000162bf       0x3a CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
+ .rodata        0x00000000000162f9        0x4 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.CLI_commandLookup.str1.1
-                0x000000000001615d       0x40 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000162fd       0x40 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
                                          0x4a (size before relaxing)
  .rodata.CLI_process.str1.1
-                0x000000000001619d       0x6a CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001633d       0x6a CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.CLI_registerDictionary.str1.1
-                0x0000000000016207       0x45 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000163a7       0x45 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.ChipVersion_cpuid_implementor.str1.1
-                0x000000000001624c        0x4 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000163ec        0x4 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.ChipVersion_cpuid_partno.str1.1
-                0x0000000000016250       0x2c CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000163f0       0x2c CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.ChipVersion_eepromsize
-                0x000000000001627c       0x20 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x000000000001627c                ChipVersion_eepromsize
+                0x000000000001641c       0x20 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001641c                ChipVersion_eepromsize
  .rodata.ChipVersion_lookup.str1.1
-                0x000000000001629c       0x82 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001643c       0x82 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.ChipVersion_nvmsize
-                0x000000000001631e       0x1e CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x000000000001631e                ChipVersion_nvmsize
+                0x00000000000164be       0x1e CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000164be                ChipVersion_nvmsize
  .rodata.ChipVersion_pflashsize
-                0x000000000001633c       0x20 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x000000000001633c                ChipVersion_pflashsize
+                0x00000000000164dc       0x20 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000164dc                ChipVersion_pflashsize
  .rodata.ChipVersion_ramsize
-                0x000000000001635c       0x20 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x000000000001635c                ChipVersion_ramsize
+                0x00000000000164fc       0x20 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000164fc                ChipVersion_ramsize
  .rodata.basicCLIDict
-                0x000000000001637c       0xa8 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x000000000001637c                basicCLIDict
+                0x000000000001651c       0xa8 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001651c                basicCLIDict
  .rodata.basicCLIDictName
-                0x0000000000016424       0x11 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000016424                basicCLIDictName
+                0x00000000000165c4       0x11 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000165c4                basicCLIDictName
  .rodata.clearCLIDict_DescEntry
-                0x0000000000016435       0x12 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000016435                clearCLIDict_DescEntry
+                0x00000000000165d5       0x12 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000165d5                clearCLIDict_DescEntry
  .rodata.cliDebugCLIDict_DescEntry
-                0x0000000000016447       0x3a CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000016447                cliDebugCLIDict_DescEntry
+                0x00000000000165e7       0x3a CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000165e7                cliDebugCLIDict_DescEntry
  .rodata.cliFunc_clear.str1.1
-                0x0000000000016481        0x9 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000016621        0x9 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.cliFunc_cliDebug.str1.1
-                0x000000000001648a       0x5d CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001662a       0x5d CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.cliFunc_colorTest.str1.1
-                0x00000000000164e7       0x1f CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000016687       0x1f CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
                                          0x22 (size before relaxing)
  .rodata.cliFunc_help.str1.1
-                0x0000000000016506       0x18 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000166a6       0x18 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
                                          0x1f (size before relaxing)
  .rodata.cliFunc_latency.str1.1
-                0x000000000001651e       0x38 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000166be       0x38 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.cliFunc_periodic.str1.1
-                0x0000000000016556       0x28 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000166f6       0x28 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.cliFunc_rand.str1.1
-                0x000000000001657e       0x46 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001671e       0x46 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.cliFunc_reload.str1.1
-                0x00000000000165c4       0x96 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000016764       0x96 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.cliFunc_reset.str1.1
-                0x00000000000165c4        0x3 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000016764        0x3 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.cliFunc_tick.str1.1
-                0x00000000000165c7       0x61 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000016767       0x61 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
                                          0x63 (size before relaxing)
  .rodata.cliFunc_version.str1.1
-                0x0000000000016628     0x1e0f CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                                       0x1e13 (size before relaxing)
+                0x00000000000167c8     0x200c CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                                       0x2010 (size before relaxing)
  .rodata.colorTestCLIDict_DescEntry
-                0x0000000000018437       0x61 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000018437                colorTestCLIDict_DescEntry
+                0x00000000000187d4       0x61 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000187d4                colorTestCLIDict_DescEntry
  .rodata.helpCLIDict_DescEntry
-                0x0000000000018498       0x18 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000018498                helpCLIDict_DescEntry
+                0x0000000000018835       0x18 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000018835                helpCLIDict_DescEntry
  .rodata.latencyCLIDict_DescEntry
-                0x00000000000184b0       0x50 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x00000000000184b0                latencyCLIDict_DescEntry
+                0x000000000001884d       0x50 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001884d                latencyCLIDict_DescEntry
  .rodata.ledCLIDict_DescEntry
-                0x0000000000018500       0x96 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000018500                ledCLIDict_DescEntry
+                0x000000000001889d       0x96 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001889d                ledCLIDict_DescEntry
  .rodata.periodicCLIDict_DescEntry
-                0x0000000000018596       0x37 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000018596                periodicCLIDict_DescEntry
+                0x0000000000018933       0x37 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000018933                periodicCLIDict_DescEntry
  .rodata.printLatency.str1.1
-                0x00000000000185cd     0x1e0f CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001896a     0x200c CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
                                           0x2 (size before relaxing)
  .rodata.prompt.str1.1
-                0x00000000000185cd       0x14 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001896a       0x14 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
  .rodata.randCLIDict_DescEntry
-                0x00000000000185e1       0x34 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x00000000000185e1                randCLIDict_DescEntry
+                0x000000000001897e       0x34 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x000000000001897e                randCLIDict_DescEntry
  .rodata.reloadCLIDict_DescEntry
-                0x0000000000018615       0x2b CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000018615                reloadCLIDict_DescEntry
+                0x00000000000189b2       0x2b CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000189b2                reloadCLIDict_DescEntry
  .rodata.resetCLIDict_DescEntry
-                0x0000000000018640       0x2e CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x0000000000018640                resetCLIDict_DescEntry
+                0x00000000000189dd       0x2e CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x00000000000189dd                resetCLIDict_DescEntry
  .rodata.restartCLIDict_DescEntry
-                0x000000000001866e       0x47 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x000000000001866e                restartCLIDict_DescEntry
+                0x0000000000018a0b       0x47 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000018a0b                restartCLIDict_DescEntry
  .rodata.str1.1
-                0x00000000000186b5       0xc9 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000018a52       0xc9 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
                                          0xd1 (size before relaxing)
  .rodata.tickCLIDict_DescEntry
-                0x000000000001877e       0x4a CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x000000000001877e                tickCLIDict_DescEntry
+                0x0000000000018b1b       0x4a CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000018b1b                tickCLIDict_DescEntry
  .rodata.versionCLIDict_DescEntry
-                0x00000000000187c8       0x29 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                0x00000000000187c8                versionCLIDict_DescEntry
+                0x0000000000018b65       0x29 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                0x0000000000018b65                versionCLIDict_DescEntry
  .rodata.Latency_add_resource.str1.1
-                0x00000000000187f1       0x3e CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
+                0x0000000000018b8e       0x3e CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
  .rodata.led_pin
-                0x000000000001882f        0x2 CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
-                0x000000000001a3dc                . = ALIGN (0x4)
- *fill*         0x0000000000018831        0x3 
+                0x0000000000018bcc        0x2 CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
+                0x000000000001a978                . = ALIGN (0x4)
+ *fill*         0x0000000000018bce        0x2 
  *(.init)
 
-.glue_7         0x0000000000018834        0x0
- .glue_7        0x0000000000018834        0x0 linker stubs
+.glue_7         0x0000000000018bd0        0x0
+ .glue_7        0x0000000000018bd0        0x0 linker stubs
 
-.glue_7t        0x0000000000018834        0x0
- .glue_7t       0x0000000000018834        0x0 linker stubs
+.glue_7t        0x0000000000018bd0        0x0
+ .glue_7t       0x0000000000018bd0        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000018834        0x0
- .vfp11_veneer  0x0000000000018834        0x0 linker stubs
+.vfp11_veneer   0x0000000000018bd0        0x0
+ .vfp11_veneer  0x0000000000018bd0        0x0 linker stubs
 
-.v4_bx          0x0000000000018834        0x0
- .v4_bx         0x0000000000018834        0x0 linker stubs
+.v4_bx          0x0000000000018bd0        0x0
+ .v4_bx         0x0000000000018bd0        0x0 linker stubs
 
-.iplt           0x0000000000018834        0x0
- .iplt          0x0000000000018834        0x0 CMakeFiles/kiibohd.dir/main.c.obj
+.iplt           0x0000000000018bd0        0x0
+ .iplt          0x0000000000018bd0        0x0 CMakeFiles/kiibohd.dir/main.c.obj
 
-.rel.dyn        0x0000000000018834        0x0
- .rel.iplt      0x0000000000018834        0x0 CMakeFiles/kiibohd.dir/main.c.obj
+.rel.dyn        0x0000000000018bd0        0x0
+ .rel.iplt      0x0000000000018bd0        0x0 CMakeFiles/kiibohd.dir/main.c.obj
 
-.ARM.exidx      0x0000000000018834        0x0
-                0x0000000000018834                __exidx_start = .
+.ARM.exidx      0x0000000000018bd0        0x0
+                0x0000000000018bd0                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000000018834                __exidx_end = .
-                0x0000000000018834                _etext = .
+                0x0000000000018bd0                __exidx_end = .
+                0x0000000000018bd0                _etext = .
 
 .usbdescriptortable
                 0x000000001fff8000      0x160
@@ -4990,7 +4991,7 @@ LOAD CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
  .usbbuffers    0x000000001fff8160      0x870 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mem.c.obj
                 0x000000001fff8160                usb_buffer_memory
 
-.data           0x000000001fff89d0      0x7e8 load address 0x0000000000018834
+.data           0x000000001fff89d0      0x7e8 load address 0x0000000000018bd0
                 0x000000001fff89d0                . = ALIGN (0x4)
                 0x000000001fff89d0                _sdata = .
  *(.data*)
@@ -5110,13 +5111,13 @@ LOAD CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
                 0x000000001fff91b8                . = ALIGN (0x4)
                 0x000000001fff91b8                _edata = .
 
-.igot.plt       0x000000001fff91b8        0x0 load address 0x000000000001901c
+.igot.plt       0x000000001fff91b8        0x0 load address 0x00000000000193b8
  .igot.plt      0x000000001fff91b8        0x0 CMakeFiles/kiibohd.dir/main.c.obj
 
 .noinit
  *(.noinit*)
 
-.bss            0x000000001fff91b8     0x2038 load address 0x000000000001901c
+.bss            0x000000001fff91b8     0x2038 load address 0x00000000000193b8
                 0x000000001fff91b8                . = ALIGN (0x4)
                 0x000000001fff91b8                _sbss = .
  *(.bss*)
@@ -5636,7 +5637,7 @@ OUTPUT(kiibohd.elf elf32-littlearm)
  .debug_ranges  0x00000000000026c8       0x20 CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
  .debug_ranges  0x00000000000026e8       0xd8 CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
 
-.debug_macro    0x0000000000000000    0x1136f
+.debug_macro    0x0000000000000000    0x112b1
  .debug_macro   0x0000000000000000       0xdd CMakeFiles/kiibohd.dir/main.c.obj
  .debug_macro   0x00000000000000dd      0xa60 CMakeFiles/kiibohd.dir/main.c.obj
  .debug_macro   0x0000000000000b3d       0x28 CMakeFiles/kiibohd.dir/main.c.obj
@@ -5718,120 +5719,119 @@ OUTPUT(kiibohd.elf elf32-littlearm)
  .debug_macro   0x0000000000010c41      0x19c CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
  .debug_macro   0x0000000000010ddd      0x1a5 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_serial.c.obj
  .debug_macro   0x0000000000010f82       0xcc CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
- .debug_macro   0x000000000001104e       0xbe CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
- .debug_macro   0x000000000001110c       0xcc CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
- .debug_macro   0x00000000000111d8       0xa2 CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
- .debug_macro   0x000000000001127a       0x9d CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
- .debug_macro   0x0000000000011317       0x58 CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
+ .debug_macro   0x000000000001104e       0xcc CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
+ .debug_macro   0x000000000001111a       0xa2 CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
+ .debug_macro   0x00000000000111bc       0x9d CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
+ .debug_macro   0x0000000000011259       0x58 CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
 
-.debug_line     0x0000000000000000     0xf8f1
- .debug_line    0x0000000000000000      0x60b CMakeFiles/kiibohd.dir/main.c.obj
- .debug_line    0x000000000000060b      0x605 CMakeFiles/kiibohd.dir/Lib/kinetis.c.obj
- .debug_line    0x0000000000000c10      0x315 CMakeFiles/kiibohd.dir/Lib/delay.c.obj
- .debug_line    0x0000000000000f25      0x318 CMakeFiles/kiibohd.dir/Lib/entropy.c.obj
- .debug_line    0x000000000000123d      0x29b CMakeFiles/kiibohd.dir/Lib/gpio.c.obj
- .debug_line    0x00000000000014d8      0x2c9 CMakeFiles/kiibohd.dir/Lib/periodic.c.obj
- .debug_line    0x00000000000017a1      0x6d5 CMakeFiles/kiibohd.dir/Lib/time.c.obj
- .debug_line    0x0000000000001e76      0x5d4 CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/i2c.c.obj
- .debug_line    0x000000000000244a      0xa1b CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/led_scan.c.obj
- .debug_line    0x0000000000002e65      0x8c9 CMakeFiles/kiibohd.dir/Scan/Devices/MatrixARMPeriodic/matrix_scan.c.obj
- .debug_line    0x000000000000372e      0x97a CMakeFiles/kiibohd.dir/Scan/Devices/STLcd/lcd_scan.c.obj
- .debug_line    0x00000000000040a8      0xe37 CMakeFiles/kiibohd.dir/Scan/Devices/UARTConnect/connect_scan.c.obj
- .debug_line    0x0000000000004edf      0x76b CMakeFiles/kiibohd.dir/Scan/Infinity_Ergodox/scan_loop.c.obj
- .debug_line    0x000000000000564a      0x4d0 CMakeFiles/kiibohd.dir/Macro/PartialMap/kll.c.obj
- .debug_line    0x0000000000005b1a      0x7d3 CMakeFiles/kiibohd.dir/Macro/PartialMap/layer.c.obj
- .debug_line    0x00000000000062ed      0xdb5 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
- .debug_line    0x00000000000070a2      0x69d CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
- .debug_line    0x000000000000773f      0x884 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
- .debug_line    0x0000000000007fc3     0x12dd CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
- .debug_line    0x00000000000092a0      0x4c1 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
- .debug_line    0x0000000000009761      0xace CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
- .debug_line    0x000000000000a22f      0x5c7 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
- .debug_line    0x000000000000a7f6      0x581 CMakeFiles/kiibohd.dir/Output/USB/output_com.c.obj
- .debug_line    0x000000000000ad77      0xbf0 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
- .debug_line    0x000000000000b967      0x395 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
- .debug_line    0x000000000000bcfc      0x9e3 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
- .debug_line    0x000000000000c6df      0x5f6 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_keyboard.c.obj
- .debug_line    0x000000000000ccd5      0x332 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mem.c.obj
- .debug_line    0x000000000000d007      0x568 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mouse.c.obj
- .debug_line    0x000000000000d56f      0x590 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
- .debug_line    0x000000000000daff      0x57e CMakeFiles/kiibohd.dir/Output/USB/arm/usb_serial.c.obj
- .debug_line    0x000000000000e07d      0x934 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
- .debug_line    0x000000000000e9b1      0x5aa CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
- .debug_line    0x000000000000ef5b      0x35e CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
- .debug_line    0x000000000000f2b9      0x638 CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
+.debug_line     0x0000000000000000    0x103ba
+ .debug_line    0x0000000000000000      0x684 CMakeFiles/kiibohd.dir/main.c.obj
+ .debug_line    0x0000000000000684      0x63c CMakeFiles/kiibohd.dir/Lib/kinetis.c.obj
+ .debug_line    0x0000000000000cc0      0x320 CMakeFiles/kiibohd.dir/Lib/delay.c.obj
+ .debug_line    0x0000000000000fe0      0x323 CMakeFiles/kiibohd.dir/Lib/entropy.c.obj
+ .debug_line    0x0000000000001303      0x2a6 CMakeFiles/kiibohd.dir/Lib/gpio.c.obj
+ .debug_line    0x00000000000015a9      0x2d4 CMakeFiles/kiibohd.dir/Lib/periodic.c.obj
+ .debug_line    0x000000000000187d      0x70c CMakeFiles/kiibohd.dir/Lib/time.c.obj
+ .debug_line    0x0000000000001f89      0x616 CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/i2c.c.obj
+ .debug_line    0x000000000000259f      0xaaa CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/led_scan.c.obj
+ .debug_line    0x0000000000003049      0x942 CMakeFiles/kiibohd.dir/Scan/Devices/MatrixARMPeriodic/matrix_scan.c.obj
+ .debug_line    0x000000000000398b      0x9fe CMakeFiles/kiibohd.dir/Scan/Devices/STLcd/lcd_scan.c.obj
+ .debug_line    0x0000000000004389      0xeb0 CMakeFiles/kiibohd.dir/Scan/Devices/UARTConnect/connect_scan.c.obj
+ .debug_line    0x0000000000005239      0x805 CMakeFiles/kiibohd.dir/Scan/Infinity_Ergodox/scan_loop.c.obj
+ .debug_line    0x0000000000005a3e      0x51d CMakeFiles/kiibohd.dir/Macro/PartialMap/kll.c.obj
+ .debug_line    0x0000000000005f5b      0x841 CMakeFiles/kiibohd.dir/Macro/PartialMap/layer.c.obj
+ .debug_line    0x000000000000679c      0xe39 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+ .debug_line    0x00000000000075d5      0x6f5 CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
+ .debug_line    0x0000000000007cca      0x8dc CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+ .debug_line    0x00000000000085a6     0x1356 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+ .debug_line    0x00000000000098fc      0x519 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+ .debug_line    0x0000000000009e15      0xb47 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+ .debug_line    0x000000000000a95c      0x61f CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+ .debug_line    0x000000000000af7b      0x5ce CMakeFiles/kiibohd.dir/Output/USB/output_com.c.obj
+ .debug_line    0x000000000000b549      0xc74 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+ .debug_line    0x000000000000c1bd      0x3c1 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
+ .debug_line    0x000000000000c57e      0xa25 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
+ .debug_line    0x000000000000cfa3      0x638 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_keyboard.c.obj
+ .debug_line    0x000000000000d5db      0x348 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mem.c.obj
+ .debug_line    0x000000000000d923      0x5aa CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mouse.c.obj
+ .debug_line    0x000000000000decd      0x5d2 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
+ .debug_line    0x000000000000e49f      0x59f CMakeFiles/kiibohd.dir/Output/USB/arm/usb_serial.c.obj
+ .debug_line    0x000000000000ea3e      0x98c CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+ .debug_line    0x000000000000f3ca      0x602 CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
+ .debug_line    0x000000000000f9cc      0x37f CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
+ .debug_line    0x000000000000fd4b      0x66f CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
 
-.debug_str      0x0000000000000000    0x402e0
- .debug_str     0x0000000000000000    0x2b7f1 CMakeFiles/kiibohd.dir/main.c.obj
-                                      0x2b990 (size before relaxing)
- .debug_str     0x000000000002b7f1      0x212 CMakeFiles/kiibohd.dir/Lib/kinetis.c.obj
-                                      0x2b4f5 (size before relaxing)
- .debug_str     0x000000000002ba03       0xc4 CMakeFiles/kiibohd.dir/Lib/delay.c.obj
-                                      0x24292 (size before relaxing)
- .debug_str     0x000000000002bac7      0x6b8 CMakeFiles/kiibohd.dir/Lib/entropy.c.obj
-                                      0x248db (size before relaxing)
- .debug_str     0x000000000002c17f      0x37b CMakeFiles/kiibohd.dir/Lib/gpio.c.obj
-                                      0x2453f (size before relaxing)
- .debug_str     0x000000000002c4fa       0x9a CMakeFiles/kiibohd.dir/Lib/periodic.c.obj
-                                      0x24840 (size before relaxing)
- .debug_str     0x000000000002c594      0x4fb CMakeFiles/kiibohd.dir/Lib/time.c.obj
-                                      0x2b939 (size before relaxing)
- .debug_str     0x000000000002ca8f      0x2d5 CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/i2c.c.obj
-                                      0x2b9a6 (size before relaxing)
- .debug_str     0x000000000002cd64     0x5a8f CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/led_scan.c.obj
-                                      0x315ef (size before relaxing)
- .debug_str     0x00000000000327f3      0x6bb CMakeFiles/kiibohd.dir/Scan/Devices/MatrixARMPeriodic/matrix_scan.c.obj
-                                      0x3084c (size before relaxing)
- .debug_str     0x0000000000032eae      0x3ff CMakeFiles/kiibohd.dir/Scan/Devices/STLcd/lcd_scan.c.obj
-                                      0x307d6 (size before relaxing)
- .debug_str     0x00000000000332ad      0xf0a CMakeFiles/kiibohd.dir/Scan/Devices/UARTConnect/connect_scan.c.obj
-                                      0x31462 (size before relaxing)
- .debug_str     0x00000000000341b7       0xbc CMakeFiles/kiibohd.dir/Scan/Infinity_Ergodox/scan_loop.c.obj
-                                      0x3058d (size before relaxing)
- .debug_str     0x0000000000034273      0x19a CMakeFiles/kiibohd.dir/Macro/PartialMap/kll.c.obj
-                                       0xf8be (size before relaxing)
- .debug_str     0x000000000003440d      0x24d CMakeFiles/kiibohd.dir/Macro/PartialMap/layer.c.obj
-                                      0x3047e (size before relaxing)
- .debug_str     0x000000000003465a     0x1c37 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
-                                      0x32781 (size before relaxing)
- .debug_str     0x0000000000036291      0x1d2 CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
-                                      0x3017c (size before relaxing)
- .debug_str     0x0000000000036463      0x3aa CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
-                                      0x30440 (size before relaxing)
- .debug_str     0x000000000003680d      0xc7c CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
-                                      0x31455 (size before relaxing)
- .debug_str     0x0000000000037489       0xfa CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
-                                       0xfdd1 (size before relaxing)
- .debug_str     0x0000000000037583      0x708 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
-                                      0x3053e (size before relaxing)
- .debug_str     0x0000000000037c8b      0x16d CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
-                                      0x2ff29 (size before relaxing)
- .debug_str     0x0000000000037df8      0x148 CMakeFiles/kiibohd.dir/Output/USB/output_com.c.obj
-                                      0x2fbe7 (size before relaxing)
- .debug_str     0x0000000000037f40     0x278d CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
-                                      0x32bd6 (size before relaxing)
- .debug_str     0x000000000003a6cd      0x66a CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
-                                       0xbd09 (size before relaxing)
- .debug_str     0x000000000003ad37      0x5cb CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
-                                      0x2e15e (size before relaxing)
- .debug_str     0x000000000003b302     0x28b2 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_keyboard.c.obj
-                                      0x3006c (size before relaxing)
- .debug_str     0x000000000003dbb4       0x7b CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mem.c.obj
-                                      0x250ed (size before relaxing)
- .debug_str     0x000000000003dc2f       0x7f CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mouse.c.obj
-                                      0x2ffc6 (size before relaxing)
- .debug_str     0x000000000003dcae       0x7e CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
-                                      0x2ee05 (size before relaxing)
- .debug_str     0x000000000003dd2c       0xef CMakeFiles/kiibohd.dir/Output/USB/arm/usb_serial.c.obj
-                                      0x2c902 (size before relaxing)
- .debug_str     0x000000000003de1b     0x21d5 CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
-                                      0x2ab69 (size before relaxing)
- .debug_str     0x000000000003fff0       0xcd CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
-                                      0x2fc67 (size before relaxing)
- .debug_str     0x00000000000400bd       0x5c CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
-                                      0x27daf (size before relaxing)
- .debug_str     0x0000000000040119      0x1c7 CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
-                                       0xb044 (size before relaxing)
+.debug_str      0x0000000000000000    0x3d823
+ .debug_str     0x0000000000000000    0x2a8a4 CMakeFiles/kiibohd.dir/main.c.obj
+                                      0x2aa43 (size before relaxing)
+ .debug_str     0x000000000002a8a4      0x21d CMakeFiles/kiibohd.dir/Lib/kinetis.c.obj
+                                      0x2a5a8 (size before relaxing)
+ .debug_str     0x000000000002aac1       0xcf CMakeFiles/kiibohd.dir/Lib/delay.c.obj
+                                      0x242a8 (size before relaxing)
+ .debug_str     0x000000000002ab90      0x6c3 CMakeFiles/kiibohd.dir/Lib/entropy.c.obj
+                                      0x248f1 (size before relaxing)
+ .debug_str     0x000000000002b253      0x386 CMakeFiles/kiibohd.dir/Lib/gpio.c.obj
+                                      0x24555 (size before relaxing)
+ .debug_str     0x000000000002b5d9       0xa5 CMakeFiles/kiibohd.dir/Lib/periodic.c.obj
+                                      0x24856 (size before relaxing)
+ .debug_str     0x000000000002b67e      0x506 CMakeFiles/kiibohd.dir/Lib/time.c.obj
+                                      0x2a9ec (size before relaxing)
+ .debug_str     0x000000000002bb84      0x2e0 CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/i2c.c.obj
+                                      0x2aa59 (size before relaxing)
+ .debug_str     0x000000000002be64     0x5a9a CMakeFiles/kiibohd.dir/Scan/Devices/ISSILed/led_scan.c.obj
+                                      0x306a2 (size before relaxing)
+ .debug_str     0x00000000000318fe      0x6c6 CMakeFiles/kiibohd.dir/Scan/Devices/MatrixARMPeriodic/matrix_scan.c.obj
+                                      0x2f8ff (size before relaxing)
+ .debug_str     0x0000000000031fc4      0x40a CMakeFiles/kiibohd.dir/Scan/Devices/STLcd/lcd_scan.c.obj
+                                      0x2f889 (size before relaxing)
+ .debug_str     0x00000000000323ce      0xf15 CMakeFiles/kiibohd.dir/Scan/Devices/UARTConnect/connect_scan.c.obj
+                                      0x30515 (size before relaxing)
+ .debug_str     0x00000000000332e3       0xc7 CMakeFiles/kiibohd.dir/Scan/Infinity_Ergodox/scan_loop.c.obj
+                                      0x2f640 (size before relaxing)
+ .debug_str     0x00000000000333aa      0x1a5 CMakeFiles/kiibohd.dir/Macro/PartialMap/kll.c.obj
+                                       0xe971 (size before relaxing)
+ .debug_str     0x000000000003354f      0x258 CMakeFiles/kiibohd.dir/Macro/PartialMap/layer.c.obj
+                                      0x2f531 (size before relaxing)
+ .debug_str     0x00000000000337a7     0x1c42 CMakeFiles/kiibohd.dir/Macro/PartialMap/macro.c.obj
+                                      0x31834 (size before relaxing)
+ .debug_str     0x00000000000353e9      0x1dd CMakeFiles/kiibohd.dir/Macro/PartialMap/result.c.obj
+                                      0x2f22f (size before relaxing)
+ .debug_str     0x00000000000355c6      0x3b5 CMakeFiles/kiibohd.dir/Macro/PartialMap/trigger.c.obj
+                                      0x2f4f3 (size before relaxing)
+ .debug_str     0x000000000003597b      0xc87 CMakeFiles/kiibohd.dir/Macro/PixelMap/pixel.c.obj
+                                      0x30508 (size before relaxing)
+ .debug_str     0x0000000000036602      0x105 CMakeFiles/kiibohd.dir/generatedPixelmap.c.obj
+                                       0xee84 (size before relaxing)
+ .debug_str     0x0000000000036707      0x713 CMakeFiles/kiibohd.dir/Output/HID-IO/hidio_com.c.obj
+                                      0x2f5f1 (size before relaxing)
+ .debug_str     0x0000000000036e1a      0x178 CMakeFiles/kiibohd.dir/Output/Interface/output_gen.c.obj
+                                      0x2efdc (size before relaxing)
+ .debug_str     0x0000000000036f92      0x153 CMakeFiles/kiibohd.dir/Output/USB/output_com.c.obj
+                                      0x2ec9a (size before relaxing)
+ .debug_str     0x00000000000370e5     0x2798 CMakeFiles/kiibohd.dir/Output/USB/output_usb.c.obj
+                                      0x31c89 (size before relaxing)
+ .debug_str     0x000000000003987d      0x675 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_desc.c.obj
+                                       0xadbc (size before relaxing)
+ .debug_str     0x0000000000039ef2      0x5d6 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_dev.c.obj
+                                      0x2d211 (size before relaxing)
+ .debug_str     0x000000000003a4c8     0x28bd CMakeFiles/kiibohd.dir/Output/USB/arm/usb_keyboard.c.obj
+                                      0x2f11f (size before relaxing)
+ .debug_str     0x000000000003cd85       0x86 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mem.c.obj
+                                      0x25103 (size before relaxing)
+ .debug_str     0x000000000003ce0b       0x8a CMakeFiles/kiibohd.dir/Output/USB/arm/usb_mouse.c.obj
+                                      0x2f079 (size before relaxing)
+ .debug_str     0x000000000003ce95       0x89 CMakeFiles/kiibohd.dir/Output/USB/arm/usb_rawio.c.obj
+                                      0x2deb8 (size before relaxing)
+ .debug_str     0x000000000003cf1e       0xfa CMakeFiles/kiibohd.dir/Output/USB/arm/usb_serial.c.obj
+                                      0x2c918 (size before relaxing)
+ .debug_str     0x000000000003d018      0x4fa CMakeFiles/kiibohd.dir/Debug/cli/cli.c.obj
+                                      0x2aca1 (size before relaxing)
+ .debug_str     0x000000000003d512       0xd8 CMakeFiles/kiibohd.dir/Debug/latency/latency.c.obj
+                                      0x2ed1a (size before relaxing)
+ .debug_str     0x000000000003d5ea       0x67 CMakeFiles/kiibohd.dir/Debug/led/led.c.obj
+                                      0x27dc5 (size before relaxing)
+ .debug_str     0x000000000003d651      0x1d2 CMakeFiles/kiibohd.dir/Debug/print/print.c.obj
+                                       0xa0f7 (size before relaxing)
 
 .comment        0x0000000000000000       0x7f
  .comment       0x0000000000000000       0x7f CMakeFiles/kiibohd.dir/main.c.obj

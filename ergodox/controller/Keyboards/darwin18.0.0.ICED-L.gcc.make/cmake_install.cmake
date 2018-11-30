@@ -1,4 +1,4 @@
-# Install script for directory: /Users/tom/dev/keyboard_utilities/ergodox/controller
+# Install script for directory: /Users/tom/.projects_root/keyboard_utilities/ergodox/controller
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/tom/dev/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
