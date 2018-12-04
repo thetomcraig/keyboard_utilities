@@ -1,0 +1,11 @@
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/edit_cache.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/rebuild_cache.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/DFUMessage.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/SizeAfter.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/kll_parser.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/kiibohd.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/kll_display.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/kll_regen.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/kll_debug.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/kll_token.dir
+/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-L.gcc.make/CMakeFiles/kll_final_display.dir
