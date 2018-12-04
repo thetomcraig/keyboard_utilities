@@ -1,4 +1,0 @@
-
-libusb-1.0-0-dev
-binutils-arm-none-eabi
-libnewlib-arm-none-eabi dfu-util

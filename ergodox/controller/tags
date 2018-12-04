@@ -224,6 +224,7 @@ AnimationStack	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/M
 AnimationStack	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Macro/PixelMap/pixel.h	/^} AnimationStack;$/;"	t	language:C++	typeref:struct:AnimationStack
 AnimationStackElement	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Macro/PixelMap/pixel.h	/^typedef struct AnimationStackElement {$/;"	s	language:C++
 AnimationStackElement	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Macro/PixelMap/pixel.h	/^} AnimationStackElement;$/;"	t	language:C++	typeref:struct:AnimationStackElement
+Animation__all_on	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/kll_defs.h	/^#define Animation__all_on /;"	d	language:C++
 B1T	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Lib/kinetis.h	/^	volatile uint8_t	B1T;$/;"	m	language:C++	struct:__anon102
 B1T	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Lib/kinetis.h	/^	volatile uint8_t	B1T;$/;"	m	language:C++	struct:__anon117
 B1T	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Lib/kinetis.h	/^	volatile uint8_t	B1T;$/;"	m	language:C++	struct:__anon12
@@ -7782,6 +7783,8 @@ addr	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Output/USB/
 addr	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Output/USB/arm/usb_dev.c	/^	void * addr;$/;"	m	language:C	struct:__anon174	file:
 addr	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Output/USB/arm/usb_dev.c	/^	void * addr;$/;"	m	language:C	struct:__anon181	file:
 addr	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Scan/Devices/ISSILed/led_scan.c	/^	uint8_t addr;$/;"	m	language:C	struct:LED_ChannelMap	file:
+all_on_frame1	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/generatedPixelmap.c	/^const uint8_t all_on_frame1[] = {$/;"	v	language:C
+all_on_frames	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Keyboards/darwin18.0.0.ICED-R.gcc.make/generatedPixelmap.c	/^const uint8_t *all_on_frames[] = {$/;"	v	language:C
 analog	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Macro/PartialMap/kll.h	/^		uint8_t analog;$/;"	m	language:C++	union:Schedule::__anon125
 analog	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Macro/PartialMap/kll.h	/^		uint8_t analog;$/;"	m	language:C++	union:Schedule::__anon126
 analog	/Users/tom/.projects_root/keyboard_utilities/ergodox/controller/Macro/PartialMap/kll.h	/^		uint8_t analog;$/;"	m	language:C++	union:Schedule::__anon127
