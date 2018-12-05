@@ -19,20 +19,22 @@ U"BACKSLASH" : U"ENTER";
 U"D" : U"RIGHT";
 U"S" : U"DOWN";
 U"A" : U"LEFT";
-U"C" : U"PENTER";
-U"DELETE" : U"DELETE";
 U"FUNCTION6" : U"F12";
 U"6" : U"F6";
 U"7" : U"F7";
 U"8" : U"F8";
 U"9" : U"F9";
 U"0" : U"F10";
-U"P" : U"P-";
 U"H" : U"LEFT";
 U"J" : U"DOWN";
 U"K" : U"UP";
 U"L" : U"RIGHT";
-U"N" : U"KEYPAD PLUS";
+U"PAGEDOWN" : U"BACKSPACE";
 
+
+
+U"c" : U"Ctrl"(H) + U"b", U"Ctrl"(R), U"c";
+U"p" : U"Ctrl"(H) + U"b", U"Ctrl"(R), U"p";
+U"n" : U"Ctrl"(H) + U"b", U"Ctrl"(R), U"n";
 
 
