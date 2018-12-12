@@ -1,0 +1,8 @@
+U"i" : U"Esc", U"b";
+U"o" : U"Esc", U"f";
+
+U"n" : U"Ctrl" + U"Shift" + U"Right";
+U"p" : U"Ctrl" + U"Shift" + U"Left";
+U"c" : U"Ctrl" + U"Shift" + U"Up";
+U"y" : U"Ctrl" + U"Shift" + U"Up";
+U"f" : U"Ctrl" + U"f";
