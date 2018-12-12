@@ -1,10 +1,9 @@
 # Generate the new binary (configurator, whatever)
-# Place binary here and rename it "ergodox_binary.zip"
 
 rm -rf ergodox_binary_files
 mkdir ergodox_binary_files
 
-unzip ergodox_binary.zip -d ergodox_binary_files
+unzip "${1}" -d ergodox_binary_files
 
 cd ergodox_binary_files
 echo "Put dox in flash mode, then wait 5s"
