@@ -1,5 +1,4 @@
 # Switches
-* ![tester_image.jpg](tester_image.jpg)
 
 | Color | Force | Notes |
 | --- | --- | --- |
@@ -15,3 +14,5 @@
 | Silent Red | 45cN | Soft Linear 45cN - Smooth & Silent |
 | Silent Black | 60cN | Firm Linear 60cN - Smooth & Silent |
 | Speed Silver | 45cN | Soft Linear 45cN - Smooth, no tactile bump, 3.4 mm total travel distance only |
+
+* ![tester_image.jpg](tester_image.jpg)
