@@ -1,0 +1,50 @@
+# PartialMap
+Name = PartialMapCapabilities;
+Version = 0.9;
+Author = "HaaTa (Jacob Alexander) 2014-2018";
+KLL = 0.5;
+
+# Modified Date
+Date = 2018-03-01;
+
+
+# Capabilties available to the PartialMap module
+layerState  => Layer_layerState_capability( layer : 2, state : 1 );
+layerLatch  => Layer_layerLatch_capability( layer : 2 );
+layerLock   => Layer_layerLock_capability( layer : 2 );
+layerShift  => Layer_layerShift_capability( layer : 2 );
+# By default, rotate to the next layer
+# The current rotating layer is stored separately to the layer stack
+# But still sets the layer stack using the layerLock/unlock mechanism
+# Argument 0 -> Next, 1 -> Previous
+layerRotate => Layer_layerRotate_capability( previous : 1 );
+
+# Null/None/noop Capability
+none => Macro_none_capability();
+
+# Test Capabilities
+testThreadSafe   => Macro_testThreadSafe_capability();
+testThreadUnsafe => Macro_testThreadUnsafe_capability();
+
+
+# Defines available to the PartialMap module
+stateWordSize => StateWordSize_define;
+stateWordSize = 16; # Default for now, increase to 32 for higher limits (8 for less resource usage)
+
+indexWordSize => IndexWordSize_define;
+indexWordSize = 16; # Default for now, increase to 32 for higher limits (8 for less resource usage)
+
+# Press/Release Cache
+PressReleaseCache => PressReleaseCache_define;
+PressReleaseCache = 1;
+
+# Delayed Capabilities Stack Size
+DelayedCapabilitiesStackSize => ResultCapabilityStackSize_define;
+DelayedCapabilitiesStackSize = 10;
+
+# Simultaneous Result Macro Buffer
+# Ring-buffer size for result macro processing
+# 1 unit per macro instance output
+ResultMacroBufferSize => ResultMacroBufferSize_define;
+ResultMacroBufferSize = 50;
+
