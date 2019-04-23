@@ -1,0 +1,22 @@
+
+Thickness measurements:
+
+	Top Plate:
+		Thickness: 4.77 mm
+		Number needed: 2
+
+	Spacer Plate #1:
+		Thickness: 2.75 mm
+		Number needed: 2
+
+	Spacer Plate #2:
+		Thickness: 4.77 mm
+		Number needed: 2
+
+	Full Hand Bottom Plate:
+		Thickness: 2.75 mm
+		Number needed: 2
+
+	Full Hand Spacer:
+		Thickness: 14mm
+		Number needed: 2
