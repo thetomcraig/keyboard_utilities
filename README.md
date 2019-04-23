@@ -1,26 +1,13 @@
-# Keymaps For my Keyboards
+# Resources for Mechanical Keyboards
+- I use this to store general information on [mechancail keyboards](https://en.wikipedia.org/wiki/Keyboard_technology#Mechanical-switch_keyboard) as well as resources for my on boards.
 
-## Layouts
-### Ergodox Infinity
-* Default 
-  * ![ergodox-default](layout_pngs/ergodox-default.png)
-* Layer 1 
-  * ![ergodox-layer-1](layout_pngs/ergodox-layer-1.png)
+## Repository Guide
+### Layouts
+- See images of my layouts [here](keymaps.md)
+-
 
-### POK3R
-* Default 
-  * ![poker-default](layout_pngs/poker-default.png)
-* Layer 1 
-  * ![poker-layer-1](layout_pngs/poker-layer-1.png)
 
-### Macbook Internal Keyboard
-* Default 
-  * ![macbook-default](layout_pngs/macbook-default.png)
-* Layer 1 
-  * ![macbook-layer-1](layout_pngs/macbook-layer-1.png)
 
-#### Resources
-* Update layouts here: http://www.keyboard-layout-editor.com/
 
 #### Liscense
 MIT
