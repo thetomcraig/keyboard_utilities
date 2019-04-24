@@ -10,10 +10,20 @@
   - `keyboard_utilities/ergodox_maps`
 
 1. Update the keymap
-    - Online, here: https://www.massdrop.com/configurator/ergodox
+    - Online, here: https://config.qmk.fm/
+    - You may need to  import the keymap.json file called `thetomcraig.json` to get the current version to work with here
+    - After making necessary changes, click "compile", and wait
 
 1. Download the keymap file(s)
-    - Download the `.hex` file from the browser configurator
+    - After compilation, click these buttons:
+        - Keymap only
+            - Not using this yet...
+        - (Download) keymap.json
+            - For posterity
+        - Firmware
+            - This is the `.hex` file for flashing
+    - Drop all of those files into 
+        - `keyboard_utilities/ergodox_maps`
 
 1. Flash the keymap
     - Load the Teensy application and flash the `.hex` file
