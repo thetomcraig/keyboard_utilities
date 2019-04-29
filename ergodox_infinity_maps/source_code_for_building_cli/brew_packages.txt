@@ -1,5 +1,0 @@
-cmake ctags
-libusb-1.0-0-dev
-binutils-arm-none-eabi
-gcc-arm-none-eabi
-libnewlib-arm-none-eabi dfu-util
