@@ -6,5 +6,8 @@
 - Images of my layouts [here](keymaps.md)
 - Guide for flashing (updating) the keyboard firmware [here](flashing_guide.md)
 
+## Other Resources
+- [A lesson in keycaps](https://www.originativeco.com/pages/a-lesson-in-keycaps)
+
 ## Liscense
 MIT
