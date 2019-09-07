@@ -952,7 +952,7 @@
         },
         {
           "from": {
-            "key_code": "c",
+            "key_code": "y",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -976,7 +976,7 @@
         },
         {
           "from": {
-            "key_code": "f",
+            "key_code": "y",
             "modifiers": {
               "mandatory": [
                 "right_command",
