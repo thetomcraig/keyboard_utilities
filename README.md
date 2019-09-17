@@ -40,8 +40,9 @@
 - Update layouts here: http://www.keyboard-layout-editor.com/
 - Upload the jsons from [here](layout_jsons)
 
-## General Switches Info
-
+## General Info
+### Switches
+![tester_image.jpg](misc_images/tester_image.jpg)
 | Color | Force | Notes |
 | --- | --- | --- |
 | Red | 45cN | Smooth, no tactile bump | Soft Linear 45cN - Smooth, no tactile bump |
@@ -57,7 +58,10 @@
 | Silent Black | 60cN | Firm Linear 60cN - Smooth & Silent |
 | Speed Silver | 45cN | Soft Linear 45cN - Smooth, no tactile bump, 3.4 mm total travel distance only |
 
-![tester_image.jpg](tester_image.jpg)
+### Profiles
+![profiles_1.jpg](misc_images/profiles_1.jpg)
+![profiles_2.jpg](misc_images/profiles_2.jpg)
+
 
 ## Other Resources
 - [A lesson in keycaps](https://www.originativeco.com/pages/a-lesson-in-keycaps)
