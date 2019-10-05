@@ -605,7 +605,7 @@
         },
         {
           "from": {
-            "key_code": "d",
+            "key_code": "w",
             "modifiers": {
               "mandatory": [
                 "right_command",
@@ -616,7 +616,7 @@
           },
           "to": [
             {
-              "key_code": "right_arrow",
+              "key_code": "up_arrow",
               "modifiers": [
                 "left_control",
                 "left_option"
