@@ -4,32 +4,6 @@
 
 ## Layouts
 
-### Ergodox [Infinity]
-
-- [Source](layout_jsons/ergodox)
-- Default
-  - ![ergodox-default](layout_pngs/ergodox-default.png)
-- Layer 1
-  - ![ergodox-layer-1](layout_pngs/ergodox-layer-1.png)
-
-### POK3R
-
-- [Source](layout_jsons/poker)
-- Default
-  - ![poker-default](layout_pngs/poker-default.png)
-- Layer 1
-  - ![poker-layer-1](layout_pngs/poker-layer-1.png)
-
-### Macbook Internal Keyboard
-
-- [Source](layout_jsons/macbook)
-- Default
-  - ![macbook-default](layout_pngs/macbook-default.png)
-- Layer 1
-  - ![macbook-layer-1](layout_pngs/macbook-layer-1.png)
-
-### Updating
-
 #### Firmware
 
 - I use [QMK Firmware](https://docs.qmk.fm/#/) to build firmware for my keyboards:
@@ -41,11 +15,6 @@
   - `cd` to the qmk submodle [here](qmk_firmware)
   - Update the keymap header file
   - Compfile and flash using the relevant `.sh` file
-
-#### Images
-
-- Update layouts here: http://www.keyboard-layout-editor.com/
-- Upload the jsons from [here](layout_jsons)
 
 ## General Info
 
