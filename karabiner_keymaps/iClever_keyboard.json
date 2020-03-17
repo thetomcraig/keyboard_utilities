@@ -60,7 +60,7 @@
           "to": [
             {
               "key_code": "right_alt",
-                "modifires": []
+                "modifiers": []
             }
           ],
           "type": "basic"
