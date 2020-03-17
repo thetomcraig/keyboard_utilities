@@ -7,21 +7,18 @@
   "import_url": "",
   "rules": [
     {
-        "description": "Backquote to Escape",
-        "manipulators": [
+    "description": "Backquote to Escape",
+    "manipulators": [
+    {
+        "from": {
+            "key_code": "grave_accent_and_tilde",
+        },
+        "to": [
         {
-          "from": {
-              "key_code": "grave_accent_and_tilde",
-            }
-          },
-          "to": [
-            {
-              "key_code": "escape",
-            }
-          ],
-          "type": "basic"
+            "key_code": "escape",
         }
-      ]
+        ],
+        "type": "basic"
     },
     {
       "description": "Swap Option and Command",
@@ -29,7 +26,6 @@
         {
           "from": {
             "key_code": "left_alt",
-            }
           },
           "to": [
             {
@@ -41,7 +37,6 @@
         {
           "from": {
             "key_code": "left_gui",
-            }
           },
           "to": [
             {
@@ -49,18 +44,21 @@
             }
           ],
           "type": "basic"
-        }        {
+    },
+        {
           "from": {
             "key_code": "right_gui",
-            }
           },
           "to": [
             {
               "key_code": "right_alt",
+            }
           ],
           "type": "basic"
         }
       ]
     }
   ]
+}
+]
 }
