@@ -1,0 +1,33 @@
+{
+  "title": "Capslock Enhancement",
+  "author": "",
+  "homepage": "",
+  "hostpage": "",
+  "manual": "",
+  "import_url": "",
+  "rules": [
+    {
+        "description": "Tilde and Escape to seperate combos",
+      "manipulators": [
+        {
+          "from": {
+              "key_code": "BACKQUOTE",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "ESCAPE",
+              "modifiers": [
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
