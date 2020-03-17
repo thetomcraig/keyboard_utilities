@@ -1,5 +1,5 @@
 {
-  "title": "Capslock Enhancement",
+  "title": "Tilde and Escape to seperate combos",
   "author": "",
   "homepage": "",
   "hostpage": "",
@@ -7,8 +7,8 @@
   "import_url": "",
   "rules": [
     {
-        "description": "Tilde and Escape to seperate combos",
-      "manipulators": [
+        "description": "Backquote to Escape",
+        "manipulators": [
         {
           "from": {
               "key_code": "BACKQUOTE",
@@ -28,6 +28,25 @@
           "type": "basic"
         }
       ]
-    }
+    },
+      {
+          "description": "Swap Option and Command",
+          "manipulators": [
+              {
+                "from": {
+                    "key_code": "left_commad",
+                    "modifiers": []
+                },
+                "to": [
+                {
+                "key_code": "left_option",
+                "modifiers": []
+                }
+            ],
+            "type": "basic"
+                }
+          ]
+        }
   ]
 }
+ 
