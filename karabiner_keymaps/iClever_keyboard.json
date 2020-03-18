@@ -1,5 +1,5 @@
 {
-  "title": "Tilde and Escape to seperate combos",
+  "title": "",
   "author": "",
   "homepage": "",
   "hostpage": "",
@@ -7,60 +7,25 @@
   "import_url": "",
   "rules": [
     {
-    "description": "Backquote to Escape",
-    "manipulators": [
-    {
-        "from": {
-            "key_code": "grave_accent_and_tilde",
-            "modifiers": []
-        },
-        "to": [
-        {
-            "key_code": "escape",
-            "modifiers": []
-        }
-        ],
-        "type": "basic"
-    },
-    {
-      "description": "Swap Option and Command",
+      "description": "Control + Command + Escape -> Backtick/Tilde",
       "manipulators": [
         {
           "from": {
-            "key_code": "left_alt",
-            "modifiers": []
-          },
-          "to": [
-            {
-              "key_code": "left_gui",
-              "modifiers": []
+            "key_code": "escape",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_command"
+              ],
+              "optional": [
+                "left_shift"
+              ]
             }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "left_gui",
-              "modifiers": []
           },
           "to": [
             {
-              "key_code": "left_alt",
-                "modifiers": []
-            }
-          ],
-          "type": "basic"
-    },
-        {
-          "from": {
-            "key_code": "right_gui",
+              "key_code": "grave_accent_and_tilde",
               "modifiers": []
-
-          },
-          "to": [
-            {
-              "key_code": "right_alt",
-                "modifiers": []
             }
           ],
           "type": "basic"
@@ -68,6 +33,4 @@
       ]
     }
   ]
-}
-]
 }
