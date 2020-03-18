@@ -27,11 +27,6 @@
               ]
             }
           ],
-          "to_if_alone": [
-            {
-              "key_code": "escape"
-            }
-          ],
           "type": "basic"
         }
       ]
@@ -803,7 +798,7 @@
           },
           "to": [
             {
-              "key_code": "b",
+zz              "key_code": "b",
               "modifiers": [
                 "left_control"
               ]
@@ -1082,4 +1077,5 @@
     }
   ]
 }
+
 

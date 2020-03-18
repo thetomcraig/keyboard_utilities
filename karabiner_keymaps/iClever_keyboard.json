@@ -18,8 +18,7 @@
                 "left_command"
               ],
               "optional": [
-                "left_shift",
-                "right_shift"
+                "left_shift"
               ]
             }
           },
@@ -29,9 +28,51 @@
               "modifiers": []
             }
           ],
-          "to_if_held_down": [
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Arrow keys -> Modifiers",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_arrow",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
             {
-              "key_code": "escape"
+              "key_code": "right_option",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "right_arrow",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_control",
+              "modifiers": {
+                "optional": [
+                  "any"
+                ]
+              }
             }
           ],
           "type": "basic"
