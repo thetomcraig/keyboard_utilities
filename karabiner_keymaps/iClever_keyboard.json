@@ -18,7 +18,8 @@
                 "left_command"
               ],
               "optional": [
-                "left_shift"
+                "left_shift",
+                "right_shift"
               ]
             }
           },
@@ -26,6 +27,11 @@
             {
               "key_code": "grave_accent_and_tilde",
               "modifiers": []
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "escape"
             }
           ],
           "type": "basic"
