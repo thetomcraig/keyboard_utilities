@@ -798,7 +798,7 @@
           },
           "to": [
             {
-zz              "key_code": "b",
+              "key_code": "b",
               "modifiers": [
                 "left_control"
               ]
