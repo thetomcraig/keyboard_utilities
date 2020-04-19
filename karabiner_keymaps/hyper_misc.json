@@ -1,0 +1,33 @@
+{
+  "title": "Hyper Misc",
+  "author": "",
+  "homepage": "",
+  "hostpage": "",
+  "manual": "",
+  "import_url": "",
+  "rules": [
+    {
+      "description": "Hyper Deletion",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "delete_or_backspace",
+            "modifiers": {
+              "mandatory": [
+                "right_command",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
