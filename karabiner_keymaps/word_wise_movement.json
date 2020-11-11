@@ -7,15 +7,16 @@
   "import_url": "",
   "rules": [
     {
-      "description": "Ctrl + b/f move by word",
+      "description": "Hyper word-wise movement",
       "manipulators": [
         {
           "from": {
-            "key_code": "b",
+            "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "left_control",
-                "left_option"
+                "right_command",
+                "right_shift",
+                "right_option"
               ]
             }
           },
@@ -31,11 +32,12 @@
         },
         {
           "from": {
-            "key_code": "f",
+            "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "left_control",
-                "left_option"
+                "right_command",
+                "right_shift",
+                "right_option"
               ]
             }
           },
