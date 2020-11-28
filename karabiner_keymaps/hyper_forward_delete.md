@@ -1,5 +1,5 @@
 {
-  "title": "Hyper Misc",
+  "title": "Hyper Forward Deleteion",
   "author": "",
   "homepage": "",
   "hostpage": "",
@@ -7,7 +7,7 @@
   "import_url": "",
   "rules": [
     {
-      "description": "Hyper Deletion",
+      "description": "Hyper Forward Deletion",
       "manipulators": [
         {
           "from": {
