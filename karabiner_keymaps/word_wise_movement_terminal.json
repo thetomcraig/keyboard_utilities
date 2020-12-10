@@ -1,5 +1,5 @@
 {
-  "title": "Hyper Bash-Style Deletion",
+  "title": "Moving Word-by-Word in Terminal Emulators",
   "author": "",
   "homepage": "",
   "hostpage": "",
@@ -7,20 +7,22 @@
   "import_url": "",
   "rules": [
     {
-      "description": "Hyper Bash-Style Deletion",
+      "description": "Hyper word-wise movement (Terminals)",
       "manipulators": [
         {
           "from": {
-            "key_code": "w",
+            "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "right_command",
+                "right_shift",
+                "right_option"
               ]
             }
           },
           "conditions": [
             {
-              "type": "frontmost_application_unless",
+              "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
@@ -30,26 +32,28 @@
           ],
           "to": [
             {
-              "key_code": "delete_or_backspace",
-              "modifiers": [
-                "left_option"
-              ]
+              "key_code": "escape"
+            },
+            {
+              "key_code": "b"
             }
           ],
           "type": "basic"
         },
         {
           "from": {
-            "key_code": "u",
+            "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "right_command",
+                "right_shift",
+                "right_option"
               ]
             }
           },
           "conditions": [
             {
-              "type": "frontmost_application_unless",
+              "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
@@ -59,21 +63,10 @@
           ],
           "to": [
             {
-              "key_code": "e",
-              "modifiers": [
-                "left_control"
-              ]
+              "key_code": "escape"
             },
             {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            },
-            {
-              "key_code": "delete_or_backspace",
-              "repeat": false
+              "key_code": "f"
             }
           ],
           "type": "basic"

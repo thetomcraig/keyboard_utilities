@@ -1,5 +1,5 @@
 {
-  "title": "Emacs Readline",
+  "title": "Moving Word-by-Word in GUI apps",
   "author": "",
   "homepage": "",
   "hostpage": "",
@@ -7,7 +7,7 @@
   "import_url": "",
   "rules": [
     {
-      "description": "Hyper word-wise movement",
+      "description": "Hyper word-wise movement (GUI)",
       "manipulators": [
         {
           "from": {
@@ -20,6 +20,16 @@
               ]
             }
           },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "net\\.kovidgoyal\\.kitty$"
+              ]
+            }
+          ],
           "to": [
             {
               "key_code": "left_arrow",
@@ -41,6 +51,16 @@
               ]
             }
           },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "net\\.kovidgoyal\\.kitty$"
+              ]
+            }
+          ],
           "to": [
             {
               "key_code": "right_arrow",
