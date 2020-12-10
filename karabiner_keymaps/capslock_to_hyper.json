@@ -20,10 +20,10 @@
           },
           "to": [
             {
-              "key_code": "right_shift",
+              "key_code": "left_shift",
               "modifiers": [
-                "right_command",
-                "right_option"
+                "left_control",
+                "left_option"
               ]
             }
           ],

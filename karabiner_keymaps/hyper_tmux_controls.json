@@ -14,9 +14,9 @@
             "key_code": "n",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },
@@ -38,9 +38,9 @@
             "key_code": "p",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },
@@ -62,9 +62,9 @@
             "key_code": "y",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },
@@ -86,9 +86,9 @@
             "key_code": "u",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },
@@ -110,9 +110,9 @@
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },
@@ -134,9 +134,9 @@
             "key_code": "period",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },

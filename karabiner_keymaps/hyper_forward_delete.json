@@ -14,9 +14,9 @@
             "key_code": "delete_or_backspace",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },

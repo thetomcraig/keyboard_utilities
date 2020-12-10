@@ -14,9 +14,9 @@
             "key_code": "i",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },
@@ -26,7 +26,7 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
-                "net\\.kovidgoyal\\.kitty$"
+                "^net\\.kovidgoyal\\.kitty$"
               ]
             }
           ],
@@ -45,9 +45,9 @@
             "key_code": "o",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_shift",
-                "right_option"
+                "left_control",
+                "left_shift",
+                "left_option"
               ]
             }
           },
@@ -57,7 +57,7 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
-                "net\\.kovidgoyal\\.kitty$"
+                "^net\\.kovidgoyal\\.kitty$"
               ]
             }
           ],
