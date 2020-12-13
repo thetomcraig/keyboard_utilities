@@ -1,0 +1,35 @@
+{
+  "title": "Left Arrow to Hyper",
+  "author": "",
+  "homepage": "",
+  "hostpage": "",
+  "manual": "",
+  "import_url": "",
+  "rules": [
+      {
+          "description": "Left Arrow to Hyper",
+          "manipulators": [
+              {
+                  "from": {
+                      "key_code": "left_arrow",
+                      "modifiers": {
+                          "optional": [
+                              "any"
+                          ]
+                      }
+                  },
+                  "to": [
+                      {
+                          "key_code": "right_shift",
+                          "modifiers": [
+                              "right_command",
+                              "right_option"
+                          ]
+                      }
+                  ],
+                  "type": "basic"
+              }
+          ]
+      }
+  ]
+}

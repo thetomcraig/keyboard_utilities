@@ -1,0 +1,560 @@
+{
+    "global": {
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": true,
+        "show_profile_name_in_menu_bar": false
+    },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "mouse_motion_to_scroll.speed": 100
+                },
+                "rules": [
+                    {
+                        "description": "CMD+OPT+CTL + D -> Disable Keyboard",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option",
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Disable Keys'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
+            "selected": true,
+            "simple_modifications": [],
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "mouse_key_xy_scale": 100
+            }
+        },
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "mouse_motion_to_scroll.speed": 100
+                },
+                "rules": [
+                    {
+                        "description": "CMD+OPT+CTL + D -> Enable Keyboard",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_option",
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Default'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [],
+            "fn_function_keys": [],
+            "name": "Disable Keys",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
+            "selected": false,
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "0"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "1"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "2"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "3"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "4"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "5"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "6"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "7"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "8"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "9"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "a"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "b"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "backslash"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "c"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "close_bracket"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "comma"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "delete_or_backs"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "down_arrow"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "e"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "equal_sign"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "g"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "grave_accent_an"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "h"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "hyphen"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "i"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "j"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "k"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "l"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "left_arrow"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "m"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "n"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "o"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "open_bracket"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "p"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "period"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "q"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "quote"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "r"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "return_or_enter"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "right_arrow"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "right_command"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "right_option"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "right_shift"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "s"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "semicolon"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "slash"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "spacebar"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "t"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "tab"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "u"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "up_arrow"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "v"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "w"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "x"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "y"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "z"
+                    },
+                    "to": {
+                        "key_code": "out"
+                    }
+                }
+            ],
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "mouse_key_xy_scale": 100
+            }
+        }
+    ]
+}
