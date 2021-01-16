@@ -1,0 +1,44 @@
+{
+  "title": "A Key to Hyper",
+  "author": "",
+  "homepage": "",
+  "hostpage": "",
+  "manual": "",
+  "import_url": "",
+  "rules": [
+      {
+          "description": "A Key to Hyper",
+          "manipulators": [
+              {
+                  "from": {
+                      "key_code": "a",
+                      "modifiers": {
+                          "optional": [
+                              "any"
+                          ]
+                      }
+                  },
+                  "to": [
+                      {
+                          "key_code": "left_shift",
+                          "modifiers": [
+                              "left_control",
+                              "left_option"
+                          ],
+                          "lazy": true
+
+                      }
+                  ],
+                  "to_if_alone": [
+                      {
+                          "key_code": "a"
+                      }
+                  ],
+                  "type": "basic"
+              }
+          ]
+      }
+  ]
+}
+
+
