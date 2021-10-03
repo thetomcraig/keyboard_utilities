@@ -1,5 +1,5 @@
 {
-    "title": "Capslock to Hyper Modifier",
+    "title": "Hyper Forward Delete",
     "author": "",
     "homepage": "",
     "hostpage": "",
@@ -7,12 +7,12 @@
     "import_url": "",
     "rules": [
         {
-            "description": "Capslock to Hyper Modifier",
+            "description": "Hyper Forward Delete",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "caps_lock",
+                        "key_code": "delete_or_backspace",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -20,18 +20,14 @@
                     },
                     "to": [
                         {
-                            "set_variable": {
-                                "name": "hyper",
-                                "value": 1
-                            }
+                            "key_code": "delete_forward"
                         }
                     ],
-                    "to_after_key_up": [
+                    "conditions": [
                         {
-                            "set_variable": {
-                                "name": "hyper",
-                                "value": 0
-                            }
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
                         }
                     ]
                 }
