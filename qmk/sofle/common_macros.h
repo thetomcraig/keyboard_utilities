@@ -61,12 +61,6 @@ enum custom_keycodes {
   P_OKTA,
   P_CP,
   P_LP,
-
-
-  /****************************/
-  /* HYPER (CTRL + ALT + SFT) */
-  /****************************/
-  HYPER
 };
 
 
@@ -119,17 +113,6 @@ bool process_custom_macro_keys(uint16_t keycode, keyrecord_t *record) {
     case NP_COL:
       if (record->event.pressed) {
         send_string(":");
-      }
-      break;
-    case HYPER:
-      if (record->event.pressed) {
-        send_string(SS_DOWN(X_LCTRL));
-        send_string(SS_DOWN(X_LSHIFT));
-        send_string(SS_DOWN(X_LALT));
-      } else {
-        send_string(SS_UP(X_LCTRL));
-        send_string(SS_UP(X_LSHIFT));
-        send_string(SS_UP(X_LALT));
       }
       break;
   }
