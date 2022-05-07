@@ -1,0 +1,168 @@
+{
+    "title": "Hyper Movement",
+    "author": "",
+    "homepage": "",
+    "hostpage": "",
+    "manual": "",
+    "import_url": "",
+    "rules": [
+        {
+            "description": "Hyper word-wise movement (GUI)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "i",
+                        "modifiers": {
+                            "mandatory": ["any"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": ["left_option"]
+                        }
+                    ],
+                    "type": "basic"
+                }, {
+                    "from": {
+                        "key_code": "o",
+                        "modifiers": {
+                            "mandatory": ["any"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": ["left_option"]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }, {
+            "description": "Hyper beginning of line and end of line (GUI)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": ["any"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^net\\.kovidgoyal\\.kitty$", "^com\\.microsoft\\.VSCode$"]
+                        },
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": ["left_command"]
+                        }
+                    ],
+                    "type": "basic"
+                }, {
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": {
+                            "mandatory": ["any"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^net\\.kovidgoyal\\.kitty$", "^com\\.microsoft\\.VSCode$"]
+                        },
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": ["left_command"]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }, {
+            "description": "Hyper beginning of line and end of line (Terminals)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": ["any"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^net\\.kovidgoyal\\.kitty$", "^com\\.microsoft\\.VSCode$"]
+                        },
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "a",
+                            "modifiers": ["left_control"]
+                        }
+                    ],
+                    "type": "basic"
+                }, {
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": {
+                            "mandatory": ["any"]
+                        }
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.apple\\.Terminal$", "^com\\.googlecode\\.iterm2$", "^net\\.kovidgoyal\\.kitty$", "^com\\.microsoft\\.VSCode$"]
+                        },
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ],
+                    "to": [
+                        {
+                            "key_code": "e",
+                            "modifiers": ["left_control"]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}

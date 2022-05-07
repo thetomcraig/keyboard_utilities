@@ -1,0 +1,37 @@
+{
+    "title": "Hyper 1 to esc",
+    "author": "",
+    "homepage": "",
+    "hostpage": "",
+    "manual": "",
+    "import_url": "",
+    "rules": [
+        {
+            "description": "Hyper 1 to esc",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "1",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
