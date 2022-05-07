@@ -7,8 +7,36 @@
     "import_url": "",
     "rules": [
         {
-            "description": "Basic Stuff",
+            "description": "Hyper Tmux Control",
             "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "p"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
                 {
                     "type": "basic",
                     "from": {
@@ -40,35 +68,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "p",
-                        "modifiers": {
-                            "mandatory": [],
-                            "optional": ["any"]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "b",
-                            "modifiers": [
-                            "left_control"
-                            ]
-                        },
-                        {
-                            "key_code": "p"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "hyper",
-                            "value": 1
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "y",
+                        "key_code": "slash",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -96,7 +96,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "u",
+                        "key_code": "semicolon",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -120,12 +120,7 @@
                             "value": 1
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "Window Movement",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "from": {
@@ -172,6 +167,174 @@
                         },
                         {
                             "key_code": "o"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "hyphen",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "hyphen"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "backslash",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "backslash"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "8",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "h"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "9",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "j"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "0",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "k"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "l"
                         }
                     ],
                     "conditions": [
