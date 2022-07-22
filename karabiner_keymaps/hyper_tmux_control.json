@@ -208,7 +208,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "backslash",
+                        "key_code": "quote",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -236,7 +236,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "8",
+                        "key_code": "y",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -264,7 +264,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "9",
+                        "key_code": "p",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -292,7 +292,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "0",
+                        "key_code": "backslash",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -320,7 +320,7 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "open_bracket",
+                        "key_code": "u",
                         "modifiers": {
                             "mandatory": [],
                             "optional": ["any"]
@@ -335,6 +335,34 @@
                         },
                         {
                             "key_code": "l"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "hyper",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "close_bracket",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "b",
+                            "modifiers": [
+                            "left_control"
+                            ]
+                        },
+                        {
+                            "key_code": "close_bracket"
                         }
                     ],
                     "conditions": [
