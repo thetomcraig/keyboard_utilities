@@ -359,33 +359,6 @@
                             "value": 1
                         }
                     ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "v",
-                        "modifiers": {
-                            "mandatory": [],
-                            "optional": ["any"]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "v",
-                            "modifiers": [
-                            "left_control",
-                            "left_option",
-                            "left_shift"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "hyper",
-                            "value": 1
-                        }
-                    ]
                 }
             ]
         }
