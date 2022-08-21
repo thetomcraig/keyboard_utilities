@@ -1,0 +1,376 @@
+[
+  [
+    {
+      "x": 3.5
+    },
+    "#\n3",
+    {
+      "x": 10.5,
+      "c": "#f2ff00"
+    },
+    "tmux\ninc R\n\n\n\n\npane"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "c": "#cccccc"
+    },
+    "@\n2",
+    {
+      "x": 1
+    },
+    "$\n4",
+    {
+      "x": 8.5,
+      "c": "#f2ff00"
+    },
+    "tmux\ninc U\n\n\n\n\npane",
+    {
+      "x": 1,
+      "c": "#cccccccc"
+    },
+    "0"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5.5,
+      "c": "#cccccc"
+    },
+    "%\n5",
+    "~\n`",
+    {
+      "x": 4.5,
+      "c": "#f2ff00"
+    },
+    "tmux\ninc L\n\n\n\n\npane",
+    "tmux\ninc D\n\n\n\n\npane"
+  ],
+  [
+    {
+      "y": -0.875,
+      "c": "#cccccc",
+      "w": 1.5
+    },
+    "esc",
+    "!\n1",
+    {
+      "x": 14.5,
+      "c": "#cccccccc"
+    },
+    "[",
+    {
+      "c": "#cccccc",
+      "w": 1.5
+    },
+    "]"
+  ],
+  [
+    {
+      "y": -0.375,
+      "x": 3.5,
+      "c": "#fbffba"
+    },
+    "win\nrgt ↗️\n\n\n\n\ntop",
+    {
+      "x": 10.5,
+      "c": "#808200"
+    },
+    "⬅️\nword\n\n\n\n\none"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "c": "#fbffba"
+    },
+    "win\nhalf ⬆️\n\n\n\n\ntop",
+    {
+      "x": 1
+    },
+    "win\ncenter",
+    {
+      "x": 8.5,
+      "c": "#f2ff00"
+    },
+    "tmux\nssns\n\n\n\n\nswitch",
+    {
+      "x": 1,
+      "c": "#808200"
+    },
+    "➡️\nword\n\n\n\n\none"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5.5,
+      "c": "#cccccc"
+    },
+    "T",
+    {
+      "h": 1.5
+    },
+    "LYR 2",
+    {
+      "x": 4.5,
+      "c": "#f2ff00",
+      "h": 1.5
+    },
+    "tmux split  horz",
+    "tmux\nssh\n\n\n\n\ntoggle"
+  ],
+  [
+    {
+      "y": -0.875,
+      "c": "#cccccc",
+      "w": 1.5
+    },
+    "tab",
+    {
+      "c": "#fbffba"
+    },
+    "win\nleft ↖️\n\n\n\n\ntop",
+    {
+      "x": 14.5,
+      "c": "#f2ff00"
+    },
+    "tmux\nlayout\n\n\n\n\nnext",
+    {
+      "w": 1.5
+    },
+    "tmux\nvert\n\n\n\n\nsplit"
+  ],
+  [
+    {
+      "y": -0.375,
+      "x": 3.5,
+      "c": "#fbffba"
+    },
+    "win\n➡️\n\n\n\n\nright",
+    {
+      "x": 10.5,
+      "c": "#808200"
+    },
+    "⬆️"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 2.5,
+      "c": "#fbffba"
+    },
+    "win\nhalf ⬇️\n\n\n\n\nbottom",
+    {
+      "x": 1
+    },
+    "win\nfull screen",
+    {
+      "x": 8.5,
+      "c": "#808200"
+    },
+    "⬇️",
+    {
+      "x": 1
+    },
+    "➡️"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5.5
+    },
+    "toggle\nmic\n\n\n\n\nmute",
+    {
+      "x": 6.5
+    },
+    "⬅️"
+  ],
+  [
+    {
+      "y": -0.875,
+      "c": "#929925",
+      "w": 1.5
+    },
+    "LYR 1\n\n\n\n\n\n(HYPER)",
+    {
+      "c": "#fbffba"
+    },
+    "win\n⬅️\n\n\n\n\nleft",
+    {
+      "x": 14.5,
+      "c": "#f2ff00"
+    },
+    "tmux\npane\n\n\n\n\nnext",
+    {
+      "c": "#cccccc",
+      "w": 1.5
+    },
+    "\"\n'"
+  ],
+  [
+    {
+      "y": -0.375,
+      "x": 3.5,
+      "c": "#fbffba"
+    },
+    "win\nrgt ↘️\n\n\n\n\nbottom",
+    {
+      "x": 10.5,
+      "c": "#f2ff00"
+    },
+    "tmux\nwin ⬅️\n\n\n\n\nmove"
+  ],
+  [
+    {
+      "y": -0.8799999999999999,
+      "x": 2.5,
+      "c": "#fbffba"
+    },
+    "win\nnext display",
+    {
+      "x": 1,
+      "c": "#cccccc"
+    },
+    "V",
+    {
+      "x": 8.5,
+      "c": "#f2ff00"
+    },
+    "tmux\nwin\n\n\n\n\nprev",
+    {
+      "x": 1
+    },
+    "tmux\nwin ➡️\n\n\n\n\nmove"
+  ],
+  [
+    {
+      "y": -0.8700000000000001,
+      "x": 5.5,
+      "c": "#cccccc"
+    },
+    "B",
+    {
+      "x": 6.5,
+      "c": "#f2ff00"
+    },
+    "tmux\nwin\n\n\n\n\nnext"
+  ],
+  [
+    {
+      "y": -0.895,
+      "c": "#cccccc",
+      "w": 1.5
+    },
+    "shift",
+    {
+      "c": "#fbffba"
+    },
+    "win\nleft ↙️\n\n\n\n\nbottom",
+    {
+      "x": 14.5,
+      "c": "#f2ff00"
+    },
+    "tmux\nwin\n\n\n\n\nnew",
+    {
+      "c": "#cccccc",
+      "w": 1.5
+    },
+    "shift"
+  ],
+  [
+    {
+      "y": -0.3550000000000004,
+      "x": 3.5
+    },
+    "alt",
+    {
+      "x": 10.5
+    },
+    "alt"
+  ],
+  [
+    {
+      "y": -0.8799999999999999,
+      "x": 2.5,
+      "a": 7
+    },
+    "",
+    {
+      "x": 1,
+      "a": 4
+    },
+    "cmd",
+    {
+      "x": 8.5
+    },
+    "cmd",
+    {
+      "x": 1,
+      "a": 7
+    },
+    ""
+  ],
+  [
+    {
+      "y": -0.7700000000000005,
+      "x": 0.5,
+      "a": 4
+    },
+    "ctrl",
+    "alt",
+    {
+      "x": 14.5
+    },
+    "alt",
+    "ctrl"
+  ],
+  [
+    {
+      "r": 30,
+      "rx": 6.5,
+      "ry": 4.25,
+      "y": -1,
+      "x": 1
+    },
+    "fwd del",
+    "enter"
+  ],
+  [
+    {
+      "x": 1,
+      "a": 7,
+      "h": 2
+    },
+    "space",
+    {
+      "c": "#808200",
+      "h": 2
+    },
+    "fwd del"
+  ],
+  [
+    {
+      "r": -30,
+      "rx": 13,
+      "y": -1,
+      "x": -3,
+      "c": "#cccccc",
+      "a": 4
+    },
+    "bkspc",
+    "+\n="
+  ],
+  [
+    {
+      "x": -3,
+      "a": 7,
+      "h": 2
+    },
+    "enter",
+    {
+      "h": 2
+    },
+    "space"
+  ]
+]
