@@ -1,209 +1,255 @@
 [
   [
     {
-      "x": 3.5
+      "x": 3.5,
+      "c": "#e3d5b9",
+      "t": "#5570d4",
+      "f": 2
     },
-    "#\n3",
+    "( 3 )\n\nwin\n\n\n\n\ndisplay",
     {
       "x": 10.5,
-      "c": "#f2ff00"
+      "t": "#10a171"
     },
-    "tmux\ninc R\n\n\n\n\npane"
+    "( 9 )\n\ntmx\ninrcs➡️\n\n\n\npane"
   ],
   [
     {
       "y": -0.875,
       "x": 2.5,
-      "c": "#cccccc"
+      "t": "#5570d4"
     },
-    "@\n2",
+    "( 2 )\n\nwin\n\n\n\n\ndisplay",
     {
       "x": 1
     },
-    "$\n4",
+    "( 4 )\n\nwin\n\n\n\n\ndisplay",
     {
       "x": 8.5,
-      "c": "#f2ff00"
+      "t": "#10a171"
     },
-    "tmux\ninc U\n\n\n\n\npane",
+    "( 8 )\n\ntmx\ninrcs⬆️\n\n\n\npane",
     {
       "x": 1,
-      "c": "#cccccccc"
+      "c": "#cccccc",
+      "t": "#000000",
+      "f": 3
     },
-    "0"
+    ")\n0"
   ],
   [
     {
       "y": -0.875,
       "x": 5.5,
-      "c": "#cccccc"
+      "c": "#e3d5b9",
+      "t": "#5570d4",
+      "f": 2
     },
-    "%\n5",
+    "( 5 )\n\nwin\n\n\n\n\ndisplay",
+    {
+      "c": "#cccccc",
+      "t": "#000000",
+      "f": 3
+    },
     "~\n`",
     {
       "x": 4.5,
-      "c": "#f2ff00"
+      "c": "#e3d5b9",
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\ninc L\n\n\n\n\npane",
-    "tmux\ninc D\n\n\n\n\npane"
+    "( 6 )\n\ntmx\nincrs⬅️\n\n\n\npane",
+    "( 7 )\n\ntmx\ninrcs⬇️\n\n\n\npane"
   ],
   [
     {
       "y": -0.875,
       "c": "#cccccc",
+      "t": "#000000",
+      "f": 5,
       "w": 1.5
     },
     "esc",
-    "!\n1",
+    {
+      "c": "#e3d5b9",
+      "t": "#5570d4",
+      "f": 2
+    },
+    "( 1 )\n\nwin\n1\n\n\n\ndisplay",
     {
       "x": 14.5,
-      "c": "#cccccccc"
-    },
-    "[",
-    {
       "c": "#cccccc",
+      "t": "#000000",
+      "f": 3
+    },
+    "{\n[",
+    {
       "w": 1.5
     },
-    "]"
+    "}\n]"
   ],
   [
     {
       "y": -0.375,
       "x": 3.5,
-      "c": "#fbffba"
+      "c": "#e3d5b9",
+      "t": "#5570d4"
     },
-    "win\nrgt ↗️\n\n\n\n\ntop",
+    "( E )\nwin↗️",
     {
       "x": 10.5,
-      "c": "#808200"
+      "t": "#c4476c"
     },
-    "⬅️\nword\n\n\n\n\none"
+    "( I )\n\n\n1 wd\n\n\n\n⬅️"
   ],
   [
     {
       "y": -0.875,
       "x": 2.5,
-      "c": "#fbffba"
+      "t": "#5570d4"
     },
-    "win\nhalf ⬆️\n\n\n\n\ntop",
+    "( W )\nwin⬆️",
     {
       "x": 1
     },
-    "win\ncenter",
+    "( R )\n\n\ncenter\n\n\n\nwin",
     {
       "x": 8.5,
-      "c": "#f2ff00"
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\nssns\n\n\n\n\nswitch",
+    "( U )\n\ntmx\nssns\n\n\n\nswitch",
     {
       "x": 1,
-      "c": "#808200"
+      "t": "#c4476c",
+      "f": 3
     },
-    "➡️\nword\n\n\n\n\none"
+    "( O )\n\n\n1 wd\n\n\n\n➡️"
   ],
   [
     {
       "y": -0.875,
       "x": 5.5,
-      "c": "#cccccc"
+      "c": "#cccccc",
+      "t": "#000000"
     },
     "T",
     {
+      "c": "#929925",
       "h": 1.5
     },
     "LYR 2",
     {
       "x": 4.5,
-      "c": "#f2ff00",
+      "c": "#e3d5b9",
+      "t": "#10a171",
       "h": 1.5
     },
-    "tmux split  horz",
-    "tmux\nssh\n\n\n\n\ntoggle"
+    "( - )\n\n\nsplit H\n\n\n\ntmux",
+    {
+      "f": 2
+    },
+    "( Y )\n\ntmx\nssns\n\n\n\ntoggle"
   ],
   [
     {
       "y": -0.875,
       "c": "#cccccc",
+      "t": "#000000",
+      "f": 5,
       "w": 1.5
     },
     "tab",
     {
-      "c": "#fbffba"
+      "c": "#e3d5b9",
+      "t": "#5570d4",
+      "f": 4
     },
-    "win\nleft ↖️\n\n\n\n\ntop",
+    "( Q )\nwin↖️",
     {
       "x": 14.5,
-      "c": "#f2ff00"
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\nlayout\n\n\n\n\nnext",
+    "( P )\n\n\nlayout\n\n\n\ntmx nxt",
     {
+      "f": 3,
       "w": 1.5
     },
-    "tmux\nvert\n\n\n\n\nsplit"
+    "( \\ )\n\n\nsplit V\n\n\n\ntmux"
   ],
   [
     {
       "y": -0.375,
       "x": 3.5,
-      "c": "#fbffba"
+      "t": "#5570d4"
     },
-    "win\n➡️\n\n\n\n\nright",
+    "( D )\nwin➡️",
     {
       "x": 10.5,
-      "c": "#808200"
+      "t": "#c4476c"
     },
-    "⬆️"
+    "( K )\n\n\n⬆️"
   ],
   [
     {
       "y": -0.875,
       "x": 2.5,
-      "c": "#fbffba"
+      "t": "#5570d4"
     },
-    "win\nhalf ⬇️\n\n\n\n\nbottom",
+    "( S )\nwin⬇️",
     {
       "x": 1
     },
-    "win\nfull screen",
+    "( F )\n\n\nfull\n\n\n\nwin",
     {
       "x": 8.5,
-      "c": "#808200"
+      "t": "#c4476c"
     },
-    "⬇️",
+    "( J )\n\n\n⬇️",
     {
       "x": 1
     },
-    "➡️"
+    "( L )\n\n\n➡️"
   ],
   [
     {
       "y": -0.875,
-      "x": 5.5
+      "x": 5.5,
+      "c": "#cccccc",
+      "t": "#000000"
     },
-    "toggle\nmic\n\n\n\n\nmute",
+    "G",
     {
-      "x": 6.5
+      "x": 6.5,
+      "c": "#e3d5b9",
+      "t": "#c4476c"
     },
-    "⬅️"
+    "( H )\n\n\n⬅️"
   ],
   [
     {
       "y": -0.875,
-      "c": "#929925",
+      "t": "#000000",
+      "f": 4,
       "w": 1.5
     },
-    "LYR 1\n\n\n\n\n\n(HYPER)",
+    "LAYER 1\n(HYPER)",
     {
-      "c": "#fbffba"
+      "t": "#5570d4",
+      "f": 3
     },
-    "win\n⬅️\n\n\n\n\nleft",
+    "( A )\nwin⬅️",
     {
       "x": 14.5,
-      "c": "#f2ff00"
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\npane\n\n\n\n\nnext",
+    "( ; )\n\ntmux\npane\n\n\n\nnext",
     {
       "c": "#cccccc",
+      "t": "#000000",
+      "f": 3,
       "w": 1.5
     },
     "\"\n'"
@@ -212,102 +258,122 @@
     {
       "y": -0.375,
       "x": 3.5,
-      "c": "#fbffba"
+      "c": "#e3d5b9",
+      "t": "#5570d4"
     },
-    "win\nrgt ↘️\n\n\n\n\nbottom",
+    "( C )\nwin↘️",
     {
       "x": 10.5,
-      "c": "#f2ff00"
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\nwin ⬅️\n\n\n\n\nmove"
+    "( , )\n\ntmux\nwin⬅️\n\n\n\nmov"
   ],
   [
     {
       "y": -0.8799999999999999,
       "x": 2.5,
-      "c": "#fbffba"
+      "t": "#5570d4"
     },
-    "win\nnext display",
+    "( X )\n\nwin\ndisplays\n\n\n\ncycle",
     {
       "x": 1,
-      "c": "#cccccc"
+      "c": "#cccccc",
+      "t": "#000000",
+      "f": 3
     },
     "V",
     {
       "x": 8.5,
-      "c": "#f2ff00"
+      "c": "#e3d5b9",
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\nwin\n\n\n\n\nprev",
+    "( M )\n\n\nprv win\n\n\n\ntmux",
     {
       "x": 1
     },
-    "tmux\nwin ➡️\n\n\n\n\nmove"
+    "( . )\n\ntmux\nwin➡️\n\n\n\nmov"
   ],
   [
     {
       "y": -0.8700000000000001,
       "x": 5.5,
-      "c": "#cccccc"
+      "c": "#cccccc",
+      "t": "#000000",
+      "f": 3
     },
     "B",
     {
       "x": 6.5,
-      "c": "#f2ff00"
+      "c": "#e3d5b9",
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\nwin\n\n\n\n\nnext"
+    "( N )\n\n\nnxt win\n\n\n\ntmux"
   ],
   [
     {
       "y": -0.895,
       "c": "#cccccc",
+      "t": "#000000",
+      "f": 5,
       "w": 1.5
     },
-    "shift",
+    "\nShift",
     {
-      "c": "#fbffba"
+      "c": "#e3d5b9",
+      "t": "#5570d4",
+      "f": 3
     },
-    "win\nleft ↙️\n\n\n\n\nbottom",
+    "( Z )\nwin↙️",
     {
       "x": 14.5,
-      "c": "#f2ff00"
+      "t": "#10a171",
+      "f": 2
     },
-    "tmux\nwin\n\n\n\n\nnew",
+    "( / )\n\ntmux\nwin\n\n\n\nnew",
     {
       "c": "#cccccc",
+      "t": "#000000",
+      "f": 5,
       "w": 1.5
     },
-    "shift"
+    "\n\n\nShift"
   ],
   [
     {
       "y": -0.3550000000000004,
       "x": 3.5
     },
-    "alt",
+    "\n\nAlt\nOpt",
     {
       "x": 10.5
     },
-    "alt"
+    "Alt\nOpt"
   ],
   [
     {
       "y": -0.8799999999999999,
       "x": 2.5,
-      "a": 7
+      "a": 7,
+      "f": 3
     },
     "",
     {
       "x": 1,
-      "a": 4
+      "a": 4,
+      "f": 5
     },
-    "cmd",
+    "\n\n⌘\nCmd",
     {
       "x": 8.5
     },
-    "cmd",
+    "⌘\nCmd",
     {
       "x": 1,
-      "a": 7
+      "a": 7,
+      "f": 3
     },
     ""
   ],
@@ -315,15 +381,24 @@
     {
       "y": -0.7700000000000005,
       "x": 0.5,
-      "a": 4
+      "a": 4,
+      "f": 5
     },
-    "ctrl",
-    "alt",
+    "\nCtrl",
+    {
+      "a": 7,
+      "f": 3
+    },
+    "",
     {
       "x": 14.5
     },
-    "alt",
-    "ctrl"
+    "",
+    {
+      "a": 4,
+      "f": 5
+    },
+    "\n\n\nCtrl"
   ],
   [
     {
@@ -331,9 +406,10 @@
       "rx": 6.5,
       "ry": 4.25,
       "y": -1,
-      "x": 1
+      "x": 1,
+      "f": 4
     },
-    "fwd del",
+    "delete",
     "enter"
   ],
   [
@@ -344,10 +420,10 @@
     },
     "space",
     {
-      "c": "#808200",
+      "c": "#e3d5b9",
       "h": 2
     },
-    "fwd del"
+    "bkspc"
   ],
   [
     {
@@ -359,12 +435,16 @@
       "a": 4
     },
     "bkspc",
+    {
+      "f": 3
+    },
     "+\n="
   ],
   [
     {
       "x": -3,
       "a": 7,
+      "f": 4,
       "h": 2
     },
     "enter",
