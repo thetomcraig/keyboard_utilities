@@ -11,23 +11,13 @@
 
 #define KC_BRTU KC_BRMU
 #define KC_BRTD KC_BRMD
-#define KC_CAPS KC_CAPSLOCK
-#define KC_L_BR KC_LBRACKET
-#define KC_R_BR KC_RBRACKET
+#define KC_CAPS KC_CAPS_LOCK
 
 #define HYPER KC_CAPS
 
 extern keymap_config_t keymap_config;
 
 enum custom_keycodes {
-  /********/
-  /* IRIS */
-  /********/
-  IRIS_BASE = SAFE_RANGE,
-  IRIS_LYR1,
-  IRIS_LYR2,
-  IRIS_LYR3,
-
   /***********/
   /* ERGODOX */
   /***********/

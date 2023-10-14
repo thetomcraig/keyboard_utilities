@@ -118,92 +118,140 @@
     "<i class=\"varela varela-tilde\"></i>\n`",
     {
       "c": "#e3d5b9",
+      "t": "#5570d4",
       "a": 4,
+      "f": 3
+    },
+    "( 1 )\n\nwin\n1\n\n\n\ndisplay",
+    "( 2 )\n\nwin\n2\n\n\n\ndisplay",
+    "( 3 )\n\nwin\n3\n\n\n\ndisplay",
+    "( 4 )\n\nwin\n4\n\n\n\ndisplay",
+    "( 5 )\n\nwin\n5\n\n\n\ndisplay",
+    {
+      "t": "#10a171",
       "f": 2
     },
-    "Tmux\n\n\n\n\n\nWin 1",
-    {
-      "a": 5
-    },
-    "Tmux\n\n\n\n\n\nWin 2",
-    "Tmux\n\n\n\n\n\nWin 3",
-    "Tmux\n\n\n\n\n\nWin 4",
-    "Tmux\n\n\n\n\n\nWin 5",
-    "Tmux\n\n\n\n\n\nWin 6",
-    "Prev\n\n\n\n\n\nTrack",
-    "Play\n\n\n\n\n\nPause",
-    "Next\n\n\n\n\n\nTrack",
-    "Mute",
-    "Vol -",
-    "Vol +",
-    {
-      "a": 4,
-      "w": 1.5
-    },
-    "\n\n\nForward Del"
-  ],
-  [
-    {
-      "w": 1.5
-    },
-    "\nEnter",
+    "( 6 )\n\ntmux\nincrs L\n\n\n\npane",
+    "( 7 )\n\ntmux\nincrs D\n\n\n\npane",
+    "( 8 )\n\ntmux\nincrs U\n\n\n\npane",
+    "( 9 )\n\ntmux\nincrs R\n\n\n\npane",
     {
       "c": "#81817e",
-      "a": 7,
-      "f": 5
+      "t": "#000000",
+      "a": 5
     },
-    "Q",
+    ")\n0",
     {
-      "c": "#e3d5b9"
+      "c": "#e3d5b9",
+      "t": "#10a171",
+      "a": 4,
+      "f": 3
     },
-    "↑",
+    "( - )\n\n\nsplit H\n\n\n\ntmux",
     {
-      "c": "#81817e"
+      "c": "#81817e",
+      "t": "#000000",
+      "a": 5,
+      "f": 2
     },
-    "E",
-    "R",
-    "T",
-    "Y",
-    "U",
+    "+\n=",
     {
       "c": "#e3d5b9",
       "a": 4,
+      "f": 4,
+      "w": 1.5
+    },
+    "\n\n\ndelete"
+  ],
+  [
+    {
+      "c": "#81817e",
+      "f": 5,
+      "w": 1.5
+    },
+    "tab",
+    {
+      "c": "#e3d5b9",
+      "t": "#5570d4"
+    },
+    "( Q )\n\n\nwin↖️",
+    "( W )\n\n\nwin⬆️",
+    "( E )\n\n\nwin↗️",
+    {
+      "f": 3
+    },
+    "( R )\n\n\ncenter\n\n\n\nwin",
+    {
+      "c": "#81817e",
+      "t": "#000000",
+      "a": 7,
+      "f": 5
+    },
+    "T",
+    {
+      "c": "#e3d5b9",
+      "t": "#10a171",
+      "a": 4,
       "f": 2
     },
-    "Prev\n\n\n\n\n\nWord",
-    "Next\n\n\n\n\n\nWord",
-    "Tmux\n\n\n\n\n\nPrev Win",
+    "( Y )\n\ntmux\nssns\n\n\n\ntoggle",
+    "( U )\n\ntmux\nssns\n\n\n\nswitch",
     {
-      "c": "#81817e"
+      "t": "#c4476c",
+      "f": 4
+    },
+    "( I )\n\n\n1 wd\n\n\n\n⬅️",
+    "( O )\n\n\n1 wd\n\n\n\n➡️",
+    {
+      "t": "#10a171",
+      "f": 3
+    },
+    "( P )\n\n\nlayout\n\n\n\ntmx nxt",
+    {
+      "c": "#81817e",
+      "t": "#000000",
+      "a": 5,
+      "f": 2
     },
     "{\n[",
     "}\n]",
     {
-      "f": 5
+      "c": "#e3d5b9",
+      "t": "#10a171",
+      "a": 4,
+      "f": 3
     },
-    "\\\n|"
+    "( | )\n\n\nsplit V\n\n\n\ntmux"
   ],
   [
     {
-      "c": "#e3d5b9",
-      "f": 2,
+      "c": "#929925",
+      "t": "#000000",
+      "f": 5,
       "w": 1.75
     },
-    "\nHYPER",
+    "LYR 1\n(HYPER)",
     {
+      "c": "#e3d5b9",
+      "t": "#5570d4"
+    },
+    "( A)\n\n\nwin⬅️",
+    "( S )\n\n\nwin⬇️",
+    "( D)\n\n\nwin➡️",
+    {
+      "f": 3
+    },
+    "( F )\n\n\nfull\n\n\n\nwin",
+    {
+      "c": "#81817e",
+      "t": "#000000",
       "a": 7,
       "f": 5
     },
-    "←",
-    "↓",
-    "→",
-    {
-      "c": "#81817e"
-    },
-    "F",
     "G",
     {
-      "c": "#e3d5b9"
+      "c": "#e3d5b9",
+      "t": "#c4476c"
     },
     "←",
     {
@@ -213,19 +261,20 @@
     "↑",
     "→",
     {
-      "c": "#81817e",
-      "a": 5
+      "t": "#10a171",
+      "a": 4,
+      "f": 2
     },
-    ":\n;",
+    "( ; )\n\ntmux\npane\n\n\n\nnext",
+    {
+      "c": "#81817e",
+      "t": "#000000",
+      "a": 5,
+      "f": 5
+    },
     "\"\n'",
     {
       "a": 4,
-      "f": 2,
-      "fa": [
-        0,
-        0,
-        1
-      ],
       "w": 1.75
     },
     "\n\nenter\nreturn"
@@ -236,45 +285,43 @@
     },
     "\nshift",
     {
-      "a": 7,
+      "c": "#e3d5b9",
+      "t": "#5570d4"
+    },
+    "( Z )\n\n\nwin↙️",
+    {
+      "f": 3
+    },
+    "( X )\n\nwin\ndisplays\n\n\n\ncycle",
+    {
       "f": 5
     },
-    "Z",
-    "X",
-    {
-      "c": "#e3d5b9",
-      "a": 4,
-      "f": 2
-    },
-    "Tmux\nWin\n\n\n\n\nNew",
+    "( C )\n\n\nwin↘️",
     {
       "c": "#81817e",
-      "a": 7,
-      "f": 5
+      "t": "#000000",
+      "a": 7
     },
     "V",
     "B",
     {
       "c": "#e3d5b9",
+      "t": "#10a171",
       "a": 4,
+      "f": 3
+    },
+    "( N )\n\n\nnxt win\n\n\n\ntmux",
+    "( M )\n\n\nprv win\n\n\n\ntmux",
+    {
       "f": 2
     },
-    "Tmux\nWin\n\n\n\n\nNext",
+    "( , )\n\ntmux\nwin ←\n\n\n\nmov",
+    "( . )\n\ntmux\nwin →\n\n\n\nmov",
+    "( / )\n\ntmux\nwin\n\n\n\nnew",
     {
       "c": "#81817e",
-      "a": 7,
-      "f": 5
-    },
-    "M",
-    {
-      "a": 5
-    },
-    "<\n,",
-    ">\n.",
-    "?\n/",
-    {
-      "a": 4,
-      "f": 2,
+      "t": "#000000",
+      "f": 5,
       "w": 2.25
     },
     "\n\n\nshift"
@@ -287,52 +334,37 @@
     {
       "h": 1.111
     },
-    "\ncontrol",
+    "\nCtrl",
     {
-      "fa": [
-        1
-      ],
       "h": 1.111
     },
-    "alt\noption",
+    "\n\nAlt\nOpt",
     {
-      "fa": [
-        1,
-        0,
-        5
-      ],
       "w": 1.25,
       "h": 1.111
     },
-    "\n\n⌘\ncommand",
+    "\n\n⌘\nCmd",
     {
       "a": 7,
+      "f": 2,
       "w": 5,
       "h": 1.111
     },
     "",
     {
       "a": 4,
-      "fa": [
-        5
-      ],
+      "f": 5,
       "w": 1.25,
       "h": 1.111
     },
-    "⌘\ncommand",
+    "⌘\nCmd",
     {
-      "fa": [
-        5,
-        0,
-        1
-      ],
       "h": 1.111
     },
-    "\n\nalt\noption",
+    "Alt\nOpt",
     {
       "x": 1,
       "a": 7,
-      "f": 5,
       "h": 0.611
     },
     "↑"
