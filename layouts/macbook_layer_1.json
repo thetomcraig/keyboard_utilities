@@ -136,6 +136,12 @@
     "( 8 )\n\ntmux\nincrs U\n\n\n\npane",
     "( 9 )\n\ntmux\nincrs R\n\n\n\npane",
     {
+      "c": "#fbffba",
+      "f": 3
+    },
+    "win\nleft\n\n↖️\n\n\ntop",
+    "win\nhalf\n\n⬆️\n\n\ntop",
+    {
       "c": "#81817e",
       "t": "#000000",
       "a": 5,
