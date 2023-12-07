@@ -137,6 +137,25 @@
     "( 9 )\n\ntmux\nincrs R\n\n\n\npane",
     "( 0 )\n\ntmux\nssns\n\n\n\ntoggle",
     {
+<<<<<<< HEAD
+=======
+      "c": "#fbffba",
+      "f": 3
+    },
+    "win\nleft\n\n↖️\n\n\ntop",
+    "win\nhalf\n\n⬆️\n\n\ntop",
+    {
+      "c": "#81817e",
+      "t": "#000000",
+      "a": 5,
+      "f": 5
+    },
+    ")\n0",
+    {
+      "c": "#e3d5b9",
+      "t": "#10a171",
+      "a": 4,
+>>>>>>> a1be1f55e3b23048b28dd60a4a464bfac3657440
       "f": 3
     },
     "( - )\n\n\nsplit H\n\n\n\ntmux",
