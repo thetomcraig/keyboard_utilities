@@ -1,0 +1,41 @@
+{
+    "title": "Miryoku Super+Alt+Ctrl+Shift to Hyper Modifier",
+    "author": "",
+    "homepage": "",
+    "hostpage": "",
+    "manual": "",
+    "import_url": "",
+    "rules": [
+        {
+            "description": "Capslock to Hyper Modifier",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "",
+                        "modifiers": {
+                            "mandatory": ["left_command", "left_option", "left_control", "left_shift"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "hyper",
+                                "value": 1
+                            }
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "hyper",
+                                "value": 0
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
