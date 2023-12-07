@@ -135,30 +135,14 @@
     "( 7 )\n\ntmux\nincrs D\n\n\n\npane",
     "( 8 )\n\ntmux\nincrs U\n\n\n\npane",
     "( 9 )\n\ntmux\nincrs R\n\n\n\npane",
+    "( 0 )\n\ntmux\nssns\n\n\n\ntoggle",
     {
-      "c": "#81817e",
-      "t": "#000000",
-      "a": 5,
-      "f": 5
-    },
-    ")\n0",
-    {
-      "c": "#e3d5b9",
-      "t": "#10a171",
-      "a": 4,
       "f": 3
     },
     "( - )\n\n\nsplit H\n\n\n\ntmux",
+    "( = )\n\n\nextrakto\n\n\n\ntmux",
     {
-      "c": "#81817e",
       "t": "#000000",
-      "a": 5,
-      "f": 5
-    },
-    "+\n=",
-    {
-      "c": "#e3d5b9",
-      "a": 4,
       "f": 4,
       "w": 1.5
     },
@@ -196,31 +180,24 @@
       "f": 2
     },
     "( Y )\n\ntmux\nssns\n\n\n\ntoggle",
-    "( U )\n\ntmux\nssns\n\n\n\nswitch",
     {
       "t": "#c4476c",
+      "f": 3
+    },
+    "( U )\n\nkill\n(back )\n\n\n\nword",
+    {
       "f": 4
     },
     "( I )\n\n\n1 wd\n\n\n\n⬅️",
     "( O )\n\n\n1 wd\n\n\n\n➡️",
     {
-      "t": "#10a171",
       "f": 3
     },
-    "( P )\n\n\nlayout\n\n\n\ntmx nxt",
+    "( P )\n\nkill\n( fwd )\n\n\n\nline",
+    "( [ )\n\n\nBOE\n\n\n\n⬅️ ⬅️",
+    "( ] )\n\n\nEOL\n\n\n\n➡️ ➡️",
     {
-      "c": "#81817e",
-      "t": "#000000",
-      "a": 5,
-      "f": 5
-    },
-    "{\n[",
-    "}\n]",
-    {
-      "c": "#e3d5b9",
-      "t": "#10a171",
-      "a": 4,
-      "f": 3
+      "t": "#10a171"
     },
     "( | )\n\n\nsplit V\n\n\n\ntmux"
   ],

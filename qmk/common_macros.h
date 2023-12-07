@@ -81,10 +81,10 @@ bool process_password_keys(uint16_t keycode, keyrecord_t *record) {
 
 // This processes all other custom macros; they're keys defined above
 bool process_custom_macro_keys(uint16_t keycode, keyrecord_t *record) {
-  bool still_need_to_process = process_password_keys(keycode, record);
-  if (still_need_to_process == false) {
-    return false;
-  }
+  // bool still_need_to_process = process_password_keys(keycode, record);
+  // if (still_need_to_process == false) {
+  //   return false;
+  // }
 
   switch (keycode) {
     case NP_COL:
