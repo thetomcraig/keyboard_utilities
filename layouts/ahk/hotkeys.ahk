@@ -88,14 +88,14 @@ Return
 ; +^!o::Send, ^{Right}
 
 ; Readline-esque controls
-+^!{::
+Home::
 if IsAppActive("WindowsTerminal.exe") {
     Send, ^a
 } else {
     Send, {Home}
 }
 Return
-+^!}::
+End:
 if IsAppActive("WindowsTerminal.exe") {
     Send, ^e
 } else {
