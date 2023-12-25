@@ -12,8 +12,8 @@
 )
 
 (defalias 
-  wordleft #(A-left)
-  wordright #(A-right)
+  wordleft #(C-left)
+  wordright #(C-right)
   linestart #(home)
   lineend #(end)
 
