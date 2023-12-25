@@ -32,19 +32,19 @@
 
 
 (deflayer U_BASE
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  esc  brdwn   brup   f3   f4   f5   f6   KeyRewind   KeyPlayPause   KeyFastForward   KeyMute  vold volu 
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  (tap-hold-next-release 200 XX (layer-toggle U_CODING))
-       (tap-hold-next-release 200 a met)
-            (tap-hold-next-release 200 s alt)
-                 (tap-hold-next-release 200 d ctl)
-                      (tap-hold-next-release 200 f sft)	
+  (tap-hold-next-release 200 caps (layer-toggle U_CODING))
+       (tap-hold-next-release 200 a lmet)
+            (tap-hold-next-release 200 s lalt)
+                 (tap-hold-next-release 200 d lctl)
+                      (tap-hold-next-release 200 f lsft)	
                            g	  h	
-                                     (tap-hold-next-release 200 j sft)
-                                          (tap-hold-next-release 200 k ctl)
-                                               (tap-hold-next-release 200 l alt)
-                                                    (tap-hold-next-release 200 ; met) 
+                                     (tap-hold-next-release 200 j rsft)
+                                          (tap-hold-next-release 200 k rctl)
+                                               (tap-hold-next-release 200 l ralt)
+                                                    (tap-hold-next-release 200 ; rmet) 
                                                          ' ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
   fn   lctl lalt lmet           (tap-hold-next-release 200 spc (layer-toggle U_CODING))
