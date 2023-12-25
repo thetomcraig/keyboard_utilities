@@ -8,23 +8,10 @@ IsAppActive(App) {
 }
 
 
-; disable for miryoku
-; SetCapslockState, AlwaysOff
-
 ; Middle mouse button to win+tab
 MButton::#Tab
 
-;;;;;;;;;;;;;
-; Modifiers ;
-;;;;;;;;;;;;;
-; Map Alt Control
-; LAlt::LCtrl
-; RAlt::RCtrl
-; Map Win to Alt
-; LWin::LAlt
-; RWin::RAlt
-
-
+; Modifiers
 ; Map Windows to Control
 LWin::LCtrl
 RWin::RCtrl
@@ -36,7 +23,6 @@ F9::LWin
 ; but ctrl+arrows is Windows
 !Left::^Left
 !Right::^Right
-
 
 ; Alt+Space: clipboard history
 !Space::
@@ -74,18 +60,6 @@ Return
 ^]::Send, !{Right}
 ^[::Send, !{Left}
 
-; vim navigation 
-; +^!h:: Send {Left} 
-; +^!l:: Send {Right}
-; +^!k:: Send {Up}
-; +^!j:: Send {Down}
-
-; Forward Delete
-; +^!Backspace::Send, {Del}
-
-; Back and Forward One Word
-; +^!i::Send, ^{Left}
-; +^!o::Send, ^{Right}
 
 ; Readline-esque controls
 Home::
@@ -119,59 +93,6 @@ if IsAppActive("WindowsTerminal.exe") {
 Return
 
 
-
-; Tmux Commands
-+^!/::
-Send, ^b
-Sleep, 50
-Send, c
-Return
-+^!-::
-Send, ^b
-Sleep, 50
-Send, -
-Return
-+^!\::
-Send, ^b
-Sleep, 50
-Send, {Text}\
-Return
-+^!|::
-Send, ^b
-Sleep, 50
-Send, |
-Return
-+^!n::
-Send, ^b
-Sleep, 50
-Send, n
-Return
-+^!m::
-Send, ^b
-Sleep, 50
-Send, m
-Return
-+^!t::
-Send, ^b
-Sleep, 50
-Send, t
-Return
-+^!,::
-Send, ^b
-Sleep, 50
-Send, ,
-Return
-+^!.::
-Send, ^b
-Sleep, 50
-Send, .
-Return
-+^!\;::
-Send, ^b
-Sleep, 50
-Send, {Text};
-Return
-
 ; TODO: refactor
 ; and figure out centering logic
 ; Window Controls
@@ -180,22 +101,23 @@ Return
 +^!r::Send, +#{Down}
 +^!f::WinMaximize, A
 
-; +^!a::
-; WinMaximize, A
-; Send, #{Left}
-; Sleep, 100
-; Send, {Esc}
-; Return
++^!a::
+WinMaximize, A
+Send, #{Left}
+Sleep, 100
+Send, {Esc}
+Return
 
-; +^!d::
-; WinMaximize, A
-; Send, #{Right}
-; Sleep, 100
-; Send, {Esc}
-; Return
++^!d::
+WinMaximize, A
+Send, #{Right}
+Sleep, 100
+Send, {Esc}
+Return
 
 ; Move window to NEXT display
 +^!x::Send, +#{Right}
+
 
 ; Emulate the macOS hotkeys for screenshots
 ^+4::
@@ -204,12 +126,6 @@ Run, "SnippingTool.exe" ,, min
 WinWait, Snipping Tool
 Return
 ControlSend,, ^{n}, ahk_class Microsoft-Windows-SnipperToolbar
-
-; Debugging
-+^!b::
-Winget,AppName,ProcessName,A
-MsgBox, %AppName%
-Return
 
 
 ^+m::
@@ -224,7 +140,6 @@ Return
         WinActivate
     }
 return
-
 ^+f::
     IfWinExist, ahk_exe C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe
     {
@@ -237,32 +152,6 @@ return
     }
 return
 
-; Initialize a variable to track the state of the backtick key
-BacktickState := 0
-; Custom hotkey for the backtick key
-; `::CheckDoubleTap()
-
-; Function to check for a double-tap of the backtick key
-CheckDoubleTap() {
-    ; Get the state of the backtick key
-    BacktickState := !BacktickState
-
-    ; Wait for a short time to detect a double-tap
-    Sleep, 100
-
-    ; If the key is pressed again within the time interval, send Escape
-    if (BacktickState && GetKeyState("`", "P"))
-    {
-        Send, {Esc}
-    } else {
-        Send, {Text}`
-    }
-
-    ; Reset the key state
-    BacktickState := 0
-    MsgBox, "done"
-}
-
 
 
 
@@ -272,4 +161,11 @@ CheckDoubleTap() {
 ; DARK READER
 ; Ctrl+, for settings everywhere
 ; ctrl+k to ctrl+f in teams
+
+
+; Debugging
++^!b::
+Winget,AppName,ProcessName,A
+MsgBox, %AppName%
+Return
 
