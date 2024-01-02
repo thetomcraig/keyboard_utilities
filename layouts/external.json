@@ -1,25 +1,13 @@
 [
   {
-    "name": "Miryoku",
-    "author": "Manna Harbour",
-    "notes": "https://github.com/manna-harbour/miryoku/"
+    "author": "Tom Craig"
   },
   [
     {
-      "f": 4,
-      "w": 12,
-      "h": 0.5,
-      "d": true
-    },
-    "<b>Miryoku</b>"
-  ],
-  [
-    {
-      "y": -0.5,
+      "y": 0.5,
       "x": 2,
       "c": "#888888",
-      "t": "#000000\n\n\n#0000ff\n#ffffff",
-      "f": 3
+      "t": "#000000\n\n\n#0000ff\n#ffffff"
     },
     "E\n\n\n8\nExtra",
     {
@@ -71,7 +59,7 @@
     {
       "y": -0.8799999999999999,
       "x": 4,
-      "t": "#000000\n\n#00ff00\n#0000ff",
+      "t": "#000000\n\n\n#0000ff",
       "f": 2,
       "fa": [
         3,
@@ -114,12 +102,12 @@
     {
       "y": -0.5,
       "x": 2,
-      "t": "#000000\n\n#00ff00\n#0000ff\n\n\n\n#00ff00"
+      "t": "#000000\n\n#fff100\n#0000ff\n\n\n\n#fff100"
     },
     "D\n\nBrws\n5\nCtrl\n\n\nFwd",
     {
       "x": 6,
-      "t": "#000000\n#ff00ff\n\n#00ffff"
+      "t": "#000000\n#fff100\n\n#00ffff"
     },
     "K\nVol-\n\n▲\nCtrl"
   ],
@@ -127,12 +115,12 @@
     {
       "y": -0.8700000000000001,
       "x": 1,
-      "t": "#000000\n\n#00ff00\n#0000ff\n\n\n\n#00ff00"
+      "t": "#000000\n\n#fff100\n#0000ff\n\n\n\n#fff100"
     },
     "S\n\nBrws\n4\nAlt\n\n\nBack",
     {
       "x": 1,
-      "t": "#000000\n\n#00ff00\n#0000ff",
+      "t": "#000000\n\n#fff100\n#0000ff",
       "fa": [
         0,
         0,
@@ -145,7 +133,7 @@
     "F\n\nExps\n6\nShift",
     {
       "x": 4,
-      "t": "#000000\n#ff00ff\n\n#00ffff",
+      "t": "#000000\n#fff100\n\n#00ffff",
       "f": 3,
       "n": true
     },
@@ -160,7 +148,7 @@
     {
       "y": -0.8799999999999999,
       "x": 4,
-      "t": "#000000\n\n#00ff00\n#0000ff",
+      "t": "#000000\n\n#fff100\n#0000ff",
       "f": 2,
       "fa": [
         3,
@@ -172,7 +160,7 @@
     "G\n\nCaps\n=",
     {
       "x": 2,
-      "t": "#000000\n#ff00ff\n\n#00ffff",
+      "t": "#000000\n#fff100\n\n#00ffff",
       "f": 3,
       "fa": [
         0,
@@ -186,11 +174,11 @@
   [
     {
       "y": -0.75,
-      "t": "#000000\n\n#00ff00\n#0000ff\n\n\n\n#00ff00",
+      "t": "#000000\n\n#fff100\n#0000ff\n\n\n\n#fff100",
       "fa": [
         0,
         0,
-        1,
+        2,
         2,
         2,
         0,
@@ -201,7 +189,7 @@
     "A\n\nNxt\n;\nSuper\n\n\nApp Win",
     {
       "x": 10,
-      "t": "#000000\n#ff00ff\n#00ffff\n#00ffff\n\n\n\n#00ffff",
+      "t": "#000000\n#fff100\n#00ffff\n#00ffff\n\n\n\n#00ffff",
       "fa": [
         0,
         0,
@@ -225,7 +213,8 @@
     "C\n\n\n2\nOpp",
     {
       "x": 6,
-      "t": "#000000\n\n\n#00ffff\n#ffffff"
+      "t": "#000000\n\n\n#00ffff\n#ffffff",
+      "f": 3
     },
     ",\n\n\nTmux Mv Lft\nOpp"
   ],
@@ -245,12 +234,14 @@
     "V\n\n\n3\nCur",
     {
       "x": 4,
-      "t": "#000000\n\n\n#00ffff\n#ffffff"
+      "t": "#000000\n\n\n#00ffff\n#ffffff",
+      "f": 3
     },
     "M\n\n\nTmux Prvs\nCur",
     {
       "x": 1,
-      "t": "#000000\n\n\n#00ffff"
+      "t": "#000000\n\n\n#00ffff",
+      "f": 3
     },
     ".\n\n\nTmux Mv Rgt"
   ],
@@ -290,42 +281,10 @@
     "Z\n\n\n`\nButton",
     {
       "x": 10,
-      "t": "#000000\n\n\n#00ffff\n#C0C0C0"
+      "t": "#000000\n\n\n#00ffff\n#C0C0C0",
+      "f": 3
     },
     "/\n\n\nTmux New\nButton"
-  ],
-  [
-    {
-      "y": -0.33999999999999986,
-      "x": 2.5,
-      "t": "#000000",
-      "a": 7
-    },
-    "",
-    {
-      "x": 5
-    },
-    ""
-  ],
-  [
-    {
-      "y": -0.16000000000000014,
-      "f": 2,
-      "w": 12,
-      "d": true
-    },
-    "",
-    {
-      "x": -2,
-      "c": "#cccccc",
-      "f": 3,
-      "d": true
-    },
-    "<img src='https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/logos/manna-harbour-boa-32.png'>",
-    {
-      "d": true
-    },
-    "<img src='https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/logos/miryoku-roa-32.png'>"
   ],
   [
     {
@@ -334,9 +293,8 @@
       "ry": 7.75,
       "y": -4.09,
       "x": -0.5,
-      "c": "#888888",
       "t": "#000000\n\n\n#0000ff\n#00ffff",
-      "a": 4,
+      "f": 3,
       "n": true
     },
     "Spc\n\n\n0\nCoding"
@@ -346,9 +304,10 @@
       "r": 36,
       "y": -1,
       "x": -0.5,
-      "t": "#000000\n\n\n#0000ff\n#ff00ff"
+      "t": "#000000\n\n\n#0000ff\n#fff100",
+      "f": 3
     },
-    "↹\n\n\n-\nMedia"
+    "↹\n\n\n-\nOS"
   ],
   [
     {
@@ -356,7 +315,7 @@
       "rx": 9,
       "y": -4.09,
       "x": -0.5,
-      "t": "#000000\n\n\n#00ffff\n#00ff00",
+      "t": "#000000\n\n\n#00ffff\n#fff100",
       "f": 5,
       "fa": [
         0,
@@ -365,7 +324,7 @@
         3
       ]
     },
-    "↵\n\n\nesc\nMisc."
+    "↵\n\n\nesc\nOS"
   ],
   [
     {
