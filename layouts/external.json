@@ -315,26 +315,30 @@
       "rx": 9,
       "y": -4.09,
       "x": -0.5,
-      "t": "#000000\n\n\n#00ffff\n#fff100",
+      "t": "#000000\n\n\n#00ffff\n#fff100\n\n\n#fff100",
       "f": 5,
       "fa": [
+        0,
+        0,
+        0,
+        3,
         0,
         0,
         0,
         3
       ]
     },
-    "↵\n\n\nesc\nOS"
+    "↵\n\n\nesc\nOS\n\n\nesc"
   ],
   [
     {
       "r": -18,
       "y": -1,
       "x": -0.5,
-      "t": "#000000\n\n\n#00ffff\n#0000ff",
+      "t": "#000000\n\n\n#00ffff\n#0000ff\n\n\n#fff100",
       "f": 3,
       "n": true
     },
-    "⌫\n\n\n⌦\nNum"
+    "⌫\n\n\n⌦\nNum\n\n\n⌦"
   ]
 ]
