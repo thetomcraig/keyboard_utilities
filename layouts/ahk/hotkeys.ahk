@@ -11,6 +11,10 @@ IsAppActive(App) {
 ; Middle mouse button to win+tab
 MButton::#Tab
 
+; Map Win+Tab to Alt+Tab
+; LWin & Tab::AltTab
+; RWin & Tab::AltTab
+
 ; Modifiers
 ; Map Windows to Control
 LWin::LCtrl
@@ -27,17 +31,6 @@ F9::LWin
 ; Alt+Space: clipboard history
 !Space::
 Send #{v}
-Return
-
-;#SingleInstance, Force
-; Map Ctrl+Tab to Win+Tab
-; But in the browser, make it select next tab
-^Tab::
-if IsAppActive("brave.exe") {
-    Send, ^{PgDn}
-} else {
-    Send #{Tab}
-}
 Return
 
 ; Windows has no concept of "hiding" an application
