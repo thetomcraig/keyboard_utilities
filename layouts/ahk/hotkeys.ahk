@@ -1,7 +1,6 @@
 ﻿; #Include WinGetPosEx.ahk
 #EscapeChar \
 
-
 IsAppActive(App) {
     Winget,AppName,ProcessName,A
     return AppName == App
@@ -22,15 +21,30 @@ RWin::RCtrl
 ; Map F9 to Windows key
 F9::LWin
 
+; Ctrl+backtick to cycle between the windows of the current application
+; This emulates Cmd+backtick on MacOS
+^`:: ;
+; WinGetClass, CurrentActive, A
+WinGet, CurrentActive, ProcessName, A
+; MsgBox, The active window's class is "%CurrentActive%".
+; WinGet, OutputVar, ProcessName, A
+; MsgBox, The active window's class is "%OutputVar%".
+WinGet, Instances, Count, ahk_exe %CurrentActive%
+If Instances > 1
+    WinSet, Bottom,, A
+WinActivate, ahk_exe %CurrentActive%
+return
+
+
 ; For word-wise movement,
 ; alt+arrows is for macOS,
 ; but ctrl+arrows is Windows
-!Left::^Left
-!Right::^Right
+; !Left::^Left
+; !Right::^Right
 
 ; Alt+Space: clipboard history
 !Space::
-Send #{v}
+Send, ^+!q ; Ctrl+Shift+Alt+Q
 Return
 
 ; Windows has no concept of "hiding" an application
@@ -58,11 +72,13 @@ Return
 Home::
 if IsAppActive("WindowsTerminal.exe") {
     Send, ^a
+    ; MsgBox, "terminal active"
 } else {
+    ; MsgBox, "terminal NOT active"
     Send, {Home}
 }
 Return
-End:
+End::
 if IsAppActive("WindowsTerminal.exe") {
     Send, ^e
 } else {
@@ -150,7 +166,6 @@ return
 
 
 ; ALT TAB - CHROME TOO
-; DEV TOOLS
 ; DARK READER
 ; Ctrl+, for settings everywhere
 ; ctrl+k to ctrl+f in teams
