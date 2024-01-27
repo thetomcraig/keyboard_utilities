@@ -45,11 +45,11 @@
                                      (tap-hold-next-release 200 j rsft)
                                           (tap-hold-next-release 200 k rctl)
                                                (tap-hold-next-release 200 l ralt)
-                                                    (tap-hold-next-release 200 ; rctl) 
-                                                         ' ret
+                                                    (tap-hold-next-release 200 ' rctl) 
+                                                         ; ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
   lctl lmet lalt           (tap-hold-next-release 200 spc (layer-toggle U_NUM))
-                                               rmet ralt left down rght
+                                               ralt rctl left down rght
 )
 
 
@@ -71,14 +71,20 @@
                                                @txmoveright
                                                     @txcreate
                                                          rsft up
-  lctl lmet  lalt           spc            rmet ralt left down rght
+  lctl lmet  lalt           spc            ralt rctl left down rght
 )
 
 (deflayer U_NUM
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  [    7    8    9    ]    y    u    i    o    p    [    ]    \
-  XX   ;    4    5    6    =    h    j    k    l    ;    '    ret
+  XX   ;    4    5    6    =    
+                                XX
+                                    (tap-hold-next-release 200 j rsft)
+                                        (tap-hold-next-release 200 k rctl)
+                                             (tap-hold-next-release 200 l ralt)
+                                                  (tap-hold-next-release 200 ' rctl) 
+                                                       ; ret
   lsft `    1    2    3    \    n    m    ,    .    /    rsft up
-  0    0    -              spc            ralt rctl left down rght
+  0    0    -              XX            ralt rctl left down rght
 )
