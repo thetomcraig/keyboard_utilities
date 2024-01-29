@@ -1,5 +1,4 @@
-﻿; #Include WinGetPosEx.ahk
-#EscapeChar \
+﻿#EscapeChar \
 
 IsAppActive(App) {
     Winget,AppName,ProcessName,A
@@ -9,37 +8,15 @@ IsAppActive(App) {
 ; Middle mouse button to win+tab
 MButton::#Tab
 
-; Modifiers
 ; Map Windows to Control
-; LWin::LCtrl
-; RWin::RCtrl
-; Map F9 to Windows key
-; F9::LWin
+LWin::LCtrl
+RWin::RCtrl
 
 
 
-; For word-wise movement,
-; alt+arrows is for macOS,
-; but ctrl+arrows is Windows
-; !Left::^Left
-; !Right::^Right
-
-; Alt+Space: clipboard history
-!Space::
-Send, ^+!q ; Ctrl+Shift+Alt+Q
-Return
-
-
-;Browser Tabs
-^+]::Send, ^{tab}
-^+[::Send, +^{tab}
-
-;Browser History
-^]::Send, !{Right}
-^[::Send, !{Left}
-
-
-; Readline-esque controls
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Readline-esque controls ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Home::
 if IsAppActive("WindowsTerminal.exe") {
     Send, ^a
@@ -78,17 +55,6 @@ Return
 ; Window Controls ;
 ;;;;;;;;;;;;;;;;;;;
 
-; Windows has no concept of "hiding" an application
-; So this will just minimize thea active window
-^h::WinMinimize, A
-Return
-^m::WinMinimize, A
-Return
-
-; "Quit" (close the front window)
-^q::
-Send !{f4}
-Return
 
 ; Halves and quarters
 ^!+w::send, #{Up}
@@ -114,9 +80,23 @@ Return
 +^!x::Send, +#{Right}
 
 
-;;;;;;;;;;
-; Ctrl+` ;
-;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;
+; MacOS emulation ;
+;;;;;;;;;;;;;;;;;;;
+; Windows has no concept of "hiding" an application
+; So this will just minimize thea active window
+^h::WinMinimize, A
+Return
+^m::WinMinimize, A
+Return
+
+; "Quit" (close the front window)
+^q::
+Send !{f4}
+Return
+
+
 ; This emulates Cmd+backtick on MacOS, 
 ; to cycle between the windows of the current application
 ^`:: ;
@@ -131,7 +111,7 @@ If Instances > 1
 WinActivate, ahk_exe %CurrentActive%
 return
 
-; Emulate the macOS hotkeys for screenshots
+; Screenshots
 ^+4::
 ^+5::
 Run, "SnippingTool.exe" ,, min
@@ -140,6 +120,10 @@ Return
 ControlSend,, ^{n}, ahk_class Microsoft-Windows-SnipperToolbar
 
 
+
+;;;;;;;;;;;;;;;;;;;;
+; Opening programs
+;;;;;;;;;;;;;;;;;;;;
 ^+m::
 ^+c::
     IfWinExist, ahk_exe C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE
@@ -168,10 +152,6 @@ return
 
 
 
-; ALT TAB - CHROME TOO
-; DARK READER
-; Ctrl+, for settings everywhere
-; ctrl+k to ctrl+f in teams
 
 
 ; Debugging
@@ -179,4 +159,32 @@ return
 Winget,AppName,ProcessName,A
 MsgBox, %AppName%
 Return
+
+
+; WIP
+
+; ALT TAB - CHROME TOO
+; DARK READER
+; Ctrl+, for settings everywhere
+; ctrl+k to ctrl+f in teams
+; Modifiers
+; Map Windows to Control
+; LWin::LCtrl
+; RWin::RCtrl
+; Map F9 to Windows key
+; F9::LWin
+
+
+
+; For word-wise movement,
+; alt+arrows is for macOS,
+; but ctrl+arrows is Windows
+; !Left::^Left
+; !Right::^Right
+
+
+
+;Browser History
+^]::Send, !{Right}
+^[::Send, !{Left}
 
