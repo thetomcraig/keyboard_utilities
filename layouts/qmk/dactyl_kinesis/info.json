@@ -26,8 +26,8 @@
         "pin": "D3"
     },
     "matrix_pins": {
-        "cols": ["GP10", "GP11", "GP12", "GP13", "GP14", "GP15", "GP16", "GP17", "GP18", "GP19", "GP20", "GP21"],
-        "rows": ["GP0", "GP1", "GP2", "GP3", "GP4", "GP5", "GP6", "GP7", "GP8"]
+        "cols": ["GP18", "GP19", "GP20", "GP21", "GP22", "GP23", "GP24", "GP25", "GP26", "GP27", "GP28", "GP29", "GP14", "GP15", "GP16"],
+        "rows": ["GP5", "GP1", "GP2", "GP3", "GP4", "GP0", "GP6", "GP7", "GP8", "GP17"]
     },
     "diode_direction": "COL2ROW",
     "split": {
@@ -120,25 +120,32 @@
                 { "matrix": [5, 6], "x": 6, "y": 5 },
                 { "matrix": [5, 7], "x": 7, "y": 5 },
 
+                // Thumbs mouse keys
+                // lclick btn1 rclick
+                { "matrix": [9, 12], "x": 0, "y": 6 },
+                { "matrix": [9, 13], "x": 1, "y": 6 },
+                { "matrix": [9, 14], "x": 2, "y": 6 },
+
                 // ROW 7
                 // ctl alt cmd ctl
-                { "matrix": [6, 0], "x": 0, "y": 6 },
-                { "matrix": [6, 1], "x": 1, "y": 6 },
-                { "matrix": [6, 2], "x": 2, "y": 6 },
-                { "matrix": [6, 3], "x": 3, "y": 6 },
+                { "matrix": [6, 0], "x": 0, "y": 7 },
+                { "matrix": [6, 1], "x": 1, "y": 7 },
+                { "matrix": [6, 2], "x": 2, "y": 7 },
+                { "matrix": [6, 3], "x": 3, "y": 7 },
 
                 // ROW 8
                 // bkspc del home pgup enter spc
-                { "matrix": [7, 0], "x": 0, "y": 7 },
-                { "matrix": [7, 1], "x": 1, "y": 7 },
-                { "matrix": [7, 2], "x": 2, "y": 7 },
-                { "matrix": [7, 3], "x": 3, "y": 7 },
-                { "matrix": [7, 4], "x": 4, "y": 7 },
-                { "matrix": [7, 5], "x": 5, "y": 7 },
+                { "matrix": [7, 0], "x": 0, "y": 8 },
+                { "matrix": [7, 1], "x": 1, "y": 8 },
+                { "matrix": [7, 2], "x": 2, "y": 8 },
+                { "matrix": [7, 3], "x": 3, "y": 8 },
+                { "matrix": [7, 4], "x": 4, "y": 8 },
+                { "matrix": [7, 5], "x": 5, "y": 8 },
 
                 // ROW 9
-                { "matrix": [8, 0], "x": 0, "y": 8 },
-                { "matrix": [8, 1], "x": 1, "y": 8 }
+                // end pgdown
+                { "matrix": [8, 0], "x": 0, "y": 9 },
+                { "matrix": [8, 1], "x": 1, "y": 9 }
             ]
         }
     }
