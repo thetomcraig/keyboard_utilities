@@ -112,13 +112,14 @@
                 // ROW 6
                 // ~ \ left right up down [ ]
                 { "matrix": [5, 0], "x": 0, "y": 5 },
-                { "matrix": [5, 1], "x": 1, "y": 5 },
-                { "matrix": [5, 2], "x": 2, "y": 5 },
-                { "matrix": [5, 3], "x": 3, "y": 5 },
-                { "matrix": [5, 4], "x": 4, "y": 5 },
-                { "matrix": [5, 5], "x": 5, "y": 5 },
+                { "matrix": [5, 3], "x": 1, "y": 5 },
+
+                { "matrix": [5, 4], "x": 2, "y": 5 },
+                { "matrix": [5, 7], "x": 3, "y": 5 },
+                { "matrix": [5, 8], "x": 4, "y": 5 },
+                { "matrix": [5, 9], "x": 5, "y": 5 },
                 { "matrix": [5, 10], "x": 6, "y": 5 },
-                { "matrix": [5, 12], "x": 7, "y": 5 }, // 67, ]
+                { "matrix": [5, 11], "x": 7, "y": 5 }, // 67, ]
 
                 // Thumbs mouse keys
                 // lclick btn1 rclick
