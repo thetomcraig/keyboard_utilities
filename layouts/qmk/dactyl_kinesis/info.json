@@ -68,9 +68,9 @@
                 { "matrix": [1, 11], "x": 11, "y": 1 }, // 23, - 0,28
 
                 // ROW 3
-                { "matrix": [2, 0], "x": 0, "y": 2 },
-                { "matrix": [2, 1], "x": 1, "y": 2 },
-                { "matrix": [2, 2], "x": 2, "y": 2 },
+                { "matrix": [2, 0], "x": 0, "y": 2 }, 
+                { "matrix": [2, 1], "x": 1, "y": 2 }, // swap test
+                { "matrix": [2, 2], "x": 2, "y": 2 }, //swap test
                 { "matrix": [2, 3], "x": 3, "y": 2 },
                 { "matrix": [2, 4], "x": 4, "y": 2 },
                 { "matrix": [2, 5], "x": 5, "y": 2 },
@@ -112,14 +112,14 @@
                 // ROW 6
                 // ~ \ left right up down [ ]
                 { "matrix": [5, 1], "x": 1, "y": 5 }, // `
-                { "matrix": [5, 2], "x": 0, "y": 5 }, // 
-                { "matrix": [5, 3], "x": 2, "y": 5 }, // 
-                { "matrix": [5, 4], "x": 3, "y": 5 }, //
+                { "matrix": [5, 2], "x": 0, "y": 5 }, // \
+                { "matrix": [5, 3], "x": 2, "y": 5 }, // <-
+                { "matrix": [5, 4], "x": 3, "y": 5 }, // ->
 
-                { "matrix": [5, 8], "x": 4, "y": 5 },
-                { "matrix": [5, 9], "x": 5, "y": 5 },
-                { "matrix": [5, 10], "x": 6, "y": 5 },
-                { "matrix": [5, 11], "x": 7, "y": 5 }, // 67, ]
+                { "matrix": [5, 7], "x": 4, "y": 5 }, //swap test
+                { "matrix": [5, 8], "x": 5, "y": 5 }, //swap test
+                { "matrix": [5, 9], "x": 6, "y": 5 },
+                { "matrix": [5, 10], "x": 7, "y": 5 }, // 67, ]
 
                 // Thumbs mouse keys
                 // lclick btn1 rclick
