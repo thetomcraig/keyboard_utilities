@@ -129,25 +129,21 @@
 
                 // ROW 7
                 // gui alt ctl gui
-                { "matrix": [6, 4], "x": 0, "y": 7 },
-                { "matrix": [6, 5], "x": 1, "y": 7 },
-                { "matrix": [6, 7], "x": 2, "y": 7 }, 
-                { "matrix": [6, 8], "x": 3, "y": 7 },
+                { "matrix": [6, 4], "x": 0, "y": 7 }, // ok
+                { "matrix": [6, 5], "x": 1, "y": 7 }, // ok
+                { "matrix": [6, 8], "x": 3, "y": 7 }, // ok
+                { "matrix": [6, 7], "x": 2, "y": 7 },  // ok
 
-                // ROW 8
-                // bkspc del home pgup enter spc
+                { "matrix": [8, 4], "x": 4, "y": 8 }, // ok
                 { "matrix": [7, 4], "x": 0, "y": 8 },
-                { "matrix": [7, 5], "x": 1, "y": 8 },
-                { "matrix": [7, 7], "x": 2, "y": 8 },
+                { "matrix": [7, 5], "x": 1, "y": 8 }, // ok
+                { "matrix": [7, 7], "x": 2, "y": 8 }, // ok
                 { "matrix": [7, 8], "x": 3, "y": 8 },
+                { "matrix": [8, 8], "x": 1, "y": 9 }, // ok
 
-                { "matrix": [8, 4], "x": 4, "y": 8 },
                 { "matrix": [8, 5], "x": 5, "y": 8 },
+                { "matrix": [8, 7], "x": 0, "y": 9 } // ok
 
-                // ROW 9
-                // end pgdown
-                { "matrix": [8, 7], "x": 0, "y": 9 },
-                { "matrix": [8, 8], "x": 1, "y": 9 }
             ]
         }
     }
