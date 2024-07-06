@@ -17,7 +17,9 @@ enum custom_keycodes {
     WD_PRV,
     WD_NXT,
     LIN_END,
+    TX_SPLT_H,
     TX_CYC,
+    TX_SPLT_V,
     TX_CMD,
     TX_SRCH,
     TX_NXT,
@@ -89,7 +91,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case TX_SRCH:
         if (record->event.pressed) {
             SEND_STRING(SS_LCTL("b"));
-            SEND_STRING("f");
+            SEND_STRING("t");
+        }
+        break;
+
+    case TX_SPLT_H:
+        if (record->event.pressed) {
+            SEND_STRING(SS_LCTL("b"));
+            SEND_STRING("-");
         }
         break;
 
@@ -97,6 +106,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             SEND_STRING(SS_LCTL("b"));
             SEND_STRING(";");
+        }
+        break;
+
+    case TX_SPLT_V:
+        if (record->event.pressed) {
+            SEND_STRING(SS_LCTL("b"));
+            SEND_STRING("\\");
         }
         break;
 
@@ -147,10 +163,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC , KC_F1 , KC_F2       , KC_F3       , KC_F4       , KC_F5  ,          KC_F6  , KC_F7       , KC_F8          , KC_F9       , KC_F10 , KC_F11 ,
         KC_EQL , KC_1  , KC_2        , KC_3        , KC_4        , KC_5   ,          KC_6   , KC_7        , KC_8           , KC_9        , KC_0   , KC_MINS,
         KC_TAB , KC_Q  , KC_W        , KC_E        , KC_R        , KC_T   ,          KC_Y   , KC_U        , KC_I           , KC_O        , KC_P   , KC_BSLS,
-        KC_LCTL, KC_A  , LCTL_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), KC_G   ,          KC_H   , RSFT_T(KC_J), RGUI_T(KC_K)   , RCTL_T(KC_L), KC_SCLN, KC_QUOT,
+        KC_LCTL, KC_A  , LCTL_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), KC_G   ,          KC_H   , RSFT_T(KC_J), RGUI_T(KC_K)   , RCTL_T(KC_L), KC_QUOT, KC_SCLN,
         KC_LSFT, KC_Z  , KC_X        , KC_C        , LALT_T(KC_V), KC_B   ,          KC_N   , RALT_T(KC_M), KC_COMM        , KC_DOT      , KC_SLSH, KC_RSFT,
                  KC_GRV, KC_BSLS     , KC_LEFT     , KC_RGHT     ,                            KC_UP       , KC_DOWN        , KC_LBRC     , KC_RBRC,
-                                                                   KC_BTN1, KC_BTN2, KC_BTN1,
+                                                                   KC_BTN2, KC_BTN1, KC_BTN2,
                                             KC_LCTL, KC_LALT,                                 KC_RCTL     , KC_RGUI        ,
                  LT(_CODE, KC_SPC), LT(_OS, KC_TAB), KC_HOME,                                 KC_PGUP     , LT(_OS, KC_ENT), LT(_NUM, KC_BSPC),
                                                       KC_END,                                 KC_PGDN
@@ -168,27 +184,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______,                            _______
     ),
     [_CODE] = LAYOUT(
-        _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______ , _______, _______,
-        _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______ , _______, _______,
-        _______, _______, _______, _______, _______, _______,          TX_TGL , LIN_SRT, WD_PRV , WD_NXT  , LIN_END, _______,
-        _______, TX_CMD , _______, _______, TX_SRCH, _______,          KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, TX_CYC , _______,
-        _______, _______, _______, _______, _______, _______,          TX_NXT , TX_PRV , TX_MV_L, TX_MV_R , TX_NEW, _______,
+        _______, _______, _______, _______, _______, _______  ,        _______, _______, _______, _______ , _______, _______,
+        _______, _______, _______, _______, _______, _______  ,        _______, _______, _______, _______ , _______, _______,
+        _______, _______, _______, _______, _______, _______  ,        TX_TGL , LIN_SRT, WD_PRV , WD_NXT  , LIN_END, _______,
+        _______, TX_CMD , _______, _______, TX_SRCH, TX_SPLT_H,        KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, TX_CYC , _______,
+        _______, _______, _______, _______, _______, TX_SPLT_V,        TX_NXT , TX_PRV , TX_MV_L, TX_MV_R , TX_NEW, _______,
                 _______ , _______, _______, _______,                            _______, _______, _______ , _______,
                                                      _______, _______, _______,
                                    _______, _______,                            _______, _______,
-                          _______, _______, _______,                            _______, _______, _______,
+                          _______, _______, _______,                            _______, KC_ESC , KC_DEL  ,
                                             _______,                            _______
     ),
     [_OS] = LAYOUT(
         _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______,
+        _______, _______, KC_WBAK, KC_WFWD, _______, KC_CAPS,          _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______,
                 _______ , _______, _______, _______,                            _______, _______, _______, _______,
                                                      _______, _______, _______,
                                    _______, _______,                            _______, _______,
-                          _______, _______, _______,                            _______, _______, _______,                             
+                          _______, _______, _______,                            _______, KC_ESC , KC_DEL ,                             
                                             _______,                            _______
     )
 };
