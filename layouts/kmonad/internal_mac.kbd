@@ -48,7 +48,9 @@
                                                (tap-hold-next-release 200 l rctl)
                                                     (tap-hold-next-release 200 ' rmet) 
                                                          ; ret
-  lsft z    x    c    (tap-hold-next-release 200 v lalt)    b    n   (tap-hold-next-release 200 m ralt)  ,    .    /    rsft up
+  lsft z    x   (tap-hold-next-release 200 c lalt)
+                      v    b    n    (tap-hold-next-release 200 m ralt)
+                                          ,    .    /    rsft up
   fn   lctl lalt lmet           (tap-hold-next-release 200 spc (layer-toggle U_NUM))
                                                rmet ralt left down rght
 )
@@ -63,7 +65,8 @@
                                                (tap-hold-next-release 200 l rctl)
                                                     (tap-hold-next-release 200 ' rmet) 
                                                        ;    ret
-  lsft `    1	  2	  3	  \\   n  (tap-hold-next-release 200 m ralt)    ,    .    /    rsft up
+  lsft `    1	  2	  3	  \\   n   (tap-hold-next-release 200 m ralt)
+                                          ,    .    /    rsft up
   fn   .    .    0    -              rmet ralt left down rght
 )
 

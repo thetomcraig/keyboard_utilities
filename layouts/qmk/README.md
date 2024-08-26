@@ -27,3 +27,5 @@ cp $KEYMAP_DIR/flash_keyboard.sh . && \
 ./flash_keyboard.sh
 ```
 
+## Dactyl Kinesis
+- See `flash_dactyl_kinesis.sh`

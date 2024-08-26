@@ -15,7 +15,6 @@
 
 #define HYPER KC_CAPS
 
-extern keymap_config_t keymap_config;
 
 enum custom_keycodes {
   /***********/
@@ -24,6 +23,28 @@ enum custom_keycodes {
   EPRM,
   VRSN,
   RGB_SLD,
+
+  /***********/
+  /* TMUX */
+  /***********/
+  // TX_NXT,
+  // TX_PRV,
+  // TX_NEW,
+  // TX_MV_L,
+  // TX_MV_R,
+  // TX_CYC,
+  // TX_TGL,
+  // TX_SRCH,
+  // TX_CMD,
+  // TUX_CMD,
+
+  /******************/
+  /* LINE MOVEMENTS */
+  /******************/
+  WD_NXT,
+  WD_PRV,
+  LIN_SRT,
+  LIN_END,
 
   /**********/
   /* NUMPAD */
@@ -41,57 +62,3 @@ enum custom_keycodes {
 };
 
 
-// This function enters passwords
-// The strings are defined in a file NOT in VCS, called "secrets.h"
-bool process_password_keys(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case P_CMP:
-      if (record->event.pressed) {
-        send_string(computer_password);
-        send_string(SS_TAP(X_ENTER));
-      }
-      break;
-    case P_1PASS:
-      if (record->event.pressed) {
-        send_string(one_pass_password);
-        send_string(SS_TAP(X_ENTER));
-      }
-      break;
-    case P_OKTA:
-      if (record->event.pressed) {
-        send_string(okta_password);
-        send_string(SS_TAP(X_ENTER));
-      }
-      break;
-    case P_CP:
-      if (record->event.pressed) {
-        send_string(coachportal_password);
-        send_string(SS_TAP(X_ENTER));
-      }
-      break;
-    case P_LP:
-      if (record->event.pressed) {
-        send_string(last_pass_password);
-        send_string(SS_TAP(X_ENTER));
-      }
-      break;
-  }
-  return true;
-}
-
-// This processes all other custom macros; they're keys defined above
-bool process_custom_macro_keys(uint16_t keycode, keyrecord_t *record) {
-  // bool still_need_to_process = process_password_keys(keycode, record);
-  // if (still_need_to_process == false) {
-  //   return false;
-  // }
-
-  switch (keycode) {
-    case NP_COL:
-      if (record->event.pressed) {
-        send_string(":");
-      }
-      break;
-  }
-  return true;
-}
