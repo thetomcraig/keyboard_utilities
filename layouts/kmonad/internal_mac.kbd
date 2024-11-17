@@ -19,8 +19,8 @@
 (defalias 
   wordleft #(A-left)
   wordright #(A-right)
-  linestart #(home)
-  lineend #(end)
+  linestart #(C-a)
+  lineend #(C-e)
 
   txcreate #(C-b c)
   txcyclepane #(C-b o)
