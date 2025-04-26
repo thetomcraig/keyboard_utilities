@@ -7,12 +7,12 @@
       "y": 0.5,
       "x": 2,
       "c": "#888888",
-      "t": "#000000\n\n\n#0000ff\n#ffffff"
+      "t": "#000000\n\n\n#0000ff"
     },
     "E\n\n\n8",
     {
       "x": 6,
-      "t": "#000000\n\n\n#00ffff\n#ffffff\n\n\n#00ffff",
+      "t": "#000000\n\n\n#00ffff\n\n\n\n#00ffff",
       "fa": [
         0,
         0,
@@ -26,18 +26,18 @@
     {
       "y": -0.87,
       "x": 1,
-      "t": "#000000\n#f251ee\n\n#0000ff\n#ffffff",
+      "t": "#000000\n#f251ee\n\n#0000ff",
       "f": 2
     },
     "W\nWin ▲\n\n7",
     {
       "x": 1,
-      "t": "#000000\n#f251ee\n\n#0000ff\n#ffffff\n\n#f251ee"
+      "t": "#000000\n#f251ee\n\n#0000ff\n\n\n#f251ee"
     },
     "R\nCtr\n\n9\n\n\nWin",
     {
       "x": 4,
-      "t": "#000000\n\n\n#00ffff\n#ffffff\n\n\n#00ffff",
+      "t": "#000000\n\n\n#00ffff\n\n\n\n#00ffff",
       "f": 3,
       "fa": [
         0,
@@ -60,20 +60,48 @@
     {
       "y": -0.8799999999999999,
       "x": 4,
-      "t": "#000000\n\n\n#0000ff",
+      "t": "#000000\n#fff100\n\n#0000ff\n\n\n#f251ee",
       "f": 2,
       "fa": [
         3,
-        0,
+        3,
         0,
         3
       ]
     },
-    "T\n\n\n]",
+    "T\nesc\n\n]\n\n\nMute",
     {
       "x": 2,
-      "t": "#000000\n\n#00ffff\n#00ffff\n\n\n\n#00ffff",
+      "t": "#000000\n#fff100\n#00ffff\n#00ffff\n\n\n\n#00ffff",
       "f": 3,
+      "fa": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    "Y\nesc\nTmux\n\n\n\n\nExtract"
+  ],
+  [
+    {
+      "y": -0.75,
+      "t": "#000000\n\n\n#0000ff",
+      "fa": [
+        0,
+        0,
+        2,
+        2
+      ]
+    },
+    "Q\n\n\n[",
+    {
+      "x": 10,
+      "t": "#000000\n\n\n#00ffff\n\n\n\n#00ffff",
       "fa": [
         0,
         0,
@@ -85,29 +113,17 @@
         2
       ]
     },
-    "Y\n\nTmux\nSession\n\n\n\nToggle"
-  ],
-  [
-    {
-      "y": -0.75,
-      "t": "#000000\n\n\n#0000ff\n#ffffff"
-    },
-    "Q\n\n\n[",
-    {
-      "x": 10,
-      "t": "#000000\n\n\n#00ffff\n#ffffff\n\n\n#00ffff"
-    },
-    "P\n🔇\n\nEnd\n\n\n\nLine"
+    "P\n\n\nEnd\n\n\n\nLine"
   ],
   [
     {
       "y": -0.5,
       "x": 2,
-      "t": "#000000\n#f251ee\n#fff100\n#0000ff\n#f251ee\n#00ff06\n\n#fff100",
+      "t": "#000000\n#fff100\n#fff100\n#0000ff\n#f251ee\n#00ff06\n#f251ee\n#fff100",
       "a": 0,
       "f": 2
     },
-    "D\nWin ▼\nBrws\n5\nMOD\n⌘\n\nFwd",
+    "D\nBrws▶\n\n5\nMOD\n⌘\nWin ▼",
     {
       "x": 6,
       "t": "#000000\n#fff100\n\n#00ffff\n#f251ee\n#00ff06",
@@ -125,16 +141,22 @@
     {
       "y": -0.8700000000000001,
       "x": 1,
-      "t": "#000000\n#f251ee\n#fff100\n#0000ff\n#f251ee\n#00ff06\n\n#fff100",
-      "f": 2
+      "t": "#000000\n#fff100\n#00ffff\n#0000ff\n#f251ee\n#00ff06\n#f251ee\n#fff100",
+      "f": 2,
+      "fa": [
+        0,
+        0,
+        1
+      ]
     },
-    "S\nWin ▼\nBrws\n4\nMOD\n^\n\nBack",
+    "S\nBrws◀\nTxCmd\n4\nMOD\n^\nWin ▼",
     {
       "x": 1,
-      "t": "#000000\n#f251ee\n#fff100\n#0000ff\n#f251ee\n#00ff06",
+      "t": "#000000\n#fff100\n#00ffff\n#0000ff\n#f251ee\n#00ff06\n#f251ee",
+      "f": 2,
       "n": true
     },
-    "F\nWin Full\nExps\n6\nMOD\n⇧",
+    "F\nExps\nTxExt\n6\nMOD\n⇧\nWin F",
     {
       "x": 4,
       "t": "#000000\n#fff100\n\n#00ffff\n#f251ee\n#00ff06",
@@ -151,17 +173,17 @@
     {
       "y": -0.8799999999999999,
       "x": 4,
-      "t": "#000000\n#f251ee\n#fff100\n#0000ff",
+      "t": "#000000\n#fff100\n#00ffff\n#0000ff\n\n\n#f251ee",
       "a": 4,
       "f": 2,
       "fa": [
         3,
-        0,
+        1,
         0,
         3
       ]
     },
-    "G\nClear Not\nCaps\n=",
+    "G\nCaps\nsplit -\n=\n\n\nClr Not",
     {
       "x": 2,
       "t": "#000000\n#fff100\n\n#00ffff",
@@ -178,10 +200,10 @@
   [
     {
       "y": -0.75,
-      "t": "#000000\n#f251ee\n#fff100\n#0000ff\n\n\n\n#fff100",
+      "t": "#000000\n#f251ee\n\n#0000ff\n\n\n#f251ee",
       "f": 2
     },
-    "A\nWin ◀\n\n;",
+    "A\n\n\n;\n\n\nWin ◀",
     {
       "x": 10,
       "t": "#000000\n#fff100\n#00ffff\n#00ffff\n\n\n\n#00ffff",
@@ -203,13 +225,13 @@
     {
       "y": -0.5,
       "x": 2,
-      "t": "#000000\n\n\n#0000ff\n#ffffff",
+      "t": "#000000\n\n\n#0000ff",
       "f": 3
     },
     "C\n\n\n2",
     {
       "x": 6,
-      "t": "#000000\n\n\n#00ffff\n#ffffff",
+      "t": "#000000\n\n\n#00ffff",
       "f": 3
     },
     ",\n\n\nTmux Mv Lft"
@@ -218,20 +240,20 @@
     {
       "y": -0.8700000000000001,
       "x": 1,
-      "t": "#000000\n#f251ee\n\n#0000ff",
+      "t": "#000000\n#f251ee\n\n#0000ff\n\n\n#f251ee",
       "f": 2
     },
-    "X\nWinNxt\n\n1",
+    "X\n\n\n1\n\n\nWin Nxt",
     {
       "x": 1,
-      "t": "#000000\n\n\n#0000ff\n\n#00ff06\n\n\n\n\n\n#ffffff",
+      "t": "#000000\n\n\n#0000ff\n\n#00ff06",
       "a": 0,
       "f": 3
     },
     "V\n\n\n3\n\n⌥",
     {
       "x": 4,
-      "t": "#000000\n#f251ee\n#00ffff\n#00ffff\n\n#00ff06\n\n#00ffff\n\n\n\n#ffffff",
+      "t": "#000000\n#f251ee\n#00ffff\n\n\n#00ff06\n\n#00ffff",
       "f": 2
     },
     "M\nExps\nTmux\n\n\n⌥\n\nPrvs",
@@ -247,7 +269,7 @@
     {
       "y": -0.8799999999999999,
       "x": 4,
-      "t": "#000000\n\n\n#0000ff",
+      "t": "#000000\n\n#00ffff\n#0000ff",
       "f": 2,
       "fa": [
         3,
@@ -256,7 +278,7 @@
         3
       ]
     },
-    "B\n\n\n\\",
+    "B\n\nsplit |\n\\",
     {
       "x": 2,
       "t": "#000000\n\n\n#00ffff",
@@ -273,7 +295,7 @@
   [
     {
       "y": -0.75,
-      "t": "#000000\n\n\n#0000ff\n#C0C0C0",
+      "t": "#000000\n\n\n#0000ff",
       "f": 3
     },
     "Z\n\n\n`",
