@@ -9,3 +9,9 @@
 ```
 stack build --flag kmonad:dext --extra-include-dirs=c_src/mac/Karabiner-DriverKit-VirtualHIDDevice/include/pqrs/karabiner/driverkit:c_src/mac/Karabiner-DriverKit-VirtualHIDDevice/src/Client/vendor/include
 ```
+
+## To Update Keymap
+Kill the process:
+```
+output=$(ps aux | grep "sudo -S ./kmonad_bin" | grep -v "grep" | awk '{print $2}')
+```
